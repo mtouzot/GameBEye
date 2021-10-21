@@ -81,7 +81,117 @@
 <h1>GameBEye.gbcamimage package<a class="headerlink" href="#gamebeye-gbcamimage-package" title="Permalink to this headline"></a></h1>
 <p>The <strong>GameBEye.gbcamimage</strong> package is as its name indicates focused on Game Boy Camera image. Each image has a <em>128x112</em> pixels resolution and uses a 4-color palette (grayscale values, natively).</p>
 <section id="module-GameBEye.gbcamimage">
-<span id="gamebeye-gbcamimage-gbcamimage-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamimage.gbcamimage</span></code> module<a class="headerlink" href="#module-GameBEye.gbcamimage" title="Permalink to this headline"></a></h2>
+<span id="gamebeye-gbcamimage-gbcamimage-module"></span><h2><a class="reference internal" href="#module-GameBEye.gbcamimage.gbcamimage" title="GameBEye.gbcamimage.gbcamimage"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamimage.gbcamimage</span></code></a> module<a class="headerlink" href="#module-GameBEye.gbcamimage" title="Permalink to this headline"></a></h2>
+<span class="target" id="module-GameBEye.gbcamimage.gbcamimage"></span><dl class="py class">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamimage.gbcamimage.</span></span><span class="sig-name descname"><span class="pre">GBCamImage</span></span><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The base class of Game Boy Camera images.</p>
+<p>A Game Boy Camera image is a nothing but a 4-colors 128x112 array.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.BLACK_NINTENDO_BORDER">
+<span class="sig-name descname"><span class="pre">BLACK_NINTENDO_BORDER</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">16</span></em><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.BLACK_NINTENDO_BORDER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.COLOR_PALETTE_SIZE">
+<span class="sig-name descname"><span class="pre">COLOR_PALETTE_SIZE</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.COLOR_PALETTE_SIZE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.IMAGE_CHANNEL">
+<span class="sig-name descname"><span class="pre">IMAGE_CHANNEL</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.IMAGE_CHANNEL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.IMAGE_HEIGHT">
+<span class="sig-name descname"><span class="pre">IMAGE_HEIGHT</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">128</span></em><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.IMAGE_HEIGHT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.IMAGE_WIDTH">
+<span class="sig-name descname"><span class="pre">IMAGE_WIDTH</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">112</span></em><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.IMAGE_WIDTH" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.change_color">
+<span class="sig-name descname"><span class="pre">change_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color_palette</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes" title="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes"><span class="pre">GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">GBColorPalettes.BW</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.change_color" title="Permalink to this definition"></a></dt>
+<dd><p>Change the color palette of an image with a new one from a GBColorPalettes selection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – The color parameter must be a GBColorPalettes.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>color_palette</strong> – the color palette to apply</p>
+</dd>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>a GBColorPalettes value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.color_palette">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">color_palette</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes" title="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes"><span class="pre">GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes</span></a></em><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.color_palette" title="Permalink to this definition"></a></dt>
+<dd><p>Return the GBColorPalette of the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a GBColorPalette value</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes" title="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes">GBColorPalettes</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">numpy.array</span></em><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.data" title="Permalink to this definition"></a></dt>
+<dd><p>Property to return the image data as a numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the image data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.read" title="Permalink to this definition"></a></dt>
+<dd><p>Open filepath to read the file contents and store the image into the data member.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – The input filepath must exist to be read</p></li>
+<li><p><strong>ValueError</strong> – Once read, the filepath must point to a standard Game Boy Camera Image : 128*112 pixels and 4 colors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>filepath</strong> (<em>a string</em>) – filepath to image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="GameBEye.gbcamimage.gbcamimage.GBCamImage.shape">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="pre">:</span> <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#GameBEye.gbcamimage.gbcamimage.GBCamImage.shape" title="Permalink to this definition"></a></dt>
+<dd><p>Property to return the image shape.</p>
+<p>As the Game Boy Camera has a fixed size, it will always return (112, 128, 3).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the image shape</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
