@@ -1,5 +1,4 @@
 from GameBEye.gbcamimage import gbcamimage
-from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
 from GameBEye.gbcamfilters import gbcamfilters
 import cv2
 
