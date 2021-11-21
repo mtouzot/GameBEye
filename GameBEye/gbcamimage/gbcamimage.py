@@ -66,20 +66,20 @@ class GBCamImage:
         """
         return self.__color_palette
 
-    def read(self, filepath: str) -> typing.NoReturn:
+    def read(self, image_filepath: str) -> typing.NoReturn:
         """
         Open filepath to read the file contents and store the image into the data member.
 
         :raises FileNotFoundError: The input filepath must exist to be read
         :raises ValueError: Once read, the filepath must point to a standard Game Boy Camera Image : 128*112 pixels and 4 colors
 
-        :param filepath: filepath to image
-        :type filepath: a string
+        :param image_filepath: filepath to image
+        :type image_filepath: a string
         """
-        if not os.path.exists(filepath):
+        if not os.path.exists(image_filepath):
             raise FileNotFoundError('The input filepath does not exist')
 
-        img = cv2.imread(filepath, cv2.IMREAD_COLOR)
+        img = cv2.imread(image_filepath, cv2.IMREAD_COLOR)
 
         if img.shape[:2] not in [(GBCamImage.IMAGE_WIDTH, GBCamImage.IMAGE_HEIGHT),  # Original image size
                                  (GBCamImage.IMAGE_WIDTH + 2 * GBCamImage.BLACK_NINTENDO_BORDER,
