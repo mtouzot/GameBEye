@@ -9,8 +9,9 @@ class GBColorPalettes(Enum):
     """
     56 Pre-defined color palettes based upon Game Boy Camera known palettes.
 
-    The GBColorPalettes class inherits from Enum class where the keys are the color palette names and the value
-    a 4 elements array whose values represent a color coded in hexadecimal basis.
+    The GBColorPalettes class inherits from Enum class where the keys are
+    the color palette names and the valuea 4 elements array whose values
+    represent a color coded in hexadecimal basis.
     """
 
     #: .. image:: ../_static/colorPalettes/BW.png
@@ -201,8 +202,9 @@ class GBColorPalettes(Enum):
     def __str__(self) -> str:
         """
         Converts the enum member to a formatted string:
-            'name : [VAL_1 VAL_2 VAL_3 VAL_4]'
-        Where name is the enum member name and [VAL_1 VAL_2 VAL_3 VAL_4] the four color hex values
+            'name : [V_1 V_2 V_3 V_4]'
+        Where name is the enum member name and
+        [V_1 V_2 V_3 V_4] the 4-color hex values
 
         :returns: the enum member as a string
         :rtype: str
@@ -253,4 +255,5 @@ class GBColorPalettes(Enum):
         >>> GBColorPalettes.BW.get_color_value
         [[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]]
         """
-        return [[channel_val for channel_val in hex_to_rgb(hex_value)] for hex_value in self.value]
+        return [[channel_val for channel_val in hex_to_rgb(hex_value)]
+                for hex_value in self.value]
