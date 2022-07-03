@@ -1,5 +1,4 @@
 from GameBEye.gbcamimage import gbcamimage
-from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
 from GameBEye.gbcamfilters import gbcamfilters
 import cv2
 
@@ -13,7 +12,8 @@ gb_image = gbcamimage.GBCamImage()
 gb_image.read(image_filepath)
 
 # Displaying the original image
-original_title = 'Original image with {} color palette'.format(gb_image.color_palette.name)
+original_title = 'Original image with {} color palette'.format(
+    gb_image.color_palette.name)
 cv2.imshow(original_title, gb_image.data)
 print('Original color palette : {}'.format(gb_image.color_palette))
 
