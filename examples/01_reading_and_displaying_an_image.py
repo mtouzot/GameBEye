@@ -15,7 +15,8 @@ print("Image filename : {}".format(image_filepath))
 print("GBColorPalette name : {}".format(gb_image.color_palette))
 
 # Displaying the image
-title = 'Original image with {} color palette'.format(gb_image.color_palette.name)
+title = 'Original image with {} color palette'.format(
+    gb_image.color_palette.name)
 cv2.imshow(title, gb_image.data)
 cv2.waitKey()
 cv2.destroyWindow(title)

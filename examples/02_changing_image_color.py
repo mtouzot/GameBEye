@@ -12,7 +12,8 @@ gb_image = gbcamimage.GBCamImage()
 gb_image.read(image_filepath)
 
 # Displaying the original image
-original_title = 'Original image with {} color palette'.format(gb_image.color_palette.name)
+original_title = 'Original image with {} color palette'.format(
+    gb_image.color_palette.name)
 cv2.imshow(original_title, gb_image.data)
 print('Original color palette : {}'.format(gb_image.color_palette))
 
@@ -21,10 +22,11 @@ gb_color_palette = GBColorPalettes.AZC
 gb_image.change_color(color_palette=gb_color_palette)
 
 # Displaying the colorized image
-color_title = 'Colorized image with {} color palette'.format(gb_image.color_palette.name)
+color_title = 'Colorized image with {} color palette'.format(
+    gb_image.color_palette.name)
 cv2.imshow(color_title, gb_image.data)
-print('Colorized image color palette : {}\nRequired color palette : {}'.format(gb_image.color_palette,
-                                                                               gb_color_palette))
+print('Colorized image color palette : {}\nRequired color palette : {}'.format(
+    gb_image.color_palette, gb_color_palette))
 
 cv2.waitKey()
 cv2.destroyWindow(original_title)
