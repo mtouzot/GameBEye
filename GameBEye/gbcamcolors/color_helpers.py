@@ -138,9 +138,9 @@ def clamp_hex(hex_val: str) -> str:
     >>> clamp_hex('#F000000')
     '#FFFFFF'
     """
-    hex_val = int(hex_val.replace('#', '0x'), 0)
-    hex_val = "0x{0:0{1}X}".format(max(0, min(int('0xFFFFFF', 0), hex_val)), 6)
-    return hex_val.replace('0x', '#')
+    hex_val = int(hex_val.replace("#", "0x"), 0)
+    hex_val = "0x{0:0{1}X}".format(max(0, min(int("0xFFFFFF", 0), hex_val)), 6)
+    return hex_val.replace("0x", "#")
 
 
 def is_clamped_hex(hex_val: str) -> bool:
@@ -163,8 +163,8 @@ def is_clamped_hex(hex_val: str) -> bool:
     >>> is_clamped_hex('#F000000')
     False
     """
-    hex_val = hex_val.replace('#', '0x')
-    return int('0x000000', 0) <= int(hex_val, 0) <= int('0xFFFFFF', 0)
+    hex_val = hex_val.replace("#", "0x")
+    return int("0x000000", 0) <= int(hex_val, 0) <= int("0xFFFFFF", 0)
 
 
 def hex_to_rgb(hex_val: str) -> RGB_val:
@@ -194,8 +194,8 @@ def hex_to_rgb(hex_val: str) -> RGB_val:
     >>> hex_to_rgb('#F000000')
     [255, 255, 255]
     """
-    hex_val = clamp_hex(hex_val).replace('#', '0x')
-    return [((int(hex_val, 0) >> idx*8) & 255) for idx in range(2, -1, -1)]
+    hex_val = clamp_hex(hex_val).replace("#", "0x")
+    return [((int(hex_val, 0) >> idx * 8) & 255) for idx in range(2, -1, -1)]
 
 
 def hex_to_bgr(hex_val: str) -> BGR_val:
@@ -225,8 +225,8 @@ def hex_to_bgr(hex_val: str) -> BGR_val:
     >>> hex_to_bgr('#F000000')
     [255, 255, 255]
     """
-    hex_val = clamp_hex(hex_val).replace('#', '0x')
-    return [((int(hex_val, 0) >> idx*8) & 255) for idx in range(0, 3, 1)]
+    hex_val = clamp_hex(hex_val).replace("#", "0x")
+    return [((int(hex_val, 0) >> idx * 8) & 255) for idx in range(0, 3, 1)]
 
 
 def rgb_to_hex(rgb_val: RGB_val) -> str:
@@ -259,7 +259,7 @@ def rgb_to_hex(rgb_val: RGB_val) -> str:
         raise ValueError("bgr_val argument must be a 3 values list")
     if not isinstance(rgb_val, tuple):
         rgb_val = tuple(clamp_rgb(rgb_val))
-    return '#%02X%02X%02X' % rgb_val
+    return "#%02X%02X%02X" % rgb_val
 
 
 def bgr_to_hex(bgr_val: BGR_val) -> str:
@@ -292,4 +292,4 @@ def bgr_to_hex(bgr_val: BGR_val) -> str:
         raise ValueError("bgr_val argument must be a 3 values list")
     if not isinstance(bgr_val, tuple):
         bgr_val = tuple(clamp_rgb(bgr_val))
-    return '#%02X%02X%02X' % bgr_val[::-1]
+    return "#%02X%02X%02X" % bgr_val[::-1]
