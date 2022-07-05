@@ -3,8 +3,11 @@ import cv2
 import numpy as np
 
 from typing import NoReturn, Tuple
-from GameBEye.gbcamcolors.color_helpers import hex_to_rgb, hex_to_bgr, \
-    bgr_to_hex
+from GameBEye.gbcamcolors.color_helpers import (
+    hex_to_rgb,
+    hex_to_bgr,
+    bgr_to_hex,
+)
 from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
 
 Shape = Tuple[int, int, int]
@@ -31,9 +34,9 @@ class GBCamImage:
 
         All members are set to O or their equivalent regarding their types.
         """
-        self.__data = np.zeros((GBCamImage.HEIGHT,
-                                GBCamImage.WIDTH,
-                                GBCamImage.CHANNEL))
+        self.__data = np.zeros(
+            (GBCamImage.HEIGHT, GBCamImage.WIDTH, GBCamImage.CHANNEL)
+        )
         self.__colors = GBColorPalettes.BW
 
     @property
@@ -45,9 +48,7 @@ class GBCamImage:
         :rtype: tuple
         """
 
-        shape = (GBCamImage.WIDTH,
-                 GBCamImage.HEIGHT,
-                 GBCamImage.CHANNEL)
+        shape = (GBCamImage.WIDTH, GBCamImage.HEIGHT, GBCamImage.CHANNEL)
 
         return shape
 
@@ -82,42 +83,56 @@ class GBCamImage:
         :type image_filepath: a string
         """
         if not os.path.exists(image_filepath):
-            raise FileNotFoundError('The input filepath does not exist')
+            raise FileNotFoundError("The input filepath does not exist")
 
         img = cv2.imread(image_filepath, cv2.IMREAD_COLOR)
 
-        if img.shape[:2] not in [(GBCamImage.WIDTH, GBCamImage.HEIGHT),
-                                 (GBCamImage.WIDTH + 2*GBCamImage.BORDER,
-                                  GBCamImage.HEIGHT + 2*GBCamImage.BORDER)]:
-            raise ValueError('The shape doesn\'t fit the GBCamImage shape')
+        if img.shape[:2] not in [
+            (GBCamImage.WIDTH, GBCamImage.HEIGHT),
+            (
+                GBCamImage.WIDTH + 2 * GBCamImage.BORDER,
+                GBCamImage.HEIGHT + 2 * GBCamImage.BORDER,
+            ),
+        ]:
+            raise ValueError("The shape doesn't fit the GBCamImage shape")
 
-        bgr_colors = np.unique(
-            img.view(np.dtype((np.void, img.dtype.itemsize * img.shape[2])))
-        ).view(img.dtype).reshape(-1, img.shape[2])
+        bgr_colors = (
+            np.unique(
+                img.view(
+                    np.dtype((np.void, img.dtype.itemsize * img.shape[2]))
+                )
+            )
+            .view(img.dtype)
+            .reshape(-1, img.shape[2])
+        )
 
         if len(bgr_colors) != GBCamImage.NB_COLORS:
-            raise ValueError('The read image have too many colors')
+            raise ValueError("The read image have too many colors")
 
-        hex_colors = np.array([bgr_to_hex(bgr_val=val)
-                               for val in bgr_colors])
-        if img.shape[:2] == (GBCamImage.WIDTH+2*GBCamImage.BORDER,
-                             GBCamImage.HEIGHT+2*GBCamImage.BORDER):
-            width_max = GBCamImage.WIDTH+GBCamImage.BORDER
-            height_max = GBCamImage.HEIGHT+GBCamImage.BORDER
+        hex_colors = np.array([bgr_to_hex(bgr_val=val) for val in bgr_colors])
+        if img.shape[:2] == (
+            GBCamImage.WIDTH + 2 * GBCamImage.BORDER,
+            GBCamImage.HEIGHT + 2 * GBCamImage.BORDER,
+        ):
+            width_max = GBCamImage.WIDTH + GBCamImage.BORDER
+            height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
             self.__data = img[
-                          GBCamImage.BORDER:width_max,
-                          GBCamImage.BORDER:height_max,
-                          :]
+                GBCamImage.BORDER : width_max,
+                GBCamImage.BORDER : height_max,
+                :,
+            ]
         else:
             self.__data = img
 
-        self.__colors = [palette for palette in GBColorPalettes
-                         if all(thresh in hex_colors
-                                for thresh in palette.value)][0]
+        self.__colors = [
+            palette
+            for palette in GBColorPalettes
+            if all(thresh in hex_colors for thresh in palette.value)
+        ][0]
 
     def change_color(
-            self,
-            color_palette: GBColorPalettes = GBColorPalettes.BW) -> NoReturn:
+        self, color_palette: GBColorPalettes = GBColorPalettes.BW
+    ) -> NoReturn:
         """
         Change the color palette with a new one from GBColorPalettes values.
 
