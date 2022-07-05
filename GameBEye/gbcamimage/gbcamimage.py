@@ -1,13 +1,16 @@
 import os
-import typing
-
 import cv2
 import numpy as np
 
-from GameBEye.gbcamcolors import color_helpers
+from typing import NoReturn, Tuple
+from GameBEye.gbcamcolors.color_helpers import (
+    hex_to_rgb,
+    hex_to_bgr,
+    bgr_to_hex,
+)
 from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
 
-Shape = typing.Tuple[int, int, int]
+Shape = Tuple[int, int, int]
 
 
 class GBCamImage:
@@ -19,32 +22,35 @@ class GBCamImage:
 
     """
 
-    IMAGE_HEIGHT: int = 128
-    IMAGE_WIDTH: int = 112
-    IMAGE_CHANNEL: int = 3
-    BLACK_NINTENDO_BORDER: int = 16
-    COLOR_PALETTE_SIZE: int = 4
+    HEIGHT: int = 128
+    WIDTH: int = 112
+    CHANNEL: int = 3
+    BORDER: int = 16
+    NB_COLORS: int = 4
 
-    def __init__(self) -> typing.NoReturn:
+    def __init__(self) -> NoReturn:
         """
         Class constructor.
 
         All members are set to O or their equivalent regarding their types.
         """
-        self.__data = np.zeros((GBCamImage.IMAGE_HEIGHT, GBCamImage.IMAGE_WIDTH, GBCamImage.IMAGE_CHANNEL))
-        self.__color_palette = GBColorPalettes.BW
+        self.__data = np.zeros(
+            (GBCamImage.HEIGHT, GBCamImage.WIDTH, GBCamImage.CHANNEL)
+        )
+        self.__colors = GBColorPalettes.BW
 
     @property
     def shape(self) -> Shape:
         """
-        Property to return the image shape.
-
-        As the Game Boy Camera has a fixed size, it will always return (112, 128, 3).
+        Property to return the GBCamImage shape.
 
         :returns: the image shape
         :rtype: tuple
         """
-        return GBCamImage.IMAGE_WIDTH, GBCamImage.IMAGE_HEIGHT, GBCamImage.IMAGE_CHANNEL
+
+        shape = (GBCamImage.WIDTH, GBCamImage.HEIGHT, GBCamImage.CHANNEL)
+
+        return shape
 
     @property
     def data(self) -> np.array:
@@ -64,51 +70,71 @@ class GBCamImage:
         :returns: a GBColorPalette value
         :rtype: GBColorPalettes
         """
-        return self.__color_palette
+        return self.__colors
 
-    def read(self, image_filepath: str) -> typing.NoReturn:
+    def read(self, image_filepath: str) -> NoReturn:
         """
-        Open filepath to read the file contents and store the image into the data member.
+        Open filepath to read the file contents to populate the object.
 
         :raises FileNotFoundError: The input filepath must exist to be read
-        :raises ValueError: Once read, the filepath must point to a standard Game Boy Camera Image : 128*112 pixels and 4 colors
+        :raises ValueError: The read image is a standard Game Boy Camera Image.
 
         :param image_filepath: filepath to image
         :type image_filepath: a string
         """
         if not os.path.exists(image_filepath):
-            raise FileNotFoundError('The input filepath does not exist')
+            raise FileNotFoundError("The input filepath does not exist")
 
         img = cv2.imread(image_filepath, cv2.IMREAD_COLOR)
 
-        if img.shape[:2] not in [(GBCamImage.IMAGE_WIDTH, GBCamImage.IMAGE_HEIGHT),  # Original image size
-                                 (GBCamImage.IMAGE_WIDTH + 2 * GBCamImage.BLACK_NINTENDO_BORDER,
-                                  GBCamImage.IMAGE_HEIGHT + 2 * GBCamImage.BLACK_NINTENDO_BORDER)]:  # Image + border
-            raise ValueError('The image is too big to be a Game Boy Camera Image')
+        if img.shape[:2] not in [
+            (GBCamImage.WIDTH, GBCamImage.HEIGHT),
+            (
+                GBCamImage.WIDTH + 2 * GBCamImage.BORDER,
+                GBCamImage.HEIGHT + 2 * GBCamImage.BORDER,
+            ),
+        ]:
+            raise ValueError("The shape doesn't fit the GBCamImage shape")
 
-        bgr_colors = np.unique(
-            img.view(np.dtype((np.void, img.dtype.itemsize * img.shape[2])))
-        ).view(img.dtype).reshape(-1, img.shape[2])
-        hex_colors = np.array([color_helpers.bgr_to_hex(bgr_val=val) for val in bgr_colors])
+        bgr_colors = (
+            np.unique(
+                img.view(
+                    np.dtype((np.void, img.dtype.itemsize * img.shape[2]))
+                )
+            )
+            .view(img.dtype)
+            .reshape(-1, img.shape[2])
+        )
 
-        if len(hex_colors) != GBCamImage.COLOR_PALETTE_SIZE:
-            raise ValueError('The image contains more than {} colors'.format(GBCamImage.COLOR_PALETTE_SIZE))
+        if len(bgr_colors) != GBCamImage.NB_COLORS:
+            raise ValueError("The read image have too many colors")
 
-        if img.shape[:2] == (GBCamImage.IMAGE_WIDTH + 2 * GBCamImage.BLACK_NINTENDO_BORDER,
-                             GBCamImage.IMAGE_HEIGHT + 2 * GBCamImage.BLACK_NINTENDO_BORDER):
+        hex_colors = np.array([bgr_to_hex(bgr_val=val) for val in bgr_colors])
+        if img.shape[:2] == (
+            GBCamImage.WIDTH + 2 * GBCamImage.BORDER,
+            GBCamImage.HEIGHT + 2 * GBCamImage.BORDER,
+        ):
+            width_max = GBCamImage.WIDTH + GBCamImage.BORDER
+            height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
             self.__data = img[
-                          GBCamImage.BLACK_NINTENDO_BORDER:GBCamImage.IMAGE_WIDTH + GBCamImage.BLACK_NINTENDO_BORDER,
-                          GBCamImage.BLACK_NINTENDO_BORDER:GBCamImage.IMAGE_HEIGHT + GBCamImage.BLACK_NINTENDO_BORDER,
-                          :]
+                GBCamImage.BORDER : width_max,
+                GBCamImage.BORDER : height_max,
+                :,
+            ]
         else:
             self.__data = img
 
-        self.__color_palette = [palette for palette in GBColorPalettes
-                                if all(thresh in hex_colors for thresh in palette.value)][0]
+        self.__colors = [
+            palette
+            for palette in GBColorPalettes
+            if all(thresh in hex_colors for thresh in palette.value)
+        ][0]
 
-    def change_color(self, color_palette: GBColorPalettes = GBColorPalettes.BW) -> typing.NoReturn:
+    def change_color(
+        self, color_palette: GBColorPalettes = GBColorPalettes.BW
+    ) -> NoReturn:
         """
-        Change the color palette of an image with a new one from a GBColorPalettes selection.
+        Change the color palette with a new one from GBColorPalettes values.
 
         :raises TypeError: The color parameter must be a GBColorPalettes.
 
@@ -121,11 +147,12 @@ class GBCamImage:
 
         img_temp = np.empty_like(self.__data)
         for idx, thresh in enumerate(color_palette.value):
-            thresh = color_helpers.hex_to_bgr(thresh)
+            thresh = hex_to_bgr(thresh)
             for x in np.arange(self.__data.shape[0]):
                 for y in np.arange(self.__data.shape[1]):
-                    if all(self.__data[x, y] == color_helpers.hex_to_rgb(self.color_palette.value[idx])):
+                    current_color = hex_to_rgb(self.colors.value[idx])
+                    if all(self.__data[x, y] == current_color):
                         img_temp[x, y] = thresh
 
         self.__data[:] = img_temp
-        self.__color_palette = color_palette
+        self.__colors = color_palette
