@@ -45,16 +45,16 @@ def to_thermal_printer(src: GBCamImage) -> np.array:
             c = y * (mask_size - overlap)
             d = c + mask_size
 
-            j = np.random.choice(nb_pixel_samples)
-            i = src.color_palette.value.index(bgr_to_hex(src.data[x, y]))
+            if bgr_to_hex(src.data[x, y]) != src.color_palette.value[0]:
+                j = np.random.choice(nb_pixel_samples)
+                i = src.color_palette.value.index(bgr_to_hex(src.data[x, y]))
 
-            dot = pixel_sample[
-                mask_size * i : mask_size * (i + 1),
-                mask_size * j : mask_size * (j + 1),
-                :,
-            ]
+                dot = pixel_sample[
+                    mask_size * i : mask_size * (i + 1),
+                    mask_size * j : mask_size * (j + 1),
+                    :,
+                ]
 
-            if bgr_to_hex(src.data[x, y]) != src.color_palette.value[3]:
                 if np.random.rand() < 0.5:
                     dot = np.flip(dot, int(np.ceil(2 * np.random.rand())))
                 dot = np.rot90(dot, int(np.ceil(2 * np.random.rand())) - 2)
