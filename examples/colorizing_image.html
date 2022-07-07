@@ -101,33 +101,39 @@
 <span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">cv2</span>
 <span class="linenos"> 4</span>
 <span class="linenos"> 5</span><span class="c1"># Path to the image</span>
-<span class="linenos"> 6</span><span class="n">image_filepath</span> <span class="o">=</span> <span class="s1">&#39;images</span><span class="se">\\</span><span class="s1">originalImage.png&#39;</span>
+<span class="linenos"> 6</span><span class="n">image_filepath</span> <span class="o">=</span> <span class="s2">&quot;images</span><span class="se">\\</span><span class="s2">originalImage.png&quot;</span>
 <span class="linenos"> 7</span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_filepath</span><span class="p">)</span>
 <span class="linenos"> 8</span>
 <span class="linenos"> 9</span><span class="c1"># Creation of an GCCamImage object</span>
-<span class="linenos">10</span><span class="n">gb_image</span> <span class="o">=</span> <span class="n">gbcamimage</span><span class="o">.</span><span class="n">GBCamImage</span><span class="p">()</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="c1"># Reading of the file</span>
-<span class="linenos">13</span><span class="n">gb_image</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">image_filepath</span><span class="p">)</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="c1"># Displaying the original image</span>
-<span class="linenos">16</span><span class="n">original_title</span> <span class="o">=</span> <span class="s1">&#39;Original image with </span><span class="si">{}</span><span class="s1"> color palette&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gb_image</span><span class="o">.</span><span class="n">color_palette</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="linenos">17</span><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">original_title</span><span class="p">,</span> <span class="n">gb_image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-<span class="linenos">18</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original color palette : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gb_image</span><span class="o">.</span><span class="n">color_palette</span><span class="p">))</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="c1"># Changing image color palette</span>
-<span class="linenos">21</span><span class="n">gb_colorpalette</span> <span class="o">=</span> <span class="n">GBColorPalettes</span><span class="o">.</span><span class="n">CCTR</span>
-<span class="linenos">22</span><span class="n">gb_image</span><span class="o">.</span><span class="n">change_color</span><span class="p">(</span><span class="n">colorpalette</span><span class="o">=</span><span class="n">gb_colorpalette</span><span class="p">)</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span><span class="c1"># Displaying the colorized image</span>
-<span class="linenos">25</span><span class="n">color_title</span> <span class="o">=</span> <span class="s1">&#39;Colorized image with </span><span class="si">{}</span><span class="s1"> color palette&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gb_image</span><span class="o">.</span><span class="n">color_palette</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="linenos">26</span><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">color_title</span><span class="p">,</span> <span class="n">gb_image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-<span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Colorized image color palette : </span><span class="si">{}</span><span class="se">\n</span><span class="s1">Required color palette : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gb_image</span><span class="o">.</span><span class="n">color_palette</span><span class="p">,</span>
-<span class="linenos">28</span>                                                                            <span class="n">gb_colorpalette</span><span class="p">))</span>
-<span class="linenos">29</span>
-<span class="linenos">30</span><span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
-<span class="linenos">31</span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyWindow</span><span class="p">(</span><span class="n">original_title</span><span class="p">)</span>
-<span class="linenos">32</span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyWindow</span><span class="p">(</span><span class="n">color_title</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">gb_img</span> <span class="o">=</span> <span class="n">gbcamimage</span><span class="o">.</span><span class="n">GBCamImage</span><span class="p">()</span>
+<span class="linenos">11</span><span class="c1"># Reading of the file</span>
+<span class="linenos">12</span><span class="n">gb_img</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">image_filepath</span><span class="p">)</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="c1"># Displaying the original image</span>
+<span class="linenos">15</span><span class="n">original_title</span> <span class="o">=</span> <span class="s2">&quot;Original image with </span><span class="si">{}</span><span class="s2"> color palette&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="linenos">16</span>    <span class="n">gb_img</span><span class="o">.</span><span class="n">color_palette</span><span class="o">.</span><span class="n">name</span>
+<span class="linenos">17</span><span class="p">)</span>
+<span class="linenos">18</span><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">original_title</span><span class="p">,</span> <span class="n">gb_img</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="linenos">19</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original color palette : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gb_img</span><span class="o">.</span><span class="n">color_palette</span><span class="p">))</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="c1"># Changing image color palette</span>
+<span class="linenos">22</span><span class="n">gb_color_palette</span> <span class="o">=</span> <span class="n">GBColorPalettes</span><span class="o">.</span><span class="n">AZC</span>
+<span class="linenos">23</span><span class="n">gb_img</span><span class="o">.</span><span class="n">change_color</span><span class="p">(</span><span class="n">color_palette</span><span class="o">=</span><span class="n">gb_color_palette</span><span class="p">)</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="c1"># Displaying the colorized image</span>
+<span class="linenos">26</span><span class="n">color_title</span> <span class="o">=</span> <span class="s2">&quot;Colorized image with </span><span class="si">{}</span><span class="s2"> color palette&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="linenos">27</span>    <span class="n">gb_img</span><span class="o">.</span><span class="n">color_palette</span><span class="o">.</span><span class="n">name</span>
+<span class="linenos">28</span><span class="p">)</span>
+<span class="linenos">29</span><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">color_title</span><span class="p">,</span> <span class="n">gb_img</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="linenos">30</span><span class="nb">print</span><span class="p">(</span>
+<span class="linenos">31</span>    <span class="s2">&quot;Colorized image color palette : </span><span class="si">{}</span><span class="se">\n</span><span class="s2">Required color palette : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="linenos">32</span>        <span class="n">gb_img</span><span class="o">.</span><span class="n">color_palette</span><span class="p">,</span> <span class="n">gb_color_palette</span>
+<span class="linenos">33</span>    <span class="p">)</span>
+<span class="linenos">34</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+<span class="linenos">37</span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyWindow</span><span class="p">(</span><span class="n">original_title</span><span class="p">)</span>
+<span class="linenos">38</span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyWindow</span><span class="p">(</span><span class="n">color_title</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
