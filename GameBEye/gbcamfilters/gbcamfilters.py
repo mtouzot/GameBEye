@@ -7,7 +7,7 @@ from GameBEye.gbcamimage.gbcamimage import GBCamImage
 from .filter_helpers import generate_vstripes
 
 
-def to_thermal_printer(src: GBCamImage) -> np.array:
+def to_thermal_printer(src: GBCamImage) -> np.ndarray:
     """
     Emulate a Game Boy thermal printer and
     Return the image as if it was printed on paper.
