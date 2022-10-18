@@ -53,7 +53,7 @@ class GBCamImage:
         return shape
 
     @property
-    def data(self) -> np.array:
+    def data(self) -> np.ndarray:
         """
         Property to return the image data as a numpy array.
 

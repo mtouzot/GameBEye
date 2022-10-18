@@ -5,7 +5,7 @@ import numpy as np
 Size = typing.Tuple[int, int]
 
 
-def generate_vstripes(size: Size) -> np.array:
+def generate_vstripes(size: Size) -> np.ndarray:
     """
     Generate an image with vertical stripes.
 
@@ -25,7 +25,7 @@ def generate_vstripes(size: Size) -> np.array:
     return stripes
 
 
-def generate_hstripes(size: Size) -> np.array:
+def generate_hstripes(size: Size) -> np.ndarray:
     """
     Generate an image with horizontal stripes.
 
