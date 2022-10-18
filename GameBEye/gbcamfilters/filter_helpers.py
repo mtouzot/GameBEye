@@ -13,7 +13,7 @@ def generate_vstripes(size: Size) -> np.array:
     :type size: tuple of two int
 
     :return: the striped image
-    :rtype: np.array
+    :rtype: np.ndarray
     """
     stripes = np.empty(size, dtype=np.float)
     for i in range(size[1]):
@@ -33,7 +33,7 @@ def generate_hstripes(size: Size) -> np.array:
     :type size: tuple of two int
 
     :return: the striped image
-    :rtype: np.array
+    :rtype: np.ndarray
     """
     stripes = np.empty(size, dtype=np.float)
     for i in range(size[0]):

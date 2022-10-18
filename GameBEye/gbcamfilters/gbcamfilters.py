@@ -16,7 +16,7 @@ def to_thermal_printer(src: GBCamImage) -> np.array:
     :type: GBCamImage
 
     :return: the printed image
-    :rtype: np.array
+    :rtype: np.ndarray
     """
 
     mask_size = 20

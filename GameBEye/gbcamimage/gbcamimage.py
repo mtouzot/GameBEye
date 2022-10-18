@@ -58,7 +58,7 @@ class GBCamImage:
         Property to return the image data as a numpy array.
 
         :returns: the image data
-        :rtype: numpy.array
+        :rtype: numpy.ndarray
         """
         return self.__data
 
