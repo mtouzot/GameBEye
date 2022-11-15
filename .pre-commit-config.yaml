@@ -13,3 +13,10 @@ repos:
         additional_dependencies:
           - flake8-black>=0.1.1
         language_version: python3
+  - repo: https://gitlab.com/pycqa/pydocstyle.git
+    rev: 6.1.1
+    hooks:
+      - id: pydocstyle
+        additional_dependencies:
+          - toml>=0.10.2
+        language_version: python3
