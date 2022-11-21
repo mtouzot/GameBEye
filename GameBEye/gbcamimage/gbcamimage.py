@@ -1,3 +1,5 @@
+"""Defines the GBCamImage class."""
+
 import os
 import cv2
 import numpy as np
@@ -47,7 +49,6 @@ class GBCamImage:
         :returns: the image shape
         :rtype: tuple
         """
-
         shape = (GBCamImage.WIDTH, GBCamImage.HEIGHT, GBCamImage.CHANNEL)
 
         return shape
@@ -141,7 +142,6 @@ class GBCamImage:
         :param color_palette: the color palette to apply
         :type: a GBColorPalettes value
         """
-
         if not isinstance(color_palette, GBColorPalettes):
             raise TypeError("The color parameter must be a GBColorPalettes.")
 
@@ -150,7 +150,7 @@ class GBCamImage:
             thresh = hex_to_bgr(thresh)
             for x in np.arange(self.__data.shape[0]):
                 for y in np.arange(self.__data.shape[1]):
-                    current_color = hex_to_rgb(self.colors.value[idx])
+                    current_color = hex_to_rgb(self.__colors.value[idx])
                     if all(self.__data[x, y] == current_color):
                         img_temp[x, y] = thresh
 
