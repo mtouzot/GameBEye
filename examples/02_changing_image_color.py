@@ -1,3 +1,5 @@
+"""An example to change image color palette from BW to AZC."""
+
 from GameBEye.gbcamimage import gbcamimage
 from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
 import cv2

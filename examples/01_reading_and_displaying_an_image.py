@@ -1,3 +1,5 @@
+"""An example to show an image, to log its name and color palette."""
+
 from GameBEye.gbcamimage import gbcamimage
 import cv2
 
