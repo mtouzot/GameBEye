@@ -18,9 +18,10 @@ jobs:
 
       # 1. On récupère le contenu du dépôt
       - name: "Checkout"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
+          lfs: true
 
       # 2. Partie spécifique à Sphinx (installation des
       #    dépendances et génération de la doc)
