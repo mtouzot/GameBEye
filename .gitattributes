@@ -1,2 +1,5 @@
 **/*png filter=lfs diff=lfs merge=lfs -text
+<<<<<<< HEAD
 **/*.gif filter=lfs diff=lfs merge=lfs -text
+=======
+>>>>>>> 4ad211ba2e6ff592c01376c264d0d5e822c6d0d3
