@@ -77,6 +77,8 @@ class GBCamImage:
         """
         Open filepath to read the file contents to populate the object.
 
+        Read filepath content, change color to GBColorPalettes.BW if unknown.
+
         :raises FileNotFoundError: The input filepath must exist to be read
         :raises ValueError: The read image is a standard Game Boy Camera Image.
 
@@ -127,9 +129,13 @@ class GBCamImage:
 
         self.__colors = [
             palette
-            for palette in GBColorPalettes
             if all(thresh in hex_colors for thresh in palette.value)
+            else "unknown"
+            for palette in GBColorPalettes
         ][0]
+
+        if self.__colors == "unknown":
+            self.change_color(GBColorPalettes.BW)
 
     def change_color(
         self, color_palette: GBColorPalettes = GBColorPalettes.BW
