@@ -36,7 +36,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.githubpages",
-    "sphinx-favicon",
+    "sphinx_favicon",
     "sphinx_rtd_theme",
 ]
 

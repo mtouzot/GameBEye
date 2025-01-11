@@ -26,26 +26,26 @@ jobs:
       # 2. Partie spécifique à Sphinx (installation des
       #    dépendances et génération de la doc)
       - name: "Set up Python"
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version: '3.10'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: "Install Python dependencies"
         run: |
-          pip3 install setuptools
-          pip3 install sphinx
-          pip3 install sphinx-rtd-theme
-          pip3 install sphinx-favicon
-          pip3 install -r requirements.txt
+          poetry install --with docs --no-root
 
-      - name: "Build Sphinx Doc"
+      - name: Build Sphinx Documentation
+        working-directory: docs
         run: |
-          make html
+            poetry run sphinx-build -b html . _build/html
 
-      # 3. Déploiement sur les Github Pages
-      - name: "Deploy Github Pages"
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages  # <- Branche sur laquelle seront commités les fichiers
-          FOLDER: build/html/ # <- Dossier contenant notre documentation générée
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: docs/_build/html
