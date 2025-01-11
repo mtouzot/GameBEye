@@ -129,13 +129,9 @@ class GBCamImage:
 
         self.__colors = [
             palette
-            if all(thresh in hex_colors for thresh in palette.value)
-            else "unknown"
             for palette in GBColorPalettes
+            if np.array_equal(np.sort(hex_colors), sorted(palette.value))
         ][0]
-
-        if self.__colors == "unknown":
-            self.change_color(GBColorPalettes.BW)
 
     def change_color(
         self, color_palette: GBColorPalettes = GBColorPalettes.BW

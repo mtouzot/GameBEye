@@ -15,6 +15,7 @@ images_filepath = sorted(
 )
 
 for image_filepath in images_filepath:
+    print(f"Processing {image_filepath}")
     gb_image = gbcamimage.GBCamImage()
 
     # Reading of the file
