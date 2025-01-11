@@ -1,3 +1,5 @@
+"""Define color conversions and methods related to 8-bits colorspaces."""
+
 import typing
 import numpy as np
 
@@ -6,8 +8,9 @@ BGR_val = typing.List[int]
 
 
 def clamp(val: int) -> int:
-    """
-    Ensures that val is between 0 and 255. Clamp each out of bound value.
+    """Ensure that val is between 0 and 255.
+
+    Clamp each out of bound value.
 
     :param int val: an int value
 
@@ -30,8 +33,8 @@ def clamp(val: int) -> int:
 
 
 def is_clamped(val: int) -> bool:
-    """
-    Check if val is clamped between 0 and 255.
+    """Check if val is clamped between 0 and 255.
+
     If val is out of boundaries, returns False. True otherwise.
 
     :param int val: the value to be checked
@@ -50,13 +53,14 @@ def is_clamped(val: int) -> bool:
     True
     >>> is_clamped(512)
     False
+
     """
     return 0 <= val <= 255
 
 
 def clamp_rgb(rgb_val: RGB_val) -> RGB_val:
-    """
-    Ensures that all RGB values are between 0 and 255.
+    """Ensure that all RGB values are between 0 and 255.
+
     Clamp each out of bound value.
 
     :param List[int] rgb_val: 3-channels list for R, G, B
@@ -86,10 +90,9 @@ def clamp_rgb(rgb_val: RGB_val) -> RGB_val:
 
 
 def is_clamped_rgb(rgb_val: RGB_val) -> bool:
-    """
-    Check if the RGB color values are clamped between 0 and 255.
-    If val is out of boundaries, returns False.
-    True otherwise.
+    """Check if the RGB color values are clamped between 0 and 255.
+
+    If val is out of boundaries, returns False. True otherwise.
 
     :param List[int] rgb_val: 3-channels list for R, G, B
 
@@ -118,10 +121,9 @@ def is_clamped_rgb(rgb_val: RGB_val) -> bool:
 
 
 def clamp_hex(hex_val: str) -> str:
-    """
-    Ensures that val is between '0x000000' and '0xFFFFFF'.
+    """Ensure that val is between '0x000000' and '0xFFFFFF'.
+
     Clamp each out of bound value.
-    True otherwise.
 
     :param str hex_val: an hexadecimal string value
 
@@ -144,8 +146,8 @@ def clamp_hex(hex_val: str) -> str:
 
 
 def is_clamped_hex(hex_val: str) -> bool:
-    """
-    Ensures that val is between '#000000' and '#FFFFFF'.
+    """Ensure that val is between '#000000' and '#FFFFFF'.
+
     If val is out of boundaries, returns False. True otherwise.
 
     :param str hex_val: an hexadecimal value
@@ -168,8 +170,8 @@ def is_clamped_hex(hex_val: str) -> bool:
 
 
 def hex_to_rgb(hex_val: str) -> RGB_val:
-    """
-    Generator that converts a hexadecimal value to RGB values.
+    """Convert a hexadecimal value to RGB values.
+
     All values are clamped between 0 and 255.
 
     The 2 left digits code the red value, the 2 middle digits the blue
@@ -199,8 +201,8 @@ def hex_to_rgb(hex_val: str) -> RGB_val:
 
 
 def hex_to_bgr(hex_val: str) -> BGR_val:
-    """
-    Generator that converts a hexadecimal value to BGR values.
+    """Convert a hexadecimal value to BGR values.
+
     All values are clamped between 0 and 255.
 
     The 2 left digits code the green value, the 2 middle digits the blue and
@@ -230,8 +232,8 @@ def hex_to_bgr(hex_val: str) -> BGR_val:
 
 
 def rgb_to_hex(rgb_val: RGB_val) -> str:
-    """
-    Converts a (R, G, B) array to hexadecimal integer.
+    """Convert a (R, G, B) array to hexadecimal integer.
+
     All values are clamped between 0 and 255.
 
     :param list rgb_val: (R, G, B) list to convert
@@ -256,15 +258,15 @@ def rgb_to_hex(rgb_val: RGB_val) -> str:
     ValueError: rgb_val argument must be a 3 values list
     """
     if len(rgb_val) != 3:
-        raise ValueError("bgr_val argument must be a 3 values list")
+        raise ValueError("rgb_val argument must be a 3 values list")
     if not isinstance(rgb_val, tuple):
         rgb_val = tuple(clamp_rgb(rgb_val))
     return "#%02X%02X%02X" % rgb_val
 
 
 def bgr_to_hex(bgr_val: BGR_val) -> str:
-    """
-    Converts a (B, G, R) array to hexadecimal integer.
+    """Convert a (B, G, R) array to hexadecimal integer.
+
     All values are clamped between 0 and 255.
 
     :param list bgr_val: (B, G, R) to convert

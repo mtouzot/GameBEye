@@ -6,6 +6,7 @@ pytest = "^8.3.4"
 flake8 = "^7.1.1"
 black = "^24.10.0"
 pydocstyle = "^6.3.0"
+coverage = "^7.6.10"
 
 [tool.poetry.group.docs.dependencies]
 setuptools = "^75.8.0"

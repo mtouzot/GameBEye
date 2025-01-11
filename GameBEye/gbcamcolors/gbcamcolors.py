@@ -1,3 +1,5 @@
+"""Defines the GBColorPalettes enum."""
+
 from enum import Enum, unique
 from typing import Tuple, List
 from .color_helpers import hex_to_rgb
@@ -187,7 +189,7 @@ class GBColorPalettes(Enum):
 
     def describe(self) -> Tuple[str, list]:
         """
-        Describes itself. Return as a tuple the color palette name and colors.
+        Describe itself. Return as a tuple the color palette name and colors.
 
         :returns: a 2-values tuple containing the color name and its values
         :rtype: str, list
@@ -196,15 +198,11 @@ class GBColorPalettes(Enum):
         >>> GBColorPalettes.BW.describe()
         ('BW', ['#FFFFFF', '#A8A8A8', '#545454', '#000000'])
         """
-
         return self.name, self.value
 
     def __str__(self) -> str:
         """
-        Converts the enum member to a formatted string:
-            'name : [V_1 V_2 V_3 V_4]'
-        Where name is the enum member name and
-        [V_1 V_2 V_3 V_4] the 4-color hex values
+        Convert the enum member to a formatted string.
 
         :returns: the enum member as a string
         :rtype: str
@@ -216,43 +214,15 @@ class GBColorPalettes(Enum):
         return "{} : {}".format(self.name, str(self.value))
 
     @property
-    def get_color_value(self) -> List[int]:
+    def rgb_colors(self) -> List[List[int]]:
         """
-        Returns the 4 color values in base 16 of the enum value
-
-        :returns: the 4 color values in base 16
-        :rtype: list[int]
-
-        >>> from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
-        >>> GBColorPalettes.BW.get_color_value
-        ['#FFFFFF', '#A8A8A8', '#545454', '#000000']
-        """
-        return self.value
-
-    @property
-    def get_name(self) -> str:
-        """
-        Returns the name of the enum value
-
-        :return: the palette name
-        :rtype: str
-
-        >>> from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
-        >>> GBColorPalettes.BW.get_name
-        'BW'
-        """
-        return self.name
-
-    @property
-    def get_rgb_colors(self) -> List[List[int]]:
-        """
-        Returns the 4 color values of the enum in RGB space
+        Return the 4 color values of the enum in RGB space.
 
         :return: the 4 colors values in the RGB space
         :rtype: list[list[int]]
 
         >>> from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
-        >>> GBColorPalettes.BW.get_color_value
+        >>> GBColorPalettes.BW.rgb_colors
         [[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]]
         """
         return [
