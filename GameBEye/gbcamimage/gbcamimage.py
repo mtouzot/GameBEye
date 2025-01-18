@@ -49,9 +49,7 @@ class GBCamImage:
         :returns: the image shape
         :rtype: tuple
         """
-        shape = (GBCamImage.WIDTH, GBCamImage.HEIGHT, GBCamImage.CHANNEL)
-
-        return shape
+        return self.__data.shape
 
     @property
     def data(self) -> np.ndarray:
