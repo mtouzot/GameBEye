@@ -110,6 +110,7 @@
 <img alt="../_images/colorizedGameBoyCamera.gif" class="align-center" src="../_images/colorizedGameBoyCamera.gif" />
 <section id="module-GameBEye.gbcamcolors.gbcamcolors">
 <span id="gamebeye-gbcamcolors-gbcamcolors-module"></span><h2><a class="reference internal" href="#module-GameBEye.gbcamcolors.gbcamcolors" title="GameBEye.gbcamcolors.gbcamcolors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamcolors.gbcamcolors</span></code></a> module<a class="headerlink" href="#module-GameBEye.gbcamcolors.gbcamcolors" title="Link to this heading"></a></h2>
+<p>Defines the GBColorPalettes enum.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.gbcamcolors.</span></span><span class="sig-name descname"><span class="pre">GBColorPalettes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes" title="Link to this definition"></a></dt>
@@ -463,7 +464,7 @@ represent a color coded in hexadecimal basis.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.describe">
 <span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.describe" title="Link to this definition"></a></dt>
-<dd><p>Describes itself. Return as a tuple the color palette name and colors.</p>
+<dd><p>Describe itself. Return as a tuple the color palette name and colors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>a 2-values tuple containing the color name and its values</p>
@@ -480,47 +481,9 @@ represent a color coded in hexadecimal basis.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.get_color_value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_color_value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.get_color_value" title="Link to this definition"></a></dt>
-<dd><p>Returns the 4 color values in base 16 of the enum value</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the 4 color values in base 16</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list[int]</p>
-</dd>
-</dl>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.gbcamcolors</span><span class="w"> </span><span class="kn">import</span> <span class="n">GBColorPalettes</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">GBColorPalettes</span><span class="o">.</span><span class="n">BW</span><span class="o">.</span><span class="n">get_color_value</span>
-<span class="go">[&#39;#FFFFFF&#39;, &#39;#A8A8A8&#39;, &#39;#545454&#39;, &#39;#000000&#39;]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.get_name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.get_name" title="Link to this definition"></a></dt>
-<dd><p>Returns the name of the enum value</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the palette name</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.gbcamcolors</span><span class="w"> </span><span class="kn">import</span> <span class="n">GBColorPalettes</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">GBColorPalettes</span><span class="o">.</span><span class="n">BW</span><span class="o">.</span><span class="n">get_name</span>
-<span class="go">&#39;BW&#39;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.get_rgb_colors">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_rgb_colors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.get_rgb_colors" title="Link to this definition"></a></dt>
-<dd><p>Returns the 4 color values of the enum in RGB space</p>
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.rgb_colors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rgb_colors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.rgb_colors" title="Link to this definition"></a></dt>
+<dd><p>Return the 4 color values of the enum in RGB space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the 4 colors values in the RGB space</p>
@@ -530,7 +493,7 @@ represent a color coded in hexadecimal basis.</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.gbcamcolors</span><span class="w"> </span><span class="kn">import</span> <span class="n">GBColorPalettes</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">GBColorPalettes</span><span class="o">.</span><span class="n">BW</span><span class="o">.</span><span class="n">get_color_value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GBColorPalettes</span><span class="o">.</span><span class="n">BW</span><span class="o">.</span><span class="n">rgb_colors</span>
 <span class="go">[[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]]</span>
 </pre></div>
 </div>
@@ -541,11 +504,12 @@ represent a color coded in hexadecimal basis.</p>
 </section>
 <section id="module-GameBEye.gbcamcolors.color_helpers">
 <span id="gamebeye-gbcamcolors-color-helpers-module"></span><h2><a class="reference internal" href="#module-GameBEye.gbcamcolors.color_helpers" title="GameBEye.gbcamcolors.color_helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamcolors.color_helpers</span></code></a> module<a class="headerlink" href="#module-GameBEye.gbcamcolors.color_helpers" title="Link to this heading"></a></h2>
+<p>Define color conversions and methods related to 8-bits colorspaces.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.bgr_to_hex">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">bgr_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bgr_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.bgr_to_hex" title="Link to this definition"></a></dt>
-<dd><p>Converts a (B, G, R) array to hexadecimal integer.
-All values are clamped between 0 and 255.</p>
+<dd><p>Convert a (B, G, R) array to hexadecimal integer.</p>
+<p>All values are clamped between 0 and 255.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>bgr_val</strong> (<em>list</em>) – (B, G, R) to convert</p>
@@ -580,7 +544,8 @@ All values are clamped between 0 and 255.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.clamp">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">clamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.clamp" title="Link to this definition"></a></dt>
-<dd><p>Ensures that val is between 0 and 255. Clamp each out of bound value.</p>
+<dd><p>Ensure that val is between 0 and 255.</p>
+<p>Clamp each out of bound value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – an int value</p>
@@ -610,9 +575,8 @@ All values are clamped between 0 and 255.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.clamp_hex">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">clamp_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.clamp_hex" title="Link to this definition"></a></dt>
-<dd><p>Ensures that val is between ‘0x000000’ and ‘0xFFFFFF’.
-Clamp each out of bound value.
-True otherwise.</p>
+<dd><p>Ensure that val is between ‘0x000000’ and ‘0xFFFFFF’.</p>
+<p>Clamp each out of bound value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>hex_val</strong> (<em>str</em>) – an hexadecimal string value</p>
@@ -640,8 +604,8 @@ True otherwise.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.clamp_rgb">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">clamp_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.clamp_rgb" title="Link to this definition"></a></dt>
-<dd><p>Ensures that all RGB values are between 0 and 255.
-Clamp each out of bound value.</p>
+<dd><p>Ensure that all RGB values are between 0 and 255.</p>
+<p>Clamp each out of bound value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rgb_val</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – 3-channels list for R, G, B</p>
@@ -674,8 +638,8 @@ Clamp each out of bound value.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.hex_to_bgr">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">hex_to_bgr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.hex_to_bgr" title="Link to this definition"></a></dt>
-<dd><p>Generator that converts a hexadecimal value to BGR values.
-All values are clamped between 0 and 255.</p>
+<dd><p>Convert a hexadecimal value to BGR values.</p>
+<p>All values are clamped between 0 and 255.</p>
 <p>The 2 left digits code the green value, the 2 middle digits the blue and
 the 2 left digits the red.</p>
 <dl class="field-list simple">
@@ -709,8 +673,8 @@ the 2 left digits the red.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.hex_to_rgb">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">hex_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.hex_to_rgb" title="Link to this definition"></a></dt>
-<dd><p>Generator that converts a hexadecimal value to RGB values.
-All values are clamped between 0 and 255.</p>
+<dd><p>Convert a hexadecimal value to RGB values.</p>
+<p>All values are clamped between 0 and 255.</p>
 <p>The 2 left digits code the red value, the 2 middle digits the blue
 and the 2 left digits the green.</p>
 <dl class="field-list simple">
@@ -744,8 +708,8 @@ and the 2 left digits the green.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.is_clamped">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">is_clamped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.is_clamped" title="Link to this definition"></a></dt>
-<dd><p>Check if val is clamped between 0 and 255.
-If val is out of boundaries, returns False. True otherwise.</p>
+<dd><p>Check if val is clamped between 0 and 255.</p>
+<p>If val is out of boundaries, returns False. True otherwise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – the value to be checked</p>
@@ -775,8 +739,8 @@ If val is out of boundaries, returns False. True otherwise.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.is_clamped_hex">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">is_clamped_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.is_clamped_hex" title="Link to this definition"></a></dt>
-<dd><p>Ensures that val is between ‘#000000’ and ‘#FFFFFF’.
-If val is out of boundaries, returns False. True otherwise.</p>
+<dd><p>Ensure that val is between ‘#000000’ and ‘#FFFFFF’.</p>
+<p>If val is out of boundaries, returns False. True otherwise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>hex_val</strong> (<em>str</em>) – an hexadecimal value</p>
@@ -804,9 +768,8 @@ If val is out of boundaries, returns False. True otherwise.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.is_clamped_rgb">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">is_clamped_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.is_clamped_rgb" title="Link to this definition"></a></dt>
-<dd><p>Check if the RGB color values are clamped between 0 and 255.
-If val is out of boundaries, returns False.
-True otherwise.</p>
+<dd><p>Check if the RGB color values are clamped between 0 and 255.</p>
+<p>If val is out of boundaries, returns False. True otherwise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rgb_val</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – 3-channels list for R, G, B</p>
@@ -839,8 +802,8 @@ True otherwise.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GameBEye.gbcamcolors.color_helpers.rgb_to_hex">
 <span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">rgb_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.color_helpers.rgb_to_hex" title="Link to this definition"></a></dt>
-<dd><p>Converts a (R, G, B) array to hexadecimal integer.
-All values are clamped between 0 and 255.</p>
+<dd><p>Convert a (R, G, B) array to hexadecimal integer.</p>
+<p>All values are clamped between 0 and 255.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rgb_val</strong> (<em>list</em>) – (R, G, B) list to convert</p>
