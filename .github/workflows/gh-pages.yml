@@ -6,6 +6,10 @@ on:
   push: # <- Déclenché lorsque l'on pousse du code...
     branches:
       - master # <- ... mais seulement sur la branche "master"
+    paths:
+      - docs/**
+      - GameBEye/**
+      - examples/**
 
 jobs:
 
