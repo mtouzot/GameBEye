@@ -10,11 +10,28 @@
 
 You can find some image processing results in the table and scripts to generate them in the [examples](examples) folder.
 
-| Image | Description|
-|-------|------------|
-|![GameBoyCamera](images/gameBoyCamera.png "Game Boy Camera Image") | Original image|
-|![ColorizedGameBoyCamera](images/colorizedGameBoyCamera.gif " Colorized Game Boy Camera Image") | Colorized image|
-|<img src="images/printedGameBoyCamera.png" alt="PrintedGameBoyCamera" title="Printed Game Boy Camera Image" style="zoom:10%;" /> | Printed image (reduced to 10% of its size) |
+<table align="center">
+    <tr>
+        <th>Image</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <th style="text-align:center"><img src="docs/_static/gameBoyCamera.png" alt="GameBoyCameraImage" title="Game Boy Camera Image"/></th>
+        <th style="text-align:center">Game Boy Camera Image</th>
+    </tr>
+    <tr>
+        <th style="text-align:center"><img src="docs/_static/borderlessGameBoyCamera.png" alt="BordelessGameBoyCameraImage" title="Bordeless Game Boy Camera Image"/></th>
+        <th style="text-align:center">Borderless Game Boy Camera Image</th>
+    </tr>
+    <tr>
+        <th style="text-align:center"><img src="docs/_static/colorizedGameBoyCamera.gif" alt="ColorizedGameBoyCamera" title="Colorized Game Boy Camera Image Carousel"></th>
+        <th style="text-align:center">Colorized Game Boy Camera Image Carousel</th>
+    </tr>
+    <tr>
+        <th style="text-align:center"><img src="docs/_static/printedGameBoyCamera.png" alt="PrintedGameBoyCamera" title="Printed Game Boy Camera Image" style="zoom:10%;"></th>
+        <th style="text-align:center">Printed image (reduced to 10% of its size)</th>
+    </tr>
+</table>
 
 ## 📚 Appendix
 
