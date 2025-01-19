@@ -5,12 +5,12 @@ Welcome to GameBEye's documentation!
 
 GameBEye is a **Python library** to process `Game Boy Camera <https://en.wikipedia.org/wiki/Game_Boy_Camera>`_ images.
 
-+-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+
-| Original image                                      | Borderless image                                    | Animated GIF made of colorized images               |
-+=====================================================+=====================================================+=====================================================+
-| .. image:: ./_static/gameBoyCamera.png              | .. image:: ./_static/borderlessGameBoyCamera.png    | .. image:: ./_static/colorizedGameBoyCamera.gif     |
-|    :class: align-center                             |    :class: align-center                             |    :class: align-center                             |
-+-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+
+| Original image                                      | Borderless image                                    | Animated GIF made of colorized images               | Printed Game Boy Camera image                       |
++=====================================================+=====================================================+=====================================================+=====================================================+
+| .. image:: ./_static/gameBoyCamera.png              | .. image:: ./_static/borderlessGameBoyCamera.png    | .. image:: ./_static/colorizedGameBoyCamera.gif     | .. image:: ./_static/printedGameBoyCamera.png       |
+|    :class: align-center                             |    :class: align-center                             |    :class: align-center                             |    :class: align-center                             |
++-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------+
 
 Here are some infos about the hardware and the Gam Boy Camera images that drive the library construction:
 
