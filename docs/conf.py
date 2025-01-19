@@ -19,11 +19,12 @@ sys.path.insert(0, os.path.abspath(".."))
 # -- Project information -----------------------------------------------------
 
 project = "GameBEye"
-copyright = "2021, Martin TOUZOT"
+copyright = "2021 - 2025, Martin TOUZOT"
 author = "Martin TOUZOT"
 
 # The full version, including alpha/beta/rc tags
-release = "0.1.0"
+version = "v0.1.0"
+release = version
 
 
 # -- General configuration ---------------------------------------------------

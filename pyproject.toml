@@ -16,7 +16,7 @@ sphinx-favicon = "^1.0.1"
 
 [project]
 name = "gamebeye"
-version = "0.1.0"
+version = "v0.1.0"
 description = "A small Python library to process GameBoy Camera images"
 authors = [
     {name = "mtouzot",email = "martin.touzot@gmail.com"}
