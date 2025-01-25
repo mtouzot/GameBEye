@@ -1,8 +1,8 @@
-"""Defines the GBColorPalettes enum."""
+"""Define the GBColorPalettes enum."""
 
 from enum import Enum, unique
 from typing import Tuple, List
-from .color_helpers import hex_to_rgb
+from GameBEye.color_helpers import hex_to_rgb
 
 
 # Class decorator @unique ensure each enum value is unique

@@ -1,13 +1,13 @@
 """An example to show an image, to log its name and color palette."""
 
-from GameBEye.gbcamimage import gbcamimage
+from GameBEye.gbcamimage import GBCamImage
 import cv2
 
 # Path to the image
 image_filepath = "images\\originalImage.png"
 
 # Creation of an GCCamImage object
-gb_img = gbcamimage.GBCamImage()
+gb_img = GBCamImage()
 
 # Reading of the file
 gb_img.read(image_filepath)

@@ -1,7 +1,7 @@
 """An example to change image color palette from BW to AZC."""
 
-from GameBEye.gbcamimage import gbcamimage
-from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
+from GameBEye.gbcamimage import GBCamImage
+from GameBEye.gbcamcolors import GBColorPalettes
 import cv2
 
 # Path to the image
@@ -9,7 +9,7 @@ image_filepath = "images\\originalImage.png"
 img = cv2.imread(image_filepath)
 
 # Creation of an GCCamImage object
-gb_img = gbcamimage.GBCamImage()
+gb_img = GBCamImage()
 # Reading of the file
 gb_img.read(image_filepath)
 

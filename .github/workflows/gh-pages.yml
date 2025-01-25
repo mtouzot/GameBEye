@@ -7,6 +7,7 @@ on:
     branches:
       - master # <- ... mais seulement sur la branche "master"
     paths:
+      - .github/workflows/gh-pages.yml
       - docs/**
       - GameBEye/**
       - examples/**
@@ -41,7 +42,7 @@ jobs:
 
       - name: "Install Python dependencies"
         run: |
-          poetry install --with docs --no-root
+          poetry install
 
       - name: Build Sphinx Documentation
         working-directory: docs

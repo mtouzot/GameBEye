@@ -1,16 +1,16 @@
-"""Defines the GBCamImage class."""
+"""Define the GBCamImage class."""
 
 import os
 import cv2
 import numpy as np
 
 from typing import NoReturn, Tuple
-from GameBEye.gbcamcolors.color_helpers import (
+from GameBEye.color_helpers import (
     hex_to_rgb,
     hex_to_bgr,
     bgr_to_hex,
 )
-from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
+from GameBEye.gbcamcolors import GBColorPalettes
 
 Shape = Tuple[int, int, int]
 
