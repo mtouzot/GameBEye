@@ -3,12 +3,18 @@ Colorizing a Black & White image
 
 You'll see in this example the result of updating the color palette of an original color image by using CCTR color palette.
 
-+-----------------------------------------------------+------------------------------------------------------+
-| Original image                                      | Output                                               |
-+=====================================================+======================================================+
-| .. image:: ../_static/gameBoyCamera.png             | .. image:: ../_static/colorizedGameBoyCamera_CCTR.png|
-|    :class: align-center                             |    :class: align-center                              |
-+-----------------------------------------------------+------------------------------------------------------+
+.. container:: centered-grid
+
+   .. raw:: html
+
+      <div class="grid-item">
+         <img src="../_static/gameBoyCamera.png" alt="Original Game Boy Camera Image">
+         <p>Original Game Boy Camera Image</p>
+      </div>
+      <div class="grid-item">
+         <img src="../_static/colorizedGameBoyCamera_CCTR.png" alt="Colorized Game Boy Camera Image with CCTR color palette">
+         <p>Borderless Game Boy Camera Image</p>
+      </div>
 
 .. code-block:: python
    :linenos:

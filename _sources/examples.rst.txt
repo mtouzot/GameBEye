@@ -5,13 +5,18 @@ You can find more usages of **GameBEye** library in the `examples <https://githu
 
 Among others, you'll be able to create an animated GIF made of color Game Boy Camera images.
 
-+-----------------------------------------------------+-----------------------------------------------------+
-| Original image                                      | Animated GIF made of colorized images               |
-+=====================================================+=====================================================+
-| .. image:: ./_static/gameBoyCamera.png              | .. image:: ./_static/colorizedGameBoyCamera.gif     |
-|    :class: align-center                             |    :class: align-center                             |
-+-----------------------------------------------------+-----------------------------------------------------+
+.. container:: centered-grid
 
+   .. raw:: html
+
+      <div class="grid-item">
+         <img src="./_static/gameBoyCamera.png" alt="Original Game Boy Camera Image">
+         <p>Original Game Boy Camera Image</p>
+      </div>
+      <div class="grid-item">
+         <img src="_static/colorizedGameBoyCamera.gif" alt="Animated GIF made of colorized images">
+         <p>Animated GIF made of colorized images</p>
+      </div>
 .. toctree::
    :maxdepth: 1
    :caption: Contents:

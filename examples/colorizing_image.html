@@ -14,6 +14,8 @@
   <title>Colorizing a Black &amp; White image &mdash; GameBEye v0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c46dc098" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c46dc098" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -32,12 +34,13 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
 
           
           
           <a href="../index.html" class="icon icon-home">
             GameBEye
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -47,29 +50,22 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../GameBEye.html">GameBEye documentation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="display_images.html">Display image and its color palette in a second window</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Colorizing a Black &amp; White image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="printing_image.html">Printing a GBCamImage</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Colorizing a Black &amp; White image</a></li>
 </ul>
-</li>
-</ul>
-
+</div>
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">GameBEye</a>
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
@@ -87,20 +83,15 @@
   <section id="colorizing-a-black-white-image">
 <h1>Colorizing a Black &amp; White image<a class="headerlink" href="#colorizing-a-black-white-image" title="Link to this heading"></a></h1>
 <p>You’ll see in this example the result of updating the color palette of an original color image by using CCTR color palette.</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Original image</p></th>
-<th class="head"><p>Output</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><img alt="../_images/gameBoyCamera.png" class="align-center" src="../_images/gameBoyCamera.png" />
-</td>
-<td><img alt="../_images/colorizedGameBoyCamera_CCTR.png" class="align-center" src="../_images/colorizedGameBoyCamera_CCTR.png" />
-</td>
-</tr>
-</tbody>
-</table>
+<div class="centered-grid docutils container">
+<div class="grid-item">
+   <img src="../_static/gameBoyCamera.png" alt="Original Game Boy Camera Image">
+   <p>Original Game Boy Camera Image</p>
+</div>
+<div class="grid-item">
+   <img src="../_static/colorizedGameBoyCamera_CCTR.png" alt="Colorized Game Boy Camera Image with CCTR color palette">
+   <p>Borderless Game Boy Camera Image</p>
+</div></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">gbcamimage</span>
 <span class="linenos"> 2</span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.gbcamcolors</span><span class="w"> </span><span class="kn">import</span> <span class="n">GBColorPalettes</span>
 <span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>

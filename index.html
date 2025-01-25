@@ -14,6 +14,8 @@
   <title>Welcome to GameBEye’s documentation! &mdash; GameBEye v0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c46dc098" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c46dc098" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -31,12 +33,13 @@
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
 
           
           
           <a href="#" class="icon icon-home">
             GameBEye
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -46,24 +49,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GameBEye.html">GameBEye documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to GameBEye’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
-
+</div>
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="#">GameBEye</a>
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
@@ -81,38 +83,38 @@
 <h1>Welcome to GameBEye’s documentation!<a class="headerlink" href="#welcome-to-gamebeye-s-documentation" title="Link to this heading"></a></h1>
 <p><a class="reference external" href="https://github.com/mtouzot/GameBEye"><img alt="Github" src="https://img.shields.io/github/stars/mtouzot/GameBEye?label=Github&amp;logo=github" /></a> <a class="reference external" href="https://github.com/mtouzot/GameBEye/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/mtouzot/GameBEye" /></a> <a class="reference external" href="https://github.com/mtouzot/GameBEye/issues"><img alt="Issues" src="https://img.shields.io/github/issues/mtouzot/GameBEye" /></a> <a class="reference external" href="https://github.com/mtouzot/GameBEye/releases"><img alt="Release" src="https://img.shields.io/github/v/release/mtouzot/GameBEye" /></a></p>
 <p>GameBEye is a <strong>Python library</strong> to process <a class="reference external" href="https://en.wikipedia.org/wiki/Game_Boy_Camera">Game Boy Camera</a> images.</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Original image</p></th>
-<th class="head"><p>Borderless image</p></th>
-<th class="head"><p>Animated GIF made of colorized images</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><img alt="_images/gameBoyCamera.png" class="align-center" src="_images/gameBoyCamera.png" />
-</td>
-<td><img alt="_images/borderlessGameBoyCamera.png" class="align-center" src="_images/borderlessGameBoyCamera.png" />
-</td>
-<td><img alt="_images/colorizedGameBoyCamera.gif" class="align-center" src="_images/colorizedGameBoyCamera.gif" />
-</td>
-</tr>
-</tbody>
-</table>
+<p>Here are what a Game Boy camera can capture:</p>
+<div class="centered-grid docutils container">
+<div class="grid-item">
+   <img src="./_static/gameBoyCamera.png" alt="Original Game Boy Camera Image">
+   <p>Original Game Boy Camera Image</p>
+</div>
+<div class="grid-item">
+   <img src="_static/borderlessGameBoyCamera.png" alt="Borderless Game Boy Camera Image">
+   <p>Borderless Game Boy Camera Image</p>
+</div>
+<div class="grid-item">
+   <img src="_static/colorizedGameBoyCamera.gif" alt="Animated GIF made of colorized images">
+   <p>Animated GIF made of colorized images</p>
+</div>
+<div class="grid-item">
+   <img src="_static/printedGameBoyCamera.png" alt="Printed Game Boy Camera Image">
+   <p>Printed Game Boy Camera Image</p>
+</div></div>
 <p>Here are some infos about the hardware and the Gam Boy Camera images that drive the library construction:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>the CMOS sensor of the camera cartridge is <em>only</em> 128x128 pixels but the images are cropped to <strong>128x112 pixels</strong>. This means all images are Nintendo borderless.</p></li>
 <li><p>the image can be framed with a Nintendo border increasing the image size to <strong>160x144 pixels</strong>.</p></li>
-<li><p>the images use a <strong>4-color palette</strong>.</p></li>
+<li><p>the images use a <strong>4-grayscale palette</strong>:</p></li>
 </ul>
 </div></blockquote>
+<div class="centered-grid docutils container">
+<div class="grid-item">
+   <img src="./_static/colorPalettes/BW.png" alt="Original color palette for Game Boy Camera Images">
+   <p>Original color palette for Game Boy Camera Images</p>
+</div></div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GameBEye.html">GameBEye documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-</ul>
 </div>
 </section>
 <section id="indices-and-tables">
