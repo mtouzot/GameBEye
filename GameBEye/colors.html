@@ -1,0 +1,1108 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../_static/icon/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="../_static/icon/favicon-16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="../_static/icon/favicon-32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link href="../_static/icon/android-chrome-192x192.png" sizes="192x192" rel="icon" type="image/png">
+    <link href="../_static/icon/android-chrome-512x512.png" sizes="512x512" rel="icon" type="image/png">
+    <link href="../_static/icon/apple-touch-icon.png" sizes="180x180" rel="icon" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colors module &mdash; GameBEye 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c46dc098" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c46dc098" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7026087e"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Filters module" href="filters.html" />
+    <link rel="prev" title="Image module" href="image.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GameBEye
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../GameBEye.html">GameBEye documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="image.html">Image module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Colors module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gamebeye-gbcamcolors-module"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamcolors</span></code> module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.gbcamcolors.GBColorPalettes"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-GameBEye.color_helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.color_helpers</span></code> module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.bgr_to_hex"><code class="docutils literal notranslate"><span class="pre">bgr_to_hex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.clamp"><code class="docutils literal notranslate"><span class="pre">clamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.clamp_hex"><code class="docutils literal notranslate"><span class="pre">clamp_hex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.clamp_rgb"><code class="docutils literal notranslate"><span class="pre">clamp_rgb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.hex_to_bgr"><code class="docutils literal notranslate"><span class="pre">hex_to_bgr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.hex_to_rgb"><code class="docutils literal notranslate"><span class="pre">hex_to_rgb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.is_clamped"><code class="docutils literal notranslate"><span class="pre">is_clamped()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.is_clamped_hex"><code class="docutils literal notranslate"><span class="pre">is_clamped_hex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.is_clamped_rgb"><code class="docutils literal notranslate"><span class="pre">is_clamped_rgb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.color_helpers.rgb_to_hex"><code class="docutils literal notranslate"><span class="pre">rgb_to_hex()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Filters module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GameBEye</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../GameBEye.html">GameBEye documentation</a></li>
+      <li class="breadcrumb-item active">Colors module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/GameBEye/colors.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="colors-module">
+<h1>Colors module<a class="headerlink" href="#colors-module" title="Link to this heading"></a></h1>
+<p>The <strong>GameBEye.gbcamcolors</strong> module is as its name indicates focused on colors and color space conversion. It deals with a selection of color palettes (picked and adapted from <a class="reference external" href="https://github.com/HerrZatacke">HerrZatacke</a> <a class="reference external" href="https://github.com/HerrZatacke/gb-printer-web">gb-printer-web</a>).</p>
+<p>Thoses colors allowed me to make this small animation :</p>
+<div class="centered-grid docutils container">
+<div class="grid-item">
+   <img src="../_static/colorizedGameBoyCamera.gif" alt="Animated GIF made of colorized images">
+   <p>Animated GIF made of colorized images</p>
+</div></div>
+<section id="gamebeye-gbcamcolors-module">
+<h2><a class="reference internal" href="#module-GameBEye.gbcamcolors" title="GameBEye.gbcamcolors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamcolors</span></code></a> module<a class="headerlink" href="#gamebeye-gbcamcolors-module" title="Link to this heading"></a></h2>
+<p>This module also uses methods from <a class="reference internal" href="#ch-module"><span class="std std-ref">GameBEye.color_helpers module</span></a></p>
+<p id="module-GameBEye.gbcamcolors">Define the GBColorPalettes enum.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamcolors.</span></span><span class="sig-name descname"><span class="pre">GBColorPalettes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>56 Pre-defined color palettes based upon Game Boy Camera known palettes.</p>
+<p>The GBColorPalettes class inherits from Enum class where the keys are
+the color palette names and the valuea 4 elements array whose values
+represent a color coded in hexadecimal basis.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.AQPP">
+<span class="sig-name descname"><span class="pre">AQPP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#EBEEE7',</span> <span class="pre">'#868779',</span> <span class="pre">'#FA2B25',</span> <span class="pre">'#2A201E']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.AQPP" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/AQPP.png">
+<p>AQPP color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.AZC">
+<span class="sig-name descname"><span class="pre">AZC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#47FF99',</span> <span class="pre">'#32B66D',</span> <span class="pre">'#124127',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.AZC" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/AZC.png">
+<p>AZC color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.BANANA">
+<span class="sig-name descname"><span class="pre">BANANA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FDFE0A',</span> <span class="pre">'#FED638',</span> <span class="pre">'#977B25',</span> <span class="pre">'#221A09']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.BANANA" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/BANANA.png">
+<p>BANANA color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.BGB">
+<span class="sig-name descname"><span class="pre">BGB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#E0F8D0',</span> <span class="pre">'#88C070',</span> <span class="pre">'#346856',</span> <span class="pre">'#081820']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.BGB" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/BGB.png">
+<p>BGB color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.BLACKZERO">
+<span class="sig-name descname"><span class="pre">BLACKZERO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#7E8416',</span> <span class="pre">'#577B46',</span> <span class="pre">'#385D49',</span> <span class="pre">'#2E463D']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.BLACKZERO" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/BLACKZERO.png">
+<p>BLACKZERO color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.BW">
+<span class="sig-name descname"><span class="pre">BW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#A8A8A8',</span> <span class="pre">'#545454',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.BW" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/BW.png">
+<p>BW color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.CCTR">
+<span class="sig-name descname"><span class="pre">CCTR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#E6AEC4',</span> <span class="pre">'#E65790',</span> <span class="pre">'#8F0039',</span> <span class="pre">'#380016']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.CCTR" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/CCTR.png">
+<p>CCTR color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.CFP">
+<span class="sig-name descname"><span class="pre">CFP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#CF9255',</span> <span class="pre">'#CF7163',</span> <span class="pre">'#B01553',</span> <span class="pre">'#3F1711']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.CFP" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/CFP.png">
+<p>CFP color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.CGA1">
+<span class="sig-name descname"><span class="pre">CGA1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#55FFFF',</span> <span class="pre">'#FF55FF',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.CGA1" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/CGA1.png">
+<p>CGA1 color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.CGA2">
+<span class="sig-name descname"><span class="pre">CGA2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#55FFFF',</span> <span class="pre">'#FF5555',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.CGA2" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/CGA2.png">
+<p>CGA2 color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.CHIG">
+<span class="sig-name descname"><span class="pre">CHIG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#D0D058',</span> <span class="pre">'#A0A840',</span> <span class="pre">'#708028',</span> <span class="pre">'#405010']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.CHIG" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/CHIG.png">
+<p>CHIG color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.CMYK">
+<span class="sig-name descname"><span class="pre">CMYK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFF00',</span> <span class="pre">'#0BE8FD',</span> <span class="pre">'#FB00FA',</span> <span class="pre">'#373737']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.CMYK" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/CMYK.png">
+<p>CMYK color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.CYBL">
+<span class="sig-name descname"><span class="pre">CYBL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#9EFBE3',</span> <span class="pre">'#21AFF5',</span> <span class="pre">'#1E4793',</span> <span class="pre">'#0E1E3D']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.CYBL" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/CYBL.png">
+<p>CYBL color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.D2KR">
+<span class="sig-name descname"><span class="pre">D2KR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FCF1CD',</span> <span class="pre">'#C09E7D',</span> <span class="pre">'#725441',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.D2KR" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/D2KR.png">
+<p>D2KR color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.DATN">
+<span class="sig-name descname"><span class="pre">DATN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#A9B0B3',</span> <span class="pre">'#586164',</span> <span class="pre">'#20293F',</span> <span class="pre">'#030C22']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.DATN" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/DATN.png">
+<p>DATN color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.DHG">
+<span class="sig-name descname"><span class="pre">DHG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#A1D909',</span> <span class="pre">'#467818',</span> <span class="pre">'#27421F',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.DHG" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/DHG.png">
+<p>DHG color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.DIMWM">
+<span class="sig-name descname"><span class="pre">DIMWM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFDBCB',</span> <span class="pre">'#F27D7A',</span> <span class="pre">'#558429',</span> <span class="pre">'#222903']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.DIMWM" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/DIMWM.png">
+<p>DIMWM color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.DMG">
+<span class="sig-name descname"><span class="pre">DMG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#9BBC0F',</span> <span class="pre">'#77A112',</span> <span class="pre">'#306230',</span> <span class="pre">'#0F380F']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.DMG" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/DMG.png">
+<p>DMG color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.FFS">
+<span class="sig-name descname"><span class="pre">FFS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#E9D9CC',</span> <span class="pre">'#C5C5CE',</span> <span class="pre">'#75868F',</span> <span class="pre">'#171F62']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.FFS" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/FFS.png">
+<p>FFS color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.FSIL">
+<span class="sig-name descname"><span class="pre">FSIL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#EAF5FA',</span> <span class="pre">'#5FB1F5',</span> <span class="pre">'#D23C4E',</span> <span class="pre">'#4C1C2D']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.FSIL" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/FSIL.png">
+<p>FSIL color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCD">
+<span class="sig-name descname"><span class="pre">GBCD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFA5',</span> <span class="pre">'#FE9494',</span> <span class="pre">'#9395FE',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCD" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCD.png">
+<p>GBCD color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCDA">
+<span class="sig-name descname"><span class="pre">GBCDA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#FFFF00',</span> <span class="pre">'#FE0000',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCDA" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCDA.png">
+<p>GBCDA color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCDB">
+<span class="sig-name descname"><span class="pre">GBCDB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#FFFF00',</span> <span class="pre">'#7D4900',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCDB" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCDB.png">
+<p>GBCDB color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCEUUS">
+<span class="sig-name descname"><span class="pre">GBCEUUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#7BFF30',</span> <span class="pre">'#0163C6',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCEUUS" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCEUUS.png">
+<p>GBCEUUS color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCJP">
+<span class="sig-name descname"><span class="pre">GBCJP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#FFAD63',</span> <span class="pre">'#833100',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCJP" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCJP.png">
+<p>GBCJP color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCL">
+<span class="sig-name descname"><span class="pre">GBCL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#65A49B',</span> <span class="pre">'#0000FE',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCL" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCL.png">
+<p>GBCL color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCLA">
+<span class="sig-name descname"><span class="pre">GBCLA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#8B8CDE',</span> <span class="pre">'#53528C',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCLA" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCLA.png">
+<p>GBCLA color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCLB">
+<span class="sig-name descname"><span class="pre">GBCLB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#A5A5A5',</span> <span class="pre">'#525252',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCLB" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCLB.png">
+<p>GBCLB color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCR">
+<span class="sig-name descname"><span class="pre">GBCR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#51FF00',</span> <span class="pre">'#FF4200',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCR" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCR.png">
+<p>GBCR color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCRB">
+<span class="sig-name descname"><span class="pre">GBCRB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#000000',</span> <span class="pre">'#008486',</span> <span class="pre">'#FFDE00',</span> <span class="pre">'#FFFFFF']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCRB" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCRB.png">
+<p>GBCRB color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCUA">
+<span class="sig-name descname"><span class="pre">GBCUA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFFF',</span> <span class="pre">'#FF8F84',</span> <span class="pre">'#943A3A',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCUA" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCUA.png">
+<p>GBCUA color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBCUC">
+<span class="sig-name descname"><span class="pre">GBCUC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFE7C5',</span> <span class="pre">'#CE9C85',</span> <span class="pre">'#846B29',</span> <span class="pre">'#5B3109']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBCUC" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBCUC.png">
+<p>GBCUC color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBLIT">
+<span class="sig-name descname"><span class="pre">GBLIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#1DDECE',</span> <span class="pre">'#19C7B3',</span> <span class="pre">'#16A596',</span> <span class="pre">'#0B7A6D']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBLIT" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBLIT.png">
+<p>GBLIT color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GBPOCKET">
+<span class="sig-name descname"><span class="pre">GBPOCKET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#C4CFA1',</span> <span class="pre">'#8B956D',</span> <span class="pre">'#4D533C',</span> <span class="pre">'#1F1F1F']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GBPOCKET" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GBPOCKET.png">
+<p>GBPOCKET color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GELC">
+<span class="sig-name descname"><span class="pre">GELC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FF9C00',</span> <span class="pre">'#C27600',</span> <span class="pre">'#4F3000',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GELC" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GELC.png">
+<p>GELC color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GLMO">
+<span class="sig-name descname"><span class="pre">GLMO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFBF98',</span> <span class="pre">'#A1A8B8',</span> <span class="pre">'#514F6C',</span> <span class="pre">'#2F1C35']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GLMO" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GLMO.png">
+<p>GLMO color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GRAFIXKIDGRAY">
+<span class="sig-name descname"><span class="pre">GRAFIXKIDGRAY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#E0DBCD',</span> <span class="pre">'#A89F94',</span> <span class="pre">'#706B66',</span> <span class="pre">'#2B2B26']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GRAFIXKIDGRAY" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GRAFIXKIDGRAY.png">
+<p>GRAFIXKIDGRAY color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.GRAFIXKIDGREEN">
+<span class="sig-name descname"><span class="pre">GRAFIXKIDGREEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#DBF4B4',</span> <span class="pre">'#ABC396',</span> <span class="pre">'#7B9278',</span> <span class="pre">'#4C625A']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.GRAFIXKIDGREEN" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/GRAFIXKIDGREEN.png">
+<p>GRAFIXKIDGREEN color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.HIPSTER">
+<span class="sig-name descname"><span class="pre">HIPSTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FDFEF5',</span> <span class="pre">'#DEA963',</span> <span class="pre">'#9E754F',</span> <span class="pre">'#241606']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.HIPSTER" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/HIPSTER.png">
+<p>HIPSTER color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.KDITW">
+<span class="sig-name descname"><span class="pre">KDITW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFE6E',</span> <span class="pre">'#D5690F',</span> <span class="pre">'#3C3CA9',</span> <span class="pre">'#2C2410']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.KDITW" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/KDITW.png">
+<p>KDITW color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.LLAWK">
+<span class="sig-name descname"><span class="pre">LLAWK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFFB5',</span> <span class="pre">'#7BC67B',</span> <span class="pre">'#6B8C42',</span> <span class="pre">'#5A3921']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.LLAWK" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/LLAWK.png">
+<p>LLAWK color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.MARMX">
+<span class="sig-name descname"><span class="pre">MARMX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#AEDF1E',</span> <span class="pre">'#047E60',</span> <span class="pre">'#B62558',</span> <span class="pre">'#2C1700']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.MARMX" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/MARMX.png">
+<p>MARMX color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.NC">
+<span class="sig-name descname"><span class="pre">NC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FCFE54',</span> <span class="pre">'#54FEFC',</span> <span class="pre">'#04AAAC',</span> <span class="pre">'#0402AC']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.NC" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/NC.png">
+<p>NC color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.PPR">
+<span class="sig-name descname"><span class="pre">PPR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#ADFFFC',</span> <span class="pre">'#8570B2',</span> <span class="pre">'#FF0084',</span> <span class="pre">'#68006A']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.PPR" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/PPR.png">
+<p>PPR color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.RCS">
+<span class="sig-name descname"><span class="pre">RCS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#EDB4A1',</span> <span class="pre">'#A96868',</span> <span class="pre">'#764462',</span> <span class="pre">'#2C2137']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.RCS" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/RCS.png">
+<p>RCS color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.ROGA">
+<span class="sig-name descname"><span class="pre">ROGA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#EBC4AB',</span> <span class="pre">'#649A57',</span> <span class="pre">'#574431',</span> <span class="pre">'#323727']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.ROGA" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/ROGA.png">
+<p>ROGA color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.SFH">
+<span class="sig-name descname"><span class="pre">SFH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFF55',</span> <span class="pre">'#FF5555',</span> <span class="pre">'#881400',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.SFH" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/SFH.png">
+<p>SFH color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.SHMGY">
+<span class="sig-name descname"><span class="pre">SHMGY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#F7E7C6',</span> <span class="pre">'#D68E49',</span> <span class="pre">'#A63725',</span> <span class="pre">'#331E50']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.SHMGY" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/SHMGY.png">
+<p>SHMGY color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.SHZOL">
+<span class="sig-name descname"><span class="pre">SHZOL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#F8E3C4',</span> <span class="pre">'#CC3495',</span> <span class="pre">'#6B1FB1',</span> <span class="pre">'#0B0630']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.SHZOL" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/SHZOL.png">
+<p>SHZOL color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.SLMEM">
+<span class="sig-name descname"><span class="pre">SLMEM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#869AD9',</span> <span class="pre">'#6D53BD',</span> <span class="pre">'#6F2096',</span> <span class="pre">'#4F133F']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.SLMEM" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/SLMEM.png">
+<p>SLMEM color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.SPEZI">
+<span class="sig-name descname"><span class="pre">SPEZI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FEDA1B',</span> <span class="pre">'#DF7925',</span> <span class="pre">'#B60077',</span> <span class="pre">'#382977']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.SPEZI" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/SPEZI.png">
+<p>SPEZI color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.TDOYC">
+<span class="sig-name descname"><span class="pre">TDOYC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#B5FF32',</span> <span class="pre">'#FF2261',</span> <span class="pre">'#462917',</span> <span class="pre">'#1D1414']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.TDOYC" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/TDOYC.png">
+<p>TDOYC color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.TPA">
+<span class="sig-name descname"><span class="pre">TPA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#F3C677',</span> <span class="pre">'#E64A4E',</span> <span class="pre">'#912978',</span> <span class="pre">'#0C0A3E']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.TPA" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/TPA.png">
+<p>TPA color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.TSK">
+<span class="sig-name descname"><span class="pre">TSK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#F5DB37',</span> <span class="pre">'#37CAE5',</span> <span class="pre">'#0F86B6',</span> <span class="pre">'#123F77']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.TSK" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/TSK.png">
+<p>TSK color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.VB85">
+<span class="sig-name descname"><span class="pre">VB85</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FF0000',</span> <span class="pre">'#DB0000',</span> <span class="pre">'#520000',</span> <span class="pre">'#000000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.VB85" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/VB85.png">
+<p>VB85 color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.WTFP">
+<span class="sig-name descname"><span class="pre">WTFP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#CECECE',</span> <span class="pre">'#6F9EDF',</span> <span class="pre">'#42678E',</span> <span class="pre">'#102533']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.WTFP" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/WTFP.png">
+<p>WTFP color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.YIRL">
+<span class="sig-name descname"><span class="pre">YIRL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#CEF7F7',</span> <span class="pre">'#F78E50',</span> <span class="pre">'#9E0000',</span> <span class="pre">'#1E0000']</span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.YIRL" title="Link to this definition"></a></dt>
+<dd><div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/colorPalettes/YIRL.png">
+<p>YIRL color palette</p>
+</div>
+</div></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.describe">
+<span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.describe" title="Link to this definition"></a></dt>
+<dd><p>Describe itself. Return as a tuple the color palette name and colors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a 2-values tuple containing the color name and its values</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str, list</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.gbcamcolors</span><span class="w"> </span><span class="kn">import</span> <span class="n">GBColorPalettes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GBColorPalettes</span><span class="o">.</span><span class="n">BW</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="go">(&#39;BW&#39;, [&#39;#FFFFFF&#39;, &#39;#A8A8A8&#39;, &#39;#545454&#39;, &#39;#000000&#39;])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="GameBEye.gbcamcolors.GBColorPalettes.rgb_colors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rgb_colors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#GameBEye.gbcamcolors.GBColorPalettes.rgb_colors" title="Link to this definition"></a></dt>
+<dd><p>Return the 4 color values of the enum in RGB space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the 4 colors values in the RGB space</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[list[int]]</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.gbcamcolors</span><span class="w"> </span><span class="kn">import</span> <span class="n">GBColorPalettes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GBColorPalettes</span><span class="o">.</span><span class="n">BW</span><span class="o">.</span><span class="n">rgb_colors</span>
+<span class="go">[[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-GameBEye.color_helpers">
+<span id="gamebeye-color-helpers-module"></span><span id="ch-module"></span><h2><a class="reference internal" href="#module-GameBEye.color_helpers" title="GameBEye.color_helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.color_helpers</span></code></a> module<a class="headerlink" href="#module-GameBEye.color_helpers" title="Link to this heading"></a></h2>
+<p>Define color conversions and methods related to 8-bits colorspaces.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.bgr_to_hex">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">bgr_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bgr_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#GameBEye.color_helpers.bgr_to_hex" title="Link to this definition"></a></dt>
+<dd><p>Convert a (B, G, R) array to hexadecimal integer.</p>
+<p>All values are clamped between 0 and 255.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bgr_val</strong> (<em>list</em>) – (B, G, R) to convert</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – rgb_val argument must be a 3 values list</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an hexadecimal value</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">bgr_to_hex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bgr_to_hex</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">&#39;#000000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bgr_to_hex</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">])</span>
+<span class="go">&#39;#FF0000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bgr_to_hex</span><span class="p">([</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">&#39;#0000FF&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bgr_to_hex</span><span class="p">([</span><span class="mi">512</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">&#39;#0080FF&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bgr_to_hex</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="gr">ValueError</span>: <span class="n">bgr_val argument must be a 3 values list</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.clamp">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">clamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#GameBEye.color_helpers.clamp" title="Link to this definition"></a></dt>
+<dd><p>Ensure that val is between 0 and 255.</p>
+<p>Clamp each out of bound value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – an int value</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the clamped value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">clamp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="mi">125</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp</span><span class="p">(</span><span class="mi">125</span><span class="p">)</span>
+<span class="go">125</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<span class="go">255</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+<span class="go">255</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.clamp_hex">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">clamp_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#GameBEye.color_helpers.clamp_hex" title="Link to this definition"></a></dt>
+<dd><p>Ensure that val is between ‘0x000000’ and ‘0xFFFFFF’.</p>
+<p>Clamp each out of bound value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hex_val</strong> (<em>str</em>) – an hexadecimal string value</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the hex clamped value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">clamp_hex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp_hex</span><span class="p">(</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+<span class="go">&#39;#000000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp_hex</span><span class="p">(</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
+<span class="go">&#39;#FFFFFF&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp_hex</span><span class="p">(</span><span class="s1">&#39;#00FF00&#39;</span><span class="p">)</span>
+<span class="go">&#39;#00FF00&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp_hex</span><span class="p">(</span><span class="s1">&#39;#F000000&#39;</span><span class="p">)</span>
+<span class="go">&#39;#FFFFFF&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.clamp_rgb">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">clamp_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#GameBEye.color_helpers.clamp_rgb" title="Link to this definition"></a></dt>
+<dd><p>Ensure that all RGB values are between 0 and 255.</p>
+<p>Clamp each out of bound value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb_val</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – 3-channels list for R, G, B</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – rgb_val argument must be a 3 values list</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the clamped list</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[int]</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">clamp_rgb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp_rgb</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">[0, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp_rgb</span><span class="p">([</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">])</span>
+<span class="go">[255, 255, 255]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp_rgb</span><span class="p">([</span><span class="mi">512</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">[255, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clamp_rgb</span><span class="p">([</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="gr">ValueError</span>: <span class="n">rgb_val argument must be a 3 values list</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.hex_to_bgr">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">hex_to_bgr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#GameBEye.color_helpers.hex_to_bgr" title="Link to this definition"></a></dt>
+<dd><p>Convert a hexadecimal value to BGR values.</p>
+<p>All values are clamped between 0 and 255.</p>
+<p>The 2 left digits code the green value, the 2 middle digits the blue and
+the 2 left digits the red.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hex_val</strong> (<em>str</em>) – hexadecimal value.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list containing B, G, R values</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a list of integer</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">hex_to_bgr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_bgr</span><span class="p">(</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+<span class="go">[0, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_bgr</span><span class="p">(</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">)</span>
+<span class="go">[0, 0, 255]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_bgr</span><span class="p">(</span><span class="s1">&#39;#00FF00&#39;</span><span class="p">)</span>
+<span class="go">[0, 255, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_bgr</span><span class="p">(</span><span class="s1">&#39;#0000FF&#39;</span><span class="p">)</span>
+<span class="go">[255, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_bgr</span><span class="p">(</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
+<span class="go">[255, 255, 255]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_bgr</span><span class="p">(</span><span class="s1">&#39;#F000000&#39;</span><span class="p">)</span>
+<span class="go">[255, 255, 255]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.hex_to_rgb">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">hex_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#GameBEye.color_helpers.hex_to_rgb" title="Link to this definition"></a></dt>
+<dd><p>Convert a hexadecimal value to RGB values.</p>
+<p>All values are clamped between 0 and 255.</p>
+<p>The 2 left digits code the red value, the 2 middle digits the blue
+and the 2 left digits the green.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hex_val</strong> (<em>str</em>) – hexadecimal value.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list containing R, G, B values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a list of integer</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">hex_to_rgb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_rgb</span><span class="p">(</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+<span class="go">[0, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_rgb</span><span class="p">(</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">)</span>
+<span class="go">[255, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_rgb</span><span class="p">(</span><span class="s1">&#39;#00FF00&#39;</span><span class="p">)</span>
+<span class="go">[0, 255, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_rgb</span><span class="p">(</span><span class="s1">&#39;#0000FF&#39;</span><span class="p">)</span>
+<span class="go">[0, 0, 255]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_rgb</span><span class="p">(</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
+<span class="go">[255, 255, 255]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hex_to_rgb</span><span class="p">(</span><span class="s1">&#39;#F000000&#39;</span><span class="p">)</span>
+<span class="go">[255, 255, 255]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.is_clamped">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">is_clamped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#GameBEye.color_helpers.is_clamped" title="Link to this definition"></a></dt>
+<dd><p>Check if val is clamped between 0 and 255.</p>
+<p>If val is out of boundaries, returns False. True otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – the value to be checked</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the comparison result</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_clamped</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped</span><span class="p">(</span><span class="o">-</span><span class="mi">125</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped</span><span class="p">(</span><span class="mi">125</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.is_clamped_hex">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">is_clamped_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#GameBEye.color_helpers.is_clamped_hex" title="Link to this definition"></a></dt>
+<dd><p>Ensure that val is between ‘#000000’ and ‘#FFFFFF’.</p>
+<p>If val is out of boundaries, returns False. True otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hex_val</strong> (<em>str</em>) – an hexadecimal value</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the comparison result</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_clamped_hex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped_hex</span><span class="p">(</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped_hex</span><span class="p">(</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped_hex</span><span class="p">(</span><span class="s1">&#39;#00FF00&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped_hex</span><span class="p">(</span><span class="s1">&#39;#F000000&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.is_clamped_rgb">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">is_clamped_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#GameBEye.color_helpers.is_clamped_rgb" title="Link to this definition"></a></dt>
+<dd><p>Check if the RGB color values are clamped between 0 and 255.</p>
+<p>If val is out of boundaries, returns False. True otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb_val</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – 3-channels list for R, G, B</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – rgb_val argument must be a 3 values list</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the comparison result</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_clamped_rgb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped_rgb</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped_rgb</span><span class="p">([</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">])</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped_rgb</span><span class="p">([</span><span class="mi">512</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_clamped_rgb</span><span class="p">([</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="gr">ValueError</span>: <span class="n">rgb_val argument must be a 3 values list</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="GameBEye.color_helpers.rgb_to_hex">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.color_helpers.</span></span><span class="sig-name descname"><span class="pre">rgb_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#GameBEye.color_helpers.rgb_to_hex" title="Link to this definition"></a></dt>
+<dd><p>Convert a (R, G, B) array to hexadecimal integer.</p>
+<p>All values are clamped between 0 and 255.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb_val</strong> (<em>list</em>) – (R, G, B) list to convert</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – rgb_val argument must be a 3 values list</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an hexadecimal value</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">GameBEye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">rgb_to_hex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rgb_to_hex</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">&#39;#000000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rgb_to_hex</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">])</span>
+<span class="go">&#39;#0000FF&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rgb_to_hex</span><span class="p">([</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">&#39;#FF0000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rgb_to_hex</span><span class="p">([</span><span class="mi">512</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">&#39;#FF8000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rgb_to_hex</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="gr">ValueError</span>: <span class="n">rgb_val argument must be a 3 values list</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="image.html" class="btn btn-neutral float-left" title="Image module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="filters.html" class="btn btn-neutral float-right" title="Filters module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2025, Martin TOUZOT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

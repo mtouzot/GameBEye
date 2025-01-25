@@ -11,7 +11,7 @@
     <link href="../_static/icon/android-chrome-512x512.png" sizes="512x512" rel="icon" type="image/png">
     <link href="../_static/icon/apple-touch-icon.png" sizes="180x180" rel="icon" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GameBEye.gbcamfilters package &mdash; GameBEye v0.1.0 documentation</title>
+  <title>Filters module &mdash; GameBEye 0.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c46dc098" />
@@ -20,14 +20,14 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=fa47ad08"></script>
+      <script src="../_static/documentation_options.js?v=7026087e"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Examples" href="../examples.html" />
-    <link rel="prev" title="GameBEye.gbcamcolors package" href="gbcamcolors.html" /> 
+    <link rel="prev" title="Colors module" href="colors.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,17 +50,24 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">GameBEye.gbcamfilters package</a><ul>
-<li><a class="reference internal" href="#module-GameBEye.gbcamfilters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamfilters.gbcamfilters</span></code> module</a><ul>
-<li><a class="reference internal" href="#GameBEye.gbcamfilters.gbcamfilters.to_thermal_printer"><code class="docutils literal notranslate"><span class="pre">to_thermal_printer()</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../GameBEye.html">GameBEye documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="image.html">Image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colors.html">Colors module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Filters module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-GameBEye.gbcamfilters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamfilters</span></code> module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GameBEye.gbcamfilters.to_thermal_printer"><code class="docutils literal notranslate"><span class="pre">to_thermal_printer()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+</ul>
+
         </div>
       </div>
     </nav>
@@ -76,9 +83,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../GameBEye.html">GameBEye documentation</a></li>
-      <li class="breadcrumb-item active">GameBEye.gbcamfilters package</li>
+      <li class="breadcrumb-item active">Filters module</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/GameBEye/gbcamfilters.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/GameBEye/filters.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -86,22 +93,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="gamebeye-gbcamfilters-package">
-<h1>GameBEye.gbcamfilters package<a class="headerlink" href="#gamebeye-gbcamfilters-package" title="Link to this heading"></a></h1>
-<p>The <strong>GameBEye.gbcamfilters</strong> package is as its name indicates focused on filters. It is used to <em>play</em> with <a class="reference internal" href="gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage" title="GameBEye.gbcamimage.gbcamimage.GBCamImage"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamimage.gbcamimage.GBCamImage</span></code></a></p>
+  <section id="filters-module">
+<h1>Filters module<a class="headerlink" href="#filters-module" title="Link to this heading"></a></h1>
+<p>The <strong>GameBEye.gbcamfilters</strong> module is as its name indicates focused on filters. It is used to <em>play</em> with <a class="reference internal" href="image.html#GameBEye.gbcamimage.GBCamImage" title="GameBEye.gbcamimage.GBCamImage"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamimage.GBCamImage</span></code></a></p>
 <section id="module-GameBEye.gbcamfilters">
-<span id="gamebeye-gbcamfilters-gbcamfilters-module"></span><h2><a class="reference internal" href="#module-GameBEye.gbcamfilters.gbcamfilters" title="GameBEye.gbcamfilters.gbcamfilters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamfilters.gbcamfilters</span></code></a> module<a class="headerlink" href="#module-GameBEye.gbcamfilters" title="Link to this heading"></a></h2>
-<p id="module-GameBEye.gbcamfilters.gbcamfilters">A module to add filters on a GBCamImage object.</p>
+<span id="gamebeye-gbcamfilters-module"></span><h2><a class="reference internal" href="#module-GameBEye.gbcamfilters" title="GameBEye.gbcamfilters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamfilters</span></code></a> module<a class="headerlink" href="#module-GameBEye.gbcamfilters" title="Link to this heading"></a></h2>
+<p>Define filters to apply to GBCamImage object.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="GameBEye.gbcamfilters.gbcamfilters.to_thermal_printer">
-<span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamfilters.gbcamfilters.</span></span><span class="sig-name descname"><span class="pre">to_thermal_printer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage" title="GameBEye.gbcamimage.gbcamimage.GBCamImage"><span class="pre">GBCamImage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#GameBEye.gbcamfilters.gbcamfilters.to_thermal_printer" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="GameBEye.gbcamfilters.to_thermal_printer">
+<span class="sig-prename descclassname"><span class="pre">GameBEye.gbcamfilters.</span></span><span class="sig-name descname"><span class="pre">to_thermal_printer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="image.html#GameBEye.gbcamimage.GBCamImage" title="GameBEye.gbcamimage.GBCamImage"><span class="pre">GBCamImage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#GameBEye.gbcamfilters.to_thermal_printer" title="Link to this definition"></a></dt>
 <dd><p>Emulate a GB thermal printer and return a printed-on-paper image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>src</strong> – A Game Boy Camera Image</p>
 </dd>
 <dt class="field-even">Type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage" title="GameBEye.gbcamimage.gbcamimage.GBCamImage">GBCamImage</a></p>
+<dd class="field-even"><p><a class="reference internal" href="image.html#GameBEye.gbcamimage.GBCamImage" title="GameBEye.gbcamimage.GBCamImage">GBCamImage</a></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the printed image</p>
@@ -119,7 +126,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="gbcamcolors.html" class="btn btn-neutral float-left" title="GameBEye.gbcamcolors package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="colors.html" class="btn btn-neutral float-left" title="Colors module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

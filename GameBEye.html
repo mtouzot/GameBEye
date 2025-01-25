@@ -11,7 +11,7 @@
     <link href="_static/icon/android-chrome-512x512.png" sizes="512x512" rel="icon" type="image/png">
     <link href="_static/icon/apple-touch-icon.png" sizes="180x180" rel="icon" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GameBEye documentation &mdash; GameBEye v0.1.0 documentation</title>
+  <title>GameBEye documentation &mdash; GameBEye 0.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c46dc098" />
@@ -20,13 +20,13 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=fa47ad08"></script>
+      <script src="_static/documentation_options.js?v=7026087e"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GameBEye.gbcamimage package" href="GameBEye/gbcamimage.html" />
+    <link rel="next" title="Image module" href="GameBEye/image.html" />
     <link rel="prev" title="Installation" href="installation.html" /> 
 </head>
 
@@ -50,11 +50,18 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">GameBEye documentation</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GameBEye documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GameBEye/image.html">Image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GameBEye/colors.html">Colors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GameBEye/filters.html">Filters module</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
         </div>
       </div>
     </nav>
@@ -79,129 +86,126 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="gamebeye-documentation">
-<h1>GameBEye documentation<a class="headerlink" href="#gamebeye-documentation" title="Link to this heading"></a></h1>
-<p>The GameBEye library is pretty simple to use and is centered around images and filters to apply on thoses images.</p>
-<p>As an example, here two images taken from the Game Boy Camera.</p>
+  <section id="module-GameBEye">
+<span id="gamebeye-documentation"></span><h1>GameBEye documentation<a class="headerlink" href="#module-GameBEye" title="Link to this heading"></a></h1>
+<p>Provide an object to manage Game Boy Camera images.</p>
+<p>Allow to read and apply various filters on images capture with Game Boy Camera.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="GameBEye/gbcamimage.html">GameBEye.gbcamimage package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GameBEye/gbcamimage.html#module-GameBEye.gbcamimage"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamimage.gbcamimage</span></code> module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage"><code class="docutils literal notranslate"><span class="pre">GBCamImage</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.BORDER"><code class="docutils literal notranslate"><span class="pre">GBCamImage.BORDER</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.CHANNEL"><code class="docutils literal notranslate"><span class="pre">GBCamImage.CHANNEL</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.HEIGHT"><code class="docutils literal notranslate"><span class="pre">GBCamImage.HEIGHT</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.NB_COLORS"><code class="docutils literal notranslate"><span class="pre">GBCamImage.NB_COLORS</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.WIDTH"><code class="docutils literal notranslate"><span class="pre">GBCamImage.WIDTH</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.change_color"><code class="docutils literal notranslate"><span class="pre">GBCamImage.change_color()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.color_palette"><code class="docutils literal notranslate"><span class="pre">GBCamImage.color_palette</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.data"><code class="docutils literal notranslate"><span class="pre">GBCamImage.data</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.read"><code class="docutils literal notranslate"><span class="pre">GBCamImage.read()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamimage.html#GameBEye.gbcamimage.gbcamimage.GBCamImage.shape"><code class="docutils literal notranslate"><span class="pre">GBCamImage.shape</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="GameBEye/image.html">Image module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage"><code class="docutils literal notranslate"><span class="pre">GBCamImage</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.BORDER"><code class="docutils literal notranslate"><span class="pre">GBCamImage.BORDER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.CHANNEL"><code class="docutils literal notranslate"><span class="pre">GBCamImage.CHANNEL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.HEIGHT"><code class="docutils literal notranslate"><span class="pre">GBCamImage.HEIGHT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.NB_COLORS"><code class="docutils literal notranslate"><span class="pre">GBCamImage.NB_COLORS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.WIDTH"><code class="docutils literal notranslate"><span class="pre">GBCamImage.WIDTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.change_color"><code class="docutils literal notranslate"><span class="pre">GBCamImage.change_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.color_palette"><code class="docutils literal notranslate"><span class="pre">GBCamImage.color_palette</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.data"><code class="docutils literal notranslate"><span class="pre">GBCamImage.data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.read"><code class="docutils literal notranslate"><span class="pre">GBCamImage.read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/image.html#GameBEye.gbcamimage.GBCamImage.shape"><code class="docutils literal notranslate"><span class="pre">GBCamImage.shape</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="GameBEye/gbcamcolors.html">GameBEye.gbcamcolors package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GameBEye/gbcamcolors.html#module-GameBEye.gbcamcolors.gbcamcolors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamcolors.gbcamcolors</span></code> module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.AQPP"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.AQPP</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.AZC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.AZC</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.BANANA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.BANANA</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.BGB"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.BGB</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.BLACKZERO"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.BLACKZERO</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.BW"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.BW</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.CCTR"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CCTR</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.CFP"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CFP</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.CGA1"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CGA1</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.CGA2"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CGA2</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.CHIG"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CHIG</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.CMYK"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CMYK</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.CYBL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CYBL</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.D2KR"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.D2KR</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.DATN"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.DATN</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.DHG"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.DHG</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.DIMWM"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.DIMWM</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.DMG"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.DMG</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.FFS"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.FFS</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.FSIL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.FSIL</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCD"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCD</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCDA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCDA</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCDB"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCDB</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCEUUS"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCEUUS</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCJP"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCJP</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCL</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCLA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCLA</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCLB"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCLB</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCR"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCR</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCRB"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCRB</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCUA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCUA</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBCUC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCUC</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBLIT"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBLIT</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GBPOCKET"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBPOCKET</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GELC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GELC</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GLMO"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GLMO</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GRAFIXKIDGRAY"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GRAFIXKIDGRAY</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.GRAFIXKIDGREEN"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GRAFIXKIDGREEN</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.HIPSTER"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.HIPSTER</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.KDITW"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.KDITW</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.LLAWK"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.LLAWK</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.MARMX"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.MARMX</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.NC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.NC</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.PPR"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.PPR</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.RCS"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.RCS</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.ROGA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.ROGA</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.SFH"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SFH</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.SHMGY"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SHMGY</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.SHZOL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SHZOL</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.SLMEM"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SLMEM</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.SPEZI"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SPEZI</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.TDOYC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.TDOYC</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.TPA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.TPA</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.TSK"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.TSK</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.VB85"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.VB85</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.WTFP"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.WTFP</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.YIRL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.YIRL</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.describe"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.describe()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.gbcamcolors.GBColorPalettes.rgb_colors"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.rgb_colors</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="GameBEye/gbcamcolors.html#module-GameBEye.gbcamcolors.color_helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamcolors.color_helpers</span></code> module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.bgr_to_hex"><code class="docutils literal notranslate"><span class="pre">bgr_to_hex()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.clamp"><code class="docutils literal notranslate"><span class="pre">clamp()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.clamp_hex"><code class="docutils literal notranslate"><span class="pre">clamp_hex()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.clamp_rgb"><code class="docutils literal notranslate"><span class="pre">clamp_rgb()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.hex_to_bgr"><code class="docutils literal notranslate"><span class="pre">hex_to_bgr()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.hex_to_rgb"><code class="docutils literal notranslate"><span class="pre">hex_to_rgb()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.is_clamped"><code class="docutils literal notranslate"><span class="pre">is_clamped()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.is_clamped_hex"><code class="docutils literal notranslate"><span class="pre">is_clamped_hex()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.is_clamped_rgb"><code class="docutils literal notranslate"><span class="pre">is_clamped_rgb()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamcolors.html#GameBEye.gbcamcolors.color_helpers.rgb_to_hex"><code class="docutils literal notranslate"><span class="pre">rgb_to_hex()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="GameBEye/colors.html">Colors module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GameBEye/colors.html#gamebeye-gbcamcolors-module"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamcolors</span></code> module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.AQPP"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.AQPP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.AZC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.AZC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.BANANA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.BANANA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.BGB"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.BGB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.BLACKZERO"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.BLACKZERO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.BW"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.BW</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.CCTR"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CCTR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.CFP"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CFP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.CGA1"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CGA1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.CGA2"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CGA2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.CHIG"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CHIG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.CMYK"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CMYK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.CYBL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.CYBL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.D2KR"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.D2KR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.DATN"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.DATN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.DHG"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.DHG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.DIMWM"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.DIMWM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.DMG"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.DMG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.FFS"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.FFS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.FSIL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.FSIL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCD"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCDA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCDA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCDB"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCDB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCEUUS"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCEUUS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCJP"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCJP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCLA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCLA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCLB"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCLB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCR"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCRB"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCRB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCUA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCUA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBCUC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBCUC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBLIT"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBLIT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GBPOCKET"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GBPOCKET</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GELC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GELC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GLMO"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GLMO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GRAFIXKIDGRAY"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GRAFIXKIDGRAY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.GRAFIXKIDGREEN"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.GRAFIXKIDGREEN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.HIPSTER"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.HIPSTER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.KDITW"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.KDITW</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.LLAWK"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.LLAWK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.MARMX"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.MARMX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.NC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.NC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.PPR"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.PPR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.RCS"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.RCS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.ROGA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.ROGA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.SFH"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SFH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.SHMGY"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SHMGY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.SHZOL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SHZOL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.SLMEM"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SLMEM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.SPEZI"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.SPEZI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.TDOYC"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.TDOYC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.TPA"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.TPA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.TSK"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.TSK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.VB85"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.VB85</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.WTFP"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.WTFP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.YIRL"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.YIRL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.describe"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="GameBEye/colors.html#GameBEye.gbcamcolors.GBColorPalettes.rgb_colors"><code class="docutils literal notranslate"><span class="pre">GBColorPalettes.rgb_colors</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="GameBEye/gbcamfilters.html">GameBEye.gbcamfilters package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GameBEye/gbcamfilters.html#module-GameBEye.gbcamfilters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamfilters.gbcamfilters</span></code> module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="GameBEye/gbcamfilters.html#GameBEye.gbcamfilters.gbcamfilters.to_thermal_printer"><code class="docutils literal notranslate"><span class="pre">to_thermal_printer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="GameBEye/colors.html#module-GameBEye.color_helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.color_helpers</span></code> module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.bgr_to_hex"><code class="docutils literal notranslate"><span class="pre">bgr_to_hex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.clamp"><code class="docutils literal notranslate"><span class="pre">clamp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.clamp_hex"><code class="docutils literal notranslate"><span class="pre">clamp_hex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.clamp_rgb"><code class="docutils literal notranslate"><span class="pre">clamp_rgb()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.hex_to_bgr"><code class="docutils literal notranslate"><span class="pre">hex_to_bgr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.hex_to_rgb"><code class="docutils literal notranslate"><span class="pre">hex_to_rgb()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.is_clamped"><code class="docutils literal notranslate"><span class="pre">is_clamped()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.is_clamped_hex"><code class="docutils literal notranslate"><span class="pre">is_clamped_hex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.is_clamped_rgb"><code class="docutils literal notranslate"><span class="pre">is_clamped_rgb()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/colors.html#GameBEye.color_helpers.rgb_to_hex"><code class="docutils literal notranslate"><span class="pre">rgb_to_hex()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GameBEye/filters.html">Filters module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GameBEye/filters.html#module-GameBEye.gbcamfilters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GameBEye.gbcamfilters</span></code> module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GameBEye/filters.html#GameBEye.gbcamfilters.to_thermal_printer"><code class="docutils literal notranslate"><span class="pre">to_thermal_printer()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </div>
-<span class="target" id="module-GameBEye"></span></section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="GameBEye/gbcamimage.html" class="btn btn-neutral float-right" title="GameBEye.gbcamimage package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GameBEye/image.html" class="btn btn-neutral float-right" title="Image module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
