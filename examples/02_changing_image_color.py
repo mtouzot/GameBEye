@@ -21,7 +21,7 @@ cv2.imshow(original_title, gb_img.data)
 print("Original color palette : {}".format(gb_img.color_palette))
 
 # Changing image color palette
-gb_color_palette = GBColorPalettes.AZC
+gb_color_palette = GBColorPalettes.CCTR
 gb_img.change_color(color_palette=gb_color_palette)
 
 # Displaying the colorized image
