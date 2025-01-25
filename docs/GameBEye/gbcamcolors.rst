@@ -5,8 +5,15 @@ The **GameBEye.gbcamcolors** package is as its name indicates focused on colors 
 
 Thoses colors allowed me to make this small animation :
 
-.. image:: ../_static/colorizedGameBoyCamera.gif
-   :class: align-center
+.. container:: centered-grid
+
+   .. raw:: html
+
+      <div class="grid-item">
+         <img src="../_static/colorizedGameBoyCamera.gif" alt="Animated GIF made of colorized images">
+         <p>Animated GIF made of colorized images</p>
+      </div>
+
 
 :mod:`GameBEye.gbcamcolors.gbcamcolors` module
 ----------------------------------------------

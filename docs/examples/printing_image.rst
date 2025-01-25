@@ -39,16 +39,22 @@ here's an example of how looks a printed image
 
 So from this input :
 
-.. figure:: ../_static/gameBoyCamera.png
-   :alt: Original Game Boy Camera image
-   :align: center
+.. container:: centered-grid
 
-   Original Game Boy Camera image
+   .. raw:: html
+
+      <div class="grid-item">
+         <img src="../_static/gameBoyCamera.png" alt="Original Game Boy Camera Image">
+         <p>Original Game Boy Camera Image</p>
+      </div>
 
 The output image is the following one :
 
-.. figure:: ../_static/printedGameBoyCamera.png
-   :alt: Printed original Game Boy Camera image
-   :align: center
+.. container:: centered-grid
 
-   Printed original Game Boy Camera image
+   .. raw:: html
+
+      <div class="grid-item">
+         <img src="../_static/printedGameBoyCamera.png" alt="Printed Game Boy Camera Image">
+         <p>Printed Game Boy Camera Image</p>
+      </div>
