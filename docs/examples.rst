@@ -17,6 +17,7 @@ Among others, you'll be able to create an animated GIF made of color Game Boy Ca
          <img src="_static/colorizedGameBoyCamera.gif" alt="Animated GIF made of colorized images">
          <p>Animated GIF made of colorized images</p>
       </div>
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
