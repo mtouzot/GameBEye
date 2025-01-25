@@ -7,8 +7,10 @@ here's an example of how looks a printed image
 .. code-block:: python
    :linenos:
 
-   from GameBEye.gbcamimage import gbcamimage
-   from GameBEye.gbcamfilters import gbcamfilters
+   """An example to use the thermal printer effect on an image."""
+
+   from GameBEye.gbcamimage import GBCamImage
+   import GameBEye.gbcamfilters as gbcamfilters
    import cv2
 
    # Path to the image
@@ -16,13 +18,13 @@ here's an example of how looks a printed image
    img = cv2.imread(image_filepath)
 
    # Creation of an GCCamImage object
-   gb_img = gbcamimage.GBCamImage()
+   gb_img = GBCamImage()
    # Reading of the file
    gb_img.read(image_filepath)
 
    # Displaying the original image
    original_title = "Original image with {} color palette".format(
-       gb_img.color_palette.name
+      gb_img.color_palette.name
    )
    cv2.imshow(original_title, gb_img.data)
    print("Original color palette : {}".format(gb_img.color_palette))
