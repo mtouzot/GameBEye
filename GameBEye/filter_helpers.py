@@ -1,3 +1,5 @@
+"""Define filter-related unitary methods."""
+
 import typing
 
 import numpy as np
@@ -15,7 +17,7 @@ def generate_vstripes(size: Size) -> np.ndarray:
     :return: the striped image
     :rtype: np.ndarray
     """
-    stripes = np.empty(size, dtype=np.float)
+    stripes = np.empty(size, dtype=float)
     for i in range(size[1]):
         start = np.ceil(2 * np.random.rand()) - 1
         for j in range(size[0]):
@@ -35,7 +37,7 @@ def generate_hstripes(size: Size) -> np.ndarray:
     :return: the striped image
     :rtype: np.ndarray
     """
-    stripes = np.empty(size, dtype=np.float)
+    stripes = np.empty(size, dtype=float)
     for i in range(size[0]):
         start = np.ceil(2 * np.random.rand()) - 1
         for j in range(size[1]):

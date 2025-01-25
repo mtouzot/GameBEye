@@ -46,7 +46,6 @@ Here are some infos about the hardware and the Gam Boy Camera images that drive 
 .. toctree::
    :maxdepth: 1
    :glob:
-   :hidden:
    :caption: Contents:
 
    ./installation.rst

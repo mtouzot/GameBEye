@@ -3,8 +3,8 @@
 import pytest
 from typing import List
 import numpy as np
-import GameBEye.gbcamcolors.gbcamcolors as gbcamcolors
-import GameBEye.gbcamcolors.color_helpers as color_helpers
+import GameBEye.gbcamcolors as gbcamcolors
+import GameBEye.color_helpers as color_helpers
 
 
 @pytest.mark.parametrize(

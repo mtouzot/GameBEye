@@ -1,7 +1,7 @@
 """An example to display both image and its corresponding color palette."""
 
-from GameBEye.gbcamimage import gbcamimage
-from GameBEye.gbcamcolors.color_helpers import hex_to_rgb
+from GameBEye.gbcamimage import GBCamImage
+from GameBEye.color_helpers import hex_to_rgb
 import numpy as np
 import cv2
 import os
@@ -16,7 +16,7 @@ images_filepath = sorted(
 
 for image_filepath in images_filepath:
     print(f"Processing {image_filepath}")
-    gb_image = gbcamimage.GBCamImage()
+    gb_image = GBCamImage()
 
     # Reading of the file
     gb_image.read(image_filepath)

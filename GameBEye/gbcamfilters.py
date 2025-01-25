@@ -1,12 +1,12 @@
-"""A module to add filters on a GBCamImage object."""
+"""Define filters to apply to GBCamImage object."""
 
 import os
 import cv2
 import numpy as np
 
-from GameBEye.gbcamcolors.color_helpers import bgr_to_hex
-from GameBEye.gbcamimage.gbcamimage import GBCamImage
-from .filter_helpers import generate_vstripes
+from GameBEye.color_helpers import bgr_to_hex
+from GameBEye.gbcamimage import GBCamImage
+from GameBEye.filter_helpers import generate_vstripes
 
 
 def to_thermal_printer(src: GBCamImage) -> np.ndarray:
