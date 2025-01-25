@@ -81,6 +81,8 @@ html_static_path = ["_static"]
 
 html_logo = "_static/icon/logo.svg"
 
+html_css_files = ["css/custom.css"]
+
 # A favicon
 favicons = [
     "icon/favicon.ico",  # => `_static/icon/favicon.ico`
@@ -90,3 +92,7 @@ favicons = [
     "icon/android-chrome-512x512.png",
     "icon/apple-touch-icon.png",
 ]
+
+# Add custom CSS file
+def setup(app):
+    app.add_css_file("css/custom.css")

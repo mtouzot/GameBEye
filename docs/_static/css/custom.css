@@ -1,0 +1,31 @@
+div.centered-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+div.grid-item {
+    display: flex; /* Use Flexbox for inner alignment */
+    flex-direction: column; /* Stack image and text vertically */
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+    text-align: center; /* Center text under the image */
+}
+
+div.grid-item img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #666;
+    padding: 4px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+div.grid-item img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
