@@ -48,6 +48,7 @@ Here are some infos about the hardware and the Gam Boy Camera images that drive 
    :glob:
    :caption: Contents:
 
+   ./hardware.rst
    ./installation.rst
    ./GameBEye.rst
    ./examples.rst
