@@ -1,16 +1,18 @@
 """Define filters to apply to GBCamImage object."""
 
 import os
+
 import cv2
 import numpy as np
 
-from GameBEye.color_helpers import bgr_to_hex
-from GameBEye.gbcamimage import GBCamImage
-from GameBEye.filter_helpers import generate_vstripes
+from gamebeye.color_helpers import bgr_to_hex
+from gamebeye.filter_helpers import generate_vstripes
+from gamebeye.gbcamimage import GBCamImage
 
 
 def to_thermal_printer(src: GBCamImage) -> np.ndarray:
-    """Emulate a GB thermal printer and return a printed-on-paper image.
+    """
+    Emulate a GB thermal printer and return a printed-on-paper image.
 
     :param src: A Game Boy Camera Image
     :type: GBCamImage
@@ -46,9 +48,7 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
 
             if bgr_to_hex(src.data[x, y]) != src.color_palette.value[0]:
                 j = np.random.choice(nb_pixel_samples)
-                i = src.color_palette.value[1:].index(
-                    bgr_to_hex(src.data[x, y])
-                )
+                i = src.color_palette.value[1:].index(bgr_to_hex(src.data[x, y]))
 
                 dot = pixel_sample[
                     mask_size * i : mask_size * (i + 1),

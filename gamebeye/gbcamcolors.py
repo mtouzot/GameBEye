@@ -1,8 +1,9 @@
 """Define the GBColorPalettes enum."""
 
 from enum import Enum, unique
-from typing import Tuple, List
-from GameBEye.color_helpers import hex_to_rgb
+from typing import List, Tuple
+
+from gamebeye.color_helpers import hex_to_rgb
 
 
 # Class decorator @unique ensure each enum value is unique
@@ -707,7 +708,7 @@ class GBColorPalettes(Enum):
         :returns: a 2-values tuple containing the color name and its values
         :rtype: str, list
 
-        >>> from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
+        >>> from gamebeye.gbcamcolors.gbcamcolors import GBColorPalettes
         >>> GBColorPalettes.BW.describe()
         ('BW', ['#FFFFFF', '#A8A8A8', '#545454', '#000000'])
         """
@@ -720,7 +721,7 @@ class GBColorPalettes(Enum):
         :returns: the enum member as a string
         :rtype: str
 
-        >>> from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
+        >>> from gamebeye.gbcamcolors.gbcamcolors import GBColorPalettes
         >>> str(GBColorPalettes.BW)
         "BW : ['#FFFFFF', '#A8A8A8', '#545454', '#000000']"
         """
@@ -734,11 +735,8 @@ class GBColorPalettes(Enum):
         :return: the 4 colors values in the RGB space
         :rtype: list[list[int]]
 
-        >>> from GameBEye.gbcamcolors.gbcamcolors import GBColorPalettes
+        >>> from gamebeye.gbcamcolors.gbcamcolors import GBColorPalettes
         >>> GBColorPalettes.BW.rgb_colors
         [[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]]
         """
-        return [
-            [channel_val for channel_val in hex_to_rgb(hex_value)]
-            for hex_value in self.value
-        ]
+        return [list(hex_to_rgb(hex_value)) for hex_value in self.value]

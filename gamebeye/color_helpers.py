@@ -1,6 +1,7 @@
 """Define color conversions and methods related to 8-bits colorspaces."""
 
 import typing
+
 import numpy as np
 
 RGB_val = typing.List[int]
@@ -8,7 +9,8 @@ BGR_val = typing.List[int]
 
 
 def clamp(val: int) -> int:
-    """Ensure that val is between 0 and 255.
+    """
+    Ensure that val is between 0 and 255.
 
     Clamp each out of bound value.
 
@@ -17,7 +19,7 @@ def clamp(val: int) -> int:
     :returns: the clamped value
     :rtype: int
 
-    >>> from GameBEye.gbcamcolors.color_helpers import clamp
+    >>> from gamebeye.gbcamcolors.color_helpers import clamp
     >>> clamp(-125)
     0
     >>> clamp(0)
@@ -33,7 +35,8 @@ def clamp(val: int) -> int:
 
 
 def is_clamped(val: int) -> bool:
-    """Check if val is clamped between 0 and 255.
+    """
+    Check if val is clamped between 0 and 255.
 
     If val is out of boundaries, returns False. True otherwise.
 
@@ -42,7 +45,7 @@ def is_clamped(val: int) -> bool:
     :returns: the comparison result
     :rtype: bool
 
-    >>> from GameBEye.gbcamcolors.color_helpers import is_clamped
+    >>> from gamebeye.gbcamcolors.color_helpers import is_clamped
     >>> is_clamped(-125)
     False
     >>> is_clamped(0)
@@ -59,7 +62,8 @@ def is_clamped(val: int) -> bool:
 
 
 def clamp_rgb(rgb_val: RGB_val) -> RGB_val:
-    """Ensure that all RGB values are between 0 and 255.
+    """
+    Ensure that all RGB values are between 0 and 255.
 
     Clamp each out of bound value.
 
@@ -70,7 +74,7 @@ def clamp_rgb(rgb_val: RGB_val) -> RGB_val:
     :returns: the clamped list
     :rtype: List[int]
 
-    >>> from GameBEye.gbcamcolors.color_helpers import clamp_rgb
+    >>> from gamebeye.gbcamcolors.color_helpers import clamp_rgb
     >>> clamp_rgb([0, 0, 0])
     [0, 0, 0]
     >>> clamp_rgb([255, 255, 255])
@@ -90,7 +94,8 @@ def clamp_rgb(rgb_val: RGB_val) -> RGB_val:
 
 
 def is_clamped_rgb(rgb_val: RGB_val) -> bool:
-    """Check if the RGB color values are clamped between 0 and 255.
+    """
+    Check if the RGB color values are clamped between 0 and 255.
 
     If val is out of boundaries, returns False. True otherwise.
 
@@ -101,7 +106,7 @@ def is_clamped_rgb(rgb_val: RGB_val) -> bool:
     :returns: the comparison result
     :rtype: bool
 
-    >>> from GameBEye.gbcamcolors.color_helpers import is_clamped_rgb
+    >>> from gamebeye.gbcamcolors.color_helpers import is_clamped_rgb
     >>> is_clamped_rgb([0, 0, 0])
     True
     >>> is_clamped_rgb([255, 255, 255])
@@ -121,7 +126,8 @@ def is_clamped_rgb(rgb_val: RGB_val) -> bool:
 
 
 def clamp_hex(hex_val: str) -> str:
-    """Ensure that val is between '0x000000' and '0xFFFFFF'.
+    """
+    Ensure that val is between '0x000000' and '0xFFFFFF'.
 
     Clamp each out of bound value.
 
@@ -130,7 +136,7 @@ def clamp_hex(hex_val: str) -> str:
     :returns: the hex clamped value
     :rtype: str
 
-    >>> from GameBEye.gbcamcolors.color_helpers import clamp_hex
+    >>> from gamebeye.gbcamcolors.color_helpers import clamp_hex
     >>> clamp_hex('#000000')
     '#000000'
     >>> clamp_hex('#FFFFFF')
@@ -146,7 +152,8 @@ def clamp_hex(hex_val: str) -> str:
 
 
 def is_clamped_hex(hex_val: str) -> bool:
-    """Ensure that val is between '#000000' and '#FFFFFF'.
+    """
+    Ensure that val is between '#000000' and '#FFFFFF'.
 
     If val is out of boundaries, returns False. True otherwise.
 
@@ -155,7 +162,7 @@ def is_clamped_hex(hex_val: str) -> bool:
     :returns: the comparison result
     :rtype: bool
 
-    >>> from GameBEye.gbcamcolors.color_helpers import is_clamped_hex
+    >>> from gamebeye.gbcamcolors.color_helpers import is_clamped_hex
     >>> is_clamped_hex('#000000')
     True
     >>> is_clamped_hex('#FFFFFF')
@@ -170,7 +177,8 @@ def is_clamped_hex(hex_val: str) -> bool:
 
 
 def hex_to_rgb(hex_val: str) -> RGB_val:
-    """Convert a hexadecimal value to RGB values.
+    """
+    Convert a hexadecimal value to RGB values.
 
     All values are clamped between 0 and 255.
 
@@ -182,7 +190,7 @@ def hex_to_rgb(hex_val: str) -> RGB_val:
     :returns: a list containing R, G, B values.
     :rtype: a list of integer
 
-    >>> from GameBEye.gbcamcolors.color_helpers import hex_to_rgb
+    >>> from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
     >>> hex_to_rgb('#000000')
     [0, 0, 0]
     >>> hex_to_rgb('#FF0000')
@@ -201,7 +209,8 @@ def hex_to_rgb(hex_val: str) -> RGB_val:
 
 
 def hex_to_bgr(hex_val: str) -> BGR_val:
-    """Convert a hexadecimal value to BGR values.
+    """
+    Convert a hexadecimal value to BGR values.
 
     All values are clamped between 0 and 255.
 
@@ -213,7 +222,7 @@ def hex_to_bgr(hex_val: str) -> BGR_val:
     :returns: a list containing B, G, R values
     :rtype: a list of integer
 
-    >>> from GameBEye.gbcamcolors.color_helpers import hex_to_bgr
+    >>> from gamebeye.gbcamcolors.color_helpers import hex_to_bgr
     >>> hex_to_bgr('#000000')
     [0, 0, 0]
     >>> hex_to_bgr('#FF0000')
@@ -232,7 +241,8 @@ def hex_to_bgr(hex_val: str) -> BGR_val:
 
 
 def rgb_to_hex(rgb_val: RGB_val) -> str:
-    """Convert a (R, G, B) array to hexadecimal integer.
+    """
+    Convert a (R, G, B) array to hexadecimal integer.
 
     All values are clamped between 0 and 255.
 
@@ -243,7 +253,7 @@ def rgb_to_hex(rgb_val: RGB_val) -> str:
     :returns: an hexadecimal value
     :rtype: str
 
-    >>> from GameBEye.gbcamcolors.color_helpers import rgb_to_hex
+    >>> from gamebeye.gbcamcolors.color_helpers import rgb_to_hex
     >>> rgb_to_hex([0, 0, 0])
     '#000000'
     >>> rgb_to_hex([0, 0, 255])
@@ -265,7 +275,8 @@ def rgb_to_hex(rgb_val: RGB_val) -> str:
 
 
 def bgr_to_hex(bgr_val: BGR_val) -> str:
-    """Convert a (B, G, R) array to hexadecimal integer.
+    """
+    Convert a (B, G, R) array to hexadecimal integer.
 
     All values are clamped between 0 and 255.
 
@@ -276,7 +287,7 @@ def bgr_to_hex(bgr_val: BGR_val) -> str:
     :returns: an hexadecimal value
     :rtype: str
 
-    >>> from GameBEye.gbcamcolors.color_helpers import bgr_to_hex
+    >>> from gamebeye.gbcamcolors.color_helpers import bgr_to_hex
     >>> bgr_to_hex([0, 0, 0])
     '#000000'
     >>> bgr_to_hex([0, 0, 255])

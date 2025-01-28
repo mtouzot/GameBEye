@@ -1,1 +1,1 @@
-"""GameBEye unitary tests."""
+"""gamebeye unitary tests."""

@@ -1,12 +1,12 @@
 Filters module
 ===================
 
-The **GameBEye.gbcamfilters** module is as its name indicates focused on filters. It is used to *play* with :mod:`GameBEye.gbcamimage.GBCamImage`
+The **gamebeye.gbcamfilters** module is as its name indicates focused on filters. It is used to *play* with :mod:`gamebeye.gbcamimage.GBCamImage`
 
-:mod:`GameBEye.gbcamfilters` module
+:mod:`gamebeye.gbcamfilters` module
 ------------------------------------------------
 
-.. automodule:: GameBEye.gbcamfilters
+.. automodule:: gamebeye.gbcamfilters
    :members:
    :undoc-members:
    :show-inheritance:

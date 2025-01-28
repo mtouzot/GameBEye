@@ -10,15 +10,15 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+import importlib.metadata
 import os
 import sys
-import importlib.metadata
 
 sys.path.insert(0, os.path.abspath(".."))
 
 
 # -- Project information -----------------------------------------------------
-project = "GameBEye"
+project = "gamebeye"
 copyright = "2021 - 2025, Martin TOUZOT"
 author = "Martin TOUZOT"
 
@@ -92,6 +92,7 @@ favicons = [
     "icon/android-chrome-512x512.png",
     "icon/apple-touch-icon.png",
 ]
+
 
 # Add custom CSS file
 def setup(app):

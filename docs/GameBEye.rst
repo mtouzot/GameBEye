@@ -1,7 +1,7 @@
-GameBEye documentation
+gamebeye documentation
 ======================
 
-.. automodule:: GameBEye
+.. automodule:: gamebeye
    :members:
    :undoc-members:
    :show-inheritance:
@@ -9,6 +9,6 @@ GameBEye documentation
 .. toctree::
    :maxdepth: 4
 
-   ./GameBEye/image.rst
-   ./GameBEye/colors.rst
-   ./GameBEye/filters.rst
+   ./gamebeye/image.rst
+   ./gamebeye/colors.rst
+   ./gamebeye/filters.rst

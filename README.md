@@ -1,10 +1,10 @@
-# GameBEye
+# gamebeye
 
-> GameBEye is a **Python Library** to process [Game Boy Camera](https://en.wikipedia.org/wiki/Game_Boy_Camera) images.
+> gamebeye is a **Python Library** to process [Game Boy Camera](https://en.wikipedia.org/wiki/Game_Boy_Camera) images.
 
 
-- **Source code** 📁: [https://github.com/mtouzot/GameBEye](https://github.com/mtouzot/GameBEye)
-- **Issues** 🆘: [https://github.com/mtouzot/GameBEye/issues](https://github.com/mtouzot/GameBEye/issues)
+- **Source code** 📁: [https://github.com/mtouzot/gamebeye](https://github.com/mtouzot/gamebeye)
+- **Issues** 🆘: [https://github.com/mtouzot/gamebeye/issues](https://github.com/mtouzot/gamebeye/issues)
 
 ## 📜 Description
 

@@ -1,10 +1,12 @@
-"""All relative tests to GameBEye.gbcamcolors.gbcamcolors file."""
+"""All relative tests to gamebeye.gbcamcolors.gbcamcolors file."""
 
-import pytest
 from typing import List
+
 import numpy as np
-import GameBEye.gbcamcolors as gbcamcolors
-import GameBEye.color_helpers as color_helpers
+import pytest
+
+import gamebeye.color_helpers as color_helpers
+import gamebeye.gbcamcolors as gbcamcolors
 
 
 @pytest.mark.parametrize(
@@ -24,7 +26,7 @@ import GameBEye.color_helpers as color_helpers
         ),
     ],
 )
-def test_GBColorPalettes(
+def test_gbcolorpalettes(
     color: gbcamcolors.GBColorPalettes,
     name: str,
     value: List[str],
