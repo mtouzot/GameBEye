@@ -1,9 +1,9 @@
-Welcome to GameBEye's documentation!
+Welcome to gamebeye's documentation!
 ====================================
 
 |Github| |License| |Issues| |Release|
 
-GameBEye is a **Python library** to process `Game Boy Camera <https://en.wikipedia.org/wiki/Game_Boy_Camera>`_ images.
+gamebeye is a **Python library** to process `Game Boy Camera <https://en.wikipedia.org/wiki/Game_Boy_Camera>`_ images.
 
 Here are what a Game Boy camera can capture:
 
@@ -50,7 +50,7 @@ Here are some infos about the hardware and the Gam Boy Camera images that drive 
 
    ./hardware.rst
    ./installation.rst
-   ./GameBEye.rst
+   ./gamebeye.rst
    ./examples.rst
 
 Indices and tables
@@ -60,17 +60,17 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-.. |Github| image:: https://img.shields.io/github/stars/mtouzot/GameBEye?label=Github&logo=github
-   :target: https://github.com/mtouzot/GameBEye
+.. |Github| image:: https://img.shields.io/github/stars/mtouzot/gamebeye?label=Github&logo=github
+   :target: https://github.com/mtouzot/gamebeye
 
-.. |License| image:: https://img.shields.io/github/license/mtouzot/GameBEye
-   :target: https://github.com/mtouzot/GameBEye/blob/master/LICENSE
+.. |License| image:: https://img.shields.io/github/license/mtouzot/gamebeye
+   :target: https://github.com/mtouzot/gamebeye/blob/master/LICENSE
 
-.. |Issues| image:: https://img.shields.io/github/issues/mtouzot/GameBEye
-   :target: https://github.com/mtouzot/GameBEye/issues
+.. |Issues| image:: https://img.shields.io/github/issues/mtouzot/gamebeye
+   :target: https://github.com/mtouzot/gamebeye/issues
 
-.. |Release| image:: https://img.shields.io/github/v/release/mtouzot/GameBEye
-   :target: https://github.com/mtouzot/GameBEye/releases
+.. |Release| image:: https://img.shields.io/github/v/release/mtouzot/gamebeye
+   :target: https://github.com/mtouzot/gamebeye/releases
 
 .. |BWpalette| image:: ./_static/colorPalettes/BW.png
    :class: align-center

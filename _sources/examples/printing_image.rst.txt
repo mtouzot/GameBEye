@@ -9,8 +9,8 @@ here's an example of how looks a printed image
 
    """An example to use the thermal printer effect on an image."""
 
-   from GameBEye.gbcamimage import GBCamImage
-   import GameBEye.gbcamfilters as gbcamfilters
+   from gamebeye.gbcamimage import GBCamImage
+   import gamebeye.gbcamfilters as gbcamfilters
    import cv2
 
    # Path to the image
