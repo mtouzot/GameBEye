@@ -1,8 +1,9 @@
 """An example to use the thermal printer effect on an image."""
 
-from GameBEye.gbcamimage import GBCamImage
-import GameBEye.gbcamfilters as gbcamfilters
 import cv2
+
+import gamebeye.gbcamfilters as gbcamfilters
+from gamebeye.gbcamimage import GBCamImage
 
 # Path to the image
 image_filepath = "images\\originalImage.png"

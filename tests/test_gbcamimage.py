@@ -1,8 +1,9 @@
-"""All relative tests to GameBEye.gbcamimage.gbcamimage file."""
+"""All relative tests to gamebeye.gbcamimage.gbcamimage file."""
 
-import pytest
 import numpy as np
-import GameBEye.gbcamimage as gbcamimage
+import pytest
+
+import gamebeye.gbcamimage as gbcamimage
 
 
 def test_gbcamimage():

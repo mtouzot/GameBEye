@@ -6,8 +6,8 @@ Display image and its color palette in a second window
 
     """An example to display both image and its corresponding color palette."""
 
-    from GameBEye.gbcamimage import GBCamImage
-    from GameBEye.color_helpers import hex_to_rgb
+    from gamebeye.gbcamimage import GBCamImage
+    from gamebeye.color_helpers import hex_to_rgb
     import numpy as np
     import cv2
     import os

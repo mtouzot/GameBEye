@@ -1,7 +1,7 @@
 Colors module
 =============
 
-The **GameBEye.gbcamcolors** module is as its name indicates focused on colors and color space conversion. It deals with a selection of color palettes (picked and adapted from `HerrZatacke <https://github.com/HerrZatacke>`_ `gb-printer-web <https://github.com/HerrZatacke/gb-printer-web>`_).
+The **gamebeye.gbcamcolors** module is as its name indicates focused on colors and color space conversion. It deals with a selection of color palettes (picked and adapted from `HerrZatacke <https://github.com/HerrZatacke>`_ `gb-printer-web <https://github.com/HerrZatacke/gb-printer-web>`_).
 
 Thoses colors allowed me to make this small animation :
 
@@ -14,24 +14,24 @@ Thoses colors allowed me to make this small animation :
          <p>Animated GIF made of colorized images</p>
       </div>
 
-:mod:`GameBEye.gbcamcolors` module
+:mod:`gamebeye.gbcamcolors` module
 ----------------------------------
 
 This module also uses methods from :ref:`ch module`
 
-.. automodule:: GameBEye.gbcamcolors
+.. automodule:: gamebeye.gbcamcolors
 
-   .. autoclass:: GameBEye.gbcamcolors.GBColorPalettes
+   .. autoclass:: gamebeye.gbcamcolors.GBColorPalettes
       :members:
       :undoc-members:
       :show-inheritance:
 
 .. _ch module:
 
-:mod:`GameBEye.color\_helpers` module
+:mod:`gamebeye.color\_helpers` module
 -------------------------------------
 
-.. automodule:: GameBEye.color_helpers
+.. automodule:: gamebeye.color_helpers
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,7 +1,8 @@
 """An example to show an image, to log its name and color palette."""
 
-from GameBEye.gbcamimage import GBCamImage
 import cv2
+
+from gamebeye.gbcamimage import GBCamImage
 
 # Path to the image
 image_filepath = "images\\originalImage.png"

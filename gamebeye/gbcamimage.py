@@ -1,16 +1,17 @@
 """Define the GBCamImage class."""
 
 import os
+from typing import NoReturn, Tuple
+
 import cv2
 import numpy as np
 
-from typing import NoReturn, Tuple
-from GameBEye.color_helpers import (
-    hex_to_rgb,
-    hex_to_bgr,
+from gamebeye.color_helpers import (
     bgr_to_hex,
+    hex_to_bgr,
+    hex_to_rgb,
 )
-from GameBEye.gbcamcolors import GBColorPalettes
+from gamebeye.gbcamcolors import GBColorPalettes
 
 Shape = Tuple[int, int, int]
 
@@ -98,11 +99,7 @@ class GBCamImage:
             raise ValueError("The shape doesn't fit the GBCamImage shape")
 
         bgr_colors = (
-            np.unique(
-                img.view(
-                    np.dtype((np.void, img.dtype.itemsize * img.shape[2]))
-                )
-            )
+            np.unique(img.view(np.dtype((np.void, img.dtype.itemsize * img.shape[2]))))
             .view(img.dtype)
             .reshape(-1, img.shape[2])
         )

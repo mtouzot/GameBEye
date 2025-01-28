@@ -9,7 +9,7 @@ on:
     paths:
       - .github/workflows/gh-pages.yml
       - docs/**
-      - GameBEye/**
+      - gamebeye/**
       - examples/**
 
 jobs:

@@ -18,7 +18,7 @@ def generate_vstripes(size: Size) -> np.ndarray:
     :rtype: np.ndarray
     """
     stripes = np.empty(size, dtype=float)
-    for i in range(size[1]):
+    for _ in range(size[1]):
         start = np.ceil(2 * np.random.rand()) - 1
         for j in range(size[0]):
             stripes[:, j] = start
@@ -40,7 +40,7 @@ def generate_hstripes(size: Size) -> np.ndarray:
     stripes = np.empty(size, dtype=float)
     for i in range(size[0]):
         start = np.ceil(2 * np.random.rand()) - 1
-        for j in range(size[1]):
+        for _ in range(size[1]):
             stripes[i, :] = start
             if np.random.rand() < 0.2:
                 start = np.ceil(2 * np.random.rand()) - 1

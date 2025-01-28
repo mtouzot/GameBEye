@@ -1,8 +1,9 @@
 """An example to change image color palette from BW to AZC."""
 
-from GameBEye.gbcamimage import GBCamImage
-from GameBEye.gbcamcolors import GBColorPalettes
 import cv2
+
+from gamebeye.gbcamcolors import GBColorPalettes
+from gamebeye.gbcamimage import GBCamImage
 
 # Path to the image
 image_filepath = "images\\originalImage.png"
@@ -25,9 +26,7 @@ gb_color_palette = GBColorPalettes.CCTR
 gb_img.change_color(color_palette=gb_color_palette)
 
 # Displaying the colorized image
-color_title = "Colorized image with {} color palette".format(
-    gb_img.color_palette.name
-)
+color_title = "Colorized image with {} color palette".format(gb_img.color_palette.name)
 cv2.imshow(color_title, gb_img.data)
 print(
     "Colorized image color palette : {}\nRequired color palette : {}".format(
