@@ -1,23 +1,11 @@
 # .pre-commit-config.yaml
 ---
 repos:
-  - repo: https://github.com/python/black.git
-    rev: 22.6.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+    rev: v0.9.3
     hooks:
-      - id: black
-        language_version: python3
-  - repo: https://gitlab.com/pycqa/flake8.git
-    rev: 3.9.2
-    hooks:
-      - id: flake8
-        additional_dependencies:
-          - flake8-black>=0.1.1
-        language_version: python3
-  - repo: https://gitlab.com/pycqa/pydocstyle.git
-    rev: 6.1.1
-    hooks:
-      - id: pydocstyle
-        additional_dependencies:
-          - toml>=0.10.2
-        language_version: python3
-        exclude: docs
+      # Run the linter.
+      - id: ruff
+      # Run the formatter.
+      - id: ruff-format

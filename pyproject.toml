@@ -56,10 +56,8 @@ line-length = 79
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
-flake8 = "^7.1.1"
-black = "^24.10.0"
-pydocstyle = "^6.3.0"
 coverage = "^7.6.10"
+ruff = "^0.9.3"
 
 [tool.poetry.group.docs.dependencies]
 setuptools = "^75.8.0"
@@ -71,3 +69,18 @@ sphinx-favicon = "^1.0.1"
 packages = [
     { include = "GameBEye" },
 ]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "N",  # PEP8 naming convetions
+    "D"  # pydocstyle
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/docs/*" = ["D"]
