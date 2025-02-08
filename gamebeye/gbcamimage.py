@@ -11,7 +11,7 @@ from gamebeye.color_helpers import (
     hex_to_bgr,
     hex_to_rgb,
 )
-from gamebeye.gbcamcolors import GBColorPalettes
+from gamebeye.gbcampalettes import GBColorPalettes
 
 Shape = Tuple[int, int, int]
 

@@ -1,4 +1,4 @@
-"""All relative tests to gamebeye.gbcamcolors.gbcamcolors file."""
+"""All relative tests to gamebeye.gbcampalettes file."""
 
 from typing import List
 
@@ -6,20 +6,20 @@ import numpy as np
 import pytest
 
 import gamebeye.color_helpers as color_helpers
-import gamebeye.gbcamcolors as gbcamcolors
+import gamebeye.gbcampalettes as gbcampalettes
 
 
 @pytest.mark.parametrize(
     "color,name,value,rgb_colors",
     [
         (
-            gbcamcolors.GBColorPalettes.BW,
+            gbcampalettes.GBColorPalettes.BW,
             "BW",
             ["#FFFFFF", "#A8A8A8", "#545454", "#000000"],
             [[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]],
         ),
         (
-            gbcamcolors.GBColorPalettes.GBCEUUS,
+            gbcampalettes.GBColorPalettes.GBCEUUS,
             "GBCEUUS",
             ["#FFFFFF", "#7BFF30", "#0163C6", "#000000"],
             [[255, 255, 255], [123, 255, 48], [1, 99, 198], [0, 0, 0]],
@@ -27,12 +27,12 @@ import gamebeye.gbcamcolors as gbcamcolors
     ],
 )
 def test_gbcolorpalettes(
-    color: gbcamcolors.GBColorPalettes,
+    color: gbcampalettes.GBColorPalettes,
     name: str,
     value: List[str],
     rgb_colors: List[List[int]],
 ):
-    """Test gbcamcolors.GBColorPalettes object."""
+    """Test gbcampalettes.GBColorPalettes object."""
     assert color.value == value
     assert color.name == name
     assert str(color) == f"{name} : {value}"

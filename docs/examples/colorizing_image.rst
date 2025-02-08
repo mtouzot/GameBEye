@@ -22,7 +22,7 @@ You'll see in this example the result of updating the color palette of an origin
     """An example to change image color palette from BW to AZC."""
 
     from gamebeye.gbcamimage import GBCamImage
-    from gamebeye.gbcamcolors import GBColorPalettes
+    from gamebeye.gbcampalettes import GBColorPalettes
     import cv2
 
     # Path to the image
