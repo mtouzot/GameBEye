@@ -19,7 +19,7 @@ def clamp(val: int) -> int:
     :returns: the clamped value
     :rtype: int
 
-    >>> from gamebeye.gbcamcolors.color_helpers import clamp
+    >>> from gamebeye.color_helpers import clamp
     >>> clamp(-125)
     0
     >>> clamp(0)
@@ -45,7 +45,7 @@ def is_clamped(val: int) -> bool:
     :returns: the comparison result
     :rtype: bool
 
-    >>> from gamebeye.gbcamcolors.color_helpers import is_clamped
+    >>> from gamebeye.color_helpers import is_clamped
     >>> is_clamped(-125)
     False
     >>> is_clamped(0)
@@ -74,7 +74,7 @@ def clamp_rgb(rgb_val: RGB_val) -> RGB_val:
     :returns: the clamped list
     :rtype: List[int]
 
-    >>> from gamebeye.gbcamcolors.color_helpers import clamp_rgb
+    >>> from gamebeye.color_helpers import clamp_rgb
     >>> clamp_rgb([0, 0, 0])
     [0, 0, 0]
     >>> clamp_rgb([255, 255, 255])
@@ -106,7 +106,7 @@ def is_clamped_rgb(rgb_val: RGB_val) -> bool:
     :returns: the comparison result
     :rtype: bool
 
-    >>> from gamebeye.gbcamcolors.color_helpers import is_clamped_rgb
+    >>> from gamebeye.color_helpers import is_clamped_rgb
     >>> is_clamped_rgb([0, 0, 0])
     True
     >>> is_clamped_rgb([255, 255, 255])
@@ -136,7 +136,7 @@ def clamp_hex(hex_val: str) -> str:
     :returns: the hex clamped value
     :rtype: str
 
-    >>> from gamebeye.gbcamcolors.color_helpers import clamp_hex
+    >>> from gamebeye.color_helpers import clamp_hex
     >>> clamp_hex('#000000')
     '#000000'
     >>> clamp_hex('#FFFFFF')
@@ -162,7 +162,7 @@ def is_clamped_hex(hex_val: str) -> bool:
     :returns: the comparison result
     :rtype: bool
 
-    >>> from gamebeye.gbcamcolors.color_helpers import is_clamped_hex
+    >>> from gamebeye.color_helpers import is_clamped_hex
     >>> is_clamped_hex('#000000')
     True
     >>> is_clamped_hex('#FFFFFF')
@@ -190,7 +190,7 @@ def hex_to_rgb(hex_val: str) -> RGB_val:
     :returns: a list containing R, G, B values.
     :rtype: a list of integer
 
-    >>> from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
+    >>> from gamebeye.color_helpers import hex_to_rgb
     >>> hex_to_rgb('#000000')
     [0, 0, 0]
     >>> hex_to_rgb('#FF0000')
@@ -222,7 +222,7 @@ def hex_to_bgr(hex_val: str) -> BGR_val:
     :returns: a list containing B, G, R values
     :rtype: a list of integer
 
-    >>> from gamebeye.gbcamcolors.color_helpers import hex_to_bgr
+    >>> from gamebeye.color_helpers import hex_to_bgr
     >>> hex_to_bgr('#000000')
     [0, 0, 0]
     >>> hex_to_bgr('#FF0000')
@@ -253,7 +253,7 @@ def rgb_to_hex(rgb_val: RGB_val) -> str:
     :returns: an hexadecimal value
     :rtype: str
 
-    >>> from gamebeye.gbcamcolors.color_helpers import rgb_to_hex
+    >>> from gamebeye.color_helpers import rgb_to_hex
     >>> rgb_to_hex([0, 0, 0])
     '#000000'
     >>> rgb_to_hex([0, 0, 255])
@@ -287,7 +287,7 @@ def bgr_to_hex(bgr_val: BGR_val) -> str:
     :returns: an hexadecimal value
     :rtype: str
 
-    >>> from gamebeye.gbcamcolors.color_helpers import bgr_to_hex
+    >>> from gamebeye.color_helpers import bgr_to_hex
     >>> bgr_to_hex([0, 0, 0])
     '#000000'
     >>> bgr_to_hex([0, 0, 255])
