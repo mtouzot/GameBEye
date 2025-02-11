@@ -1,11 +1,7 @@
 """Define color conversions and methods related to 8-bits colorspaces."""
 
-import typing
-
 import numpy as np
-
-RGB_val = typing.List[int]
-BGR_val = typing.List[int]
+import numpy.typing as npt
 
 
 def clamp(val: int) -> int:
@@ -61,7 +57,7 @@ def is_clamped(val: int) -> bool:
     return 0 <= val <= 255
 
 
-def clamp_rgb(rgb_val: RGB_val) -> RGB_val:
+def clamp_rgb(rgb_val: npt.ArrayLike) -> np.ndarray:
     """
     Ensure that all RGB values are between 0 and 255.
 
@@ -90,10 +86,10 @@ def clamp_rgb(rgb_val: RGB_val) -> RGB_val:
         raise ValueError("rgb_val argument must be a 3 values list")
     if isinstance(rgb_val, np.ndarray):
         rgb_val = rgb_val.tolist()
-    return [clamp(val) for val in rgb_val]
+    return np.array([clamp(val) for val in rgb_val])
 
 
-def is_clamped_rgb(rgb_val: RGB_val) -> bool:
+def is_clamped_rgb(rgb_val: npt.ArrayLike) -> bool:
     """
     Check if the RGB color values are clamped between 0 and 255.
 
@@ -176,7 +172,7 @@ def is_clamped_hex(hex_val: str) -> bool:
     return int("0x000000", 0) <= int(hex_val, 0) <= int("0xFFFFFF", 0)
 
 
-def hex_to_rgb(hex_val: str) -> RGB_val:
+def hex_to_rgb(hex_val: str) -> np.ndarray:
     """
     Convert a hexadecimal value to RGB values.
 
@@ -205,10 +201,10 @@ def hex_to_rgb(hex_val: str) -> RGB_val:
     [255, 255, 255]
     """
     hex_val = clamp_hex(hex_val).replace("#", "0x")
-    return [((int(hex_val, 0) >> idx * 8) & 255) for idx in range(2, -1, -1)]
+    return np.array([((int(hex_val, 0) >> idx * 8) & 255) for idx in range(2, -1, -1)])
 
 
-def hex_to_bgr(hex_val: str) -> BGR_val:
+def hex_to_bgr(hex_val: str) -> np.ndarray:
     """
     Convert a hexadecimal value to BGR values.
 
@@ -237,10 +233,10 @@ def hex_to_bgr(hex_val: str) -> BGR_val:
     [255, 255, 255]
     """
     hex_val = clamp_hex(hex_val).replace("#", "0x")
-    return [((int(hex_val, 0) >> idx * 8) & 255) for idx in range(0, 3, 1)]
+    return np.array([((int(hex_val, 0) >> idx * 8) & 255) for idx in range(0, 3, 1)])
 
 
-def rgb_to_hex(rgb_val: RGB_val) -> str:
+def rgb_to_hex(rgb_val: npt.ArrayLike) -> str:
     """
     Convert a (R, G, B) array to hexadecimal integer.
 
@@ -274,7 +270,7 @@ def rgb_to_hex(rgb_val: RGB_val) -> str:
     return "#%02X%02X%02X" % rgb_val
 
 
-def bgr_to_hex(bgr_val: BGR_val) -> str:
+def bgr_to_hex(bgr_val: npt.ArrayLike) -> str:
     """
     Convert a (B, G, R) array to hexadecimal integer.
 

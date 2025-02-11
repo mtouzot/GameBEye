@@ -3,6 +3,7 @@
 from typing import List
 
 import numpy as np
+import numpy.testing as npt
 import pytest
 
 import gamebeye.gbcamcolors.color_helpers as color_helpers
@@ -57,20 +58,21 @@ def test_clamp_int(value, excepted):
 
 
 @pytest.mark.parametrize(
-    "value,excepted",
+    "value,color,is_clamped",
     [
-        ([0, 0, 0], ([0, 0, 0], True)),
-        ([255, 255, 255], ([255, 255, 255], True)),
-        ([512, 0, 0], ([255, 0, 0], False)),
-        (np.array([0, 0, 0]), ([0, 0, 0], True)),
-        (np.array([255, 255, 255]), ([255, 255, 255], True)),
-        (np.array([512, 0, 0]), ([255, 0, 0], False)),
+        ([0, 0, 0], np.array([0, 0, 0]), True),
+        ([255, 255, 255], np.array([255, 255, 255]), True),
+        ([512, 0, 0], np.array([255, 0, 0]), False),
+        (np.array([0, 0, 0]), np.array([0, 0, 0]), True),
+        (np.array([255, 255, 255]), np.array([255, 255, 255]), True),
+        (np.array([512, 0, 0]), np.array([255, 0, 0]), False),
     ],
 )
-def test_clamp_rgb(value, excepted):
-    """Test `clamp_hex` and `is_clampled_hex` methods."""
-    assert color_helpers.clamp_rgb(value) == excepted[0]
-    assert color_helpers.is_clamped_rgb(value) == excepted[1]
+def test_clamp_rgb(value, color, is_clamped):
+    """Test `clamp_rgb` and `is_clamped_rgb` methods."""
+    clamped = color_helpers.clamp_rgb(value)
+    npt.assert_array_equal(clamped, color)
+    assert color_helpers.is_clamped_rgb(value) == is_clamped
 
 
 @pytest.mark.parametrize(
@@ -119,27 +121,27 @@ def test_clamp_hex(value, excepted):
 @pytest.mark.parametrize(
     "value,expected",
     [
-        ("#000000", [0, 0, 0]),
-        ("#FF0000", [255, 0, 0]),
-        ("#F000000", [255, 255, 255]),
+        ("#000000", np.array([0, 0, 0])),
+        ("#FF0000", np.array([255, 0, 0])),
+        ("#F000000", np.array([255, 255, 255])),
     ],
 )
 def test_hex_to_rgb(value, expected):
     """Test `hex_to_rgb` conversion."""
-    assert color_helpers.hex_to_rgb(value) == expected
+    npt.assert_array_equal(color_helpers.hex_to_rgb(value), expected)
 
 
 @pytest.mark.parametrize(
     "value,expected",
     [
-        ("#000000", [0, 0, 0]),
-        ("#FF0000", [0, 0, 255]),
-        ("#F000000", [255, 255, 255]),
+        ("#000000", np.array([0, 0, 0])),
+        ("#FF0000", np.array([0, 0, 255])),
+        ("#F000000", np.array([255, 255, 255])),
     ],
 )
 def test_hex_to_bgr(value, expected):
     """Test `hex_to_bgr` method."""
-    assert color_helpers.hex_to_bgr(value) == expected
+    npt.assert_array_equal(color_helpers.hex_to_bgr(value), expected)
 
 
 @pytest.mark.parametrize(
