@@ -145,11 +145,8 @@ class GBCamImage:
         img_temp = np.empty_like(self.__data)
         for idx, thresh in enumerate(color_palette.value):
             thresh = hex_to_bgr(thresh)
-            for x in np.arange(self.__data.shape[0]):
-                for y in np.arange(self.__data.shape[1]):
-                    current_color = hex_to_rgb(self.__colors.value[idx])
-                    if all(self.__data[x, y] == current_color):
-                        img_temp[x, y] = thresh
+            current_color = hex_to_rgb(self.__colors.value[idx])
+            img_temp = np.where(self.__data == current_color, thresh, img_temp)
 
         self.__data[:] = img_temp
         self.__colors = color_palette
