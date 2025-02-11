@@ -3,7 +3,7 @@
 from enum import Enum, unique
 from typing import List, Tuple
 
-from gamebeye.color_helpers import hex_to_rgb
+from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
 
 
 # Class decorator @unique ensure each enum value is unique

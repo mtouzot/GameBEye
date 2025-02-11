@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-import gamebeye.gbcamimage as gbcamimage
+import gamebeye.gbcamimage.gbcamimage as gbcamimage
 
 
 def test_gbcamimage():

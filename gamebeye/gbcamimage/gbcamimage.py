@@ -6,12 +6,12 @@ from typing import NoReturn, Tuple
 import cv2
 import numpy as np
 
-from gamebeye.color_helpers import (
+from gamebeye.gbcamcolors.color_helpers import (
     bgr_to_hex,
     hex_to_bgr,
     hex_to_rgb,
 )
-from gamebeye.gbcampalettes import GBColorPalettes
+from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
 
 Shape = Tuple[int, int, int]
 

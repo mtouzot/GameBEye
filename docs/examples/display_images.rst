@@ -3,21 +3,20 @@ Display image and its color palette in a second window
 
 .. code-block:: python
    :linenos:
-
+    
     """An example to display both image and its corresponding color palette."""
 
-    from gamebeye.gbcamimage import GBCamImage
-    from gamebeye.color_helpers import hex_to_rgb
-    import numpy as np
-    import cv2
     import os
+
+    import cv2
+    import numpy as np
+
+    from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
+    from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
     input_folder = os.path.join("images", "colorizedImages")
     images_filepath = sorted(
-        [
-            os.path.join(input_folder, filename)
-            for filename in os.listdir(input_folder)
-        ]
+        [os.path.join(input_folder, filename) for filename in os.listdir(input_folder)]
     )
 
     for image_filepath in images_filepath:
@@ -44,9 +43,7 @@ Display image and its color palette in a second window
             color_palettes.append(cv2.merge([blue, green, red]))
         color_palettes = cv2.hconcat(color_palettes)
 
-        color_palette_title = "Color palettes {}".format(
-            gb_image.color_palette.name
-        )
+        color_palette_title = "Color palettes {}".format(gb_image.color_palette.name)
         cv2.imshow(color_palette_title, color_palettes)
 
         cv2.waitKey()

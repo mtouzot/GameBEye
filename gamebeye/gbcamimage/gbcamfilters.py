@@ -5,9 +5,9 @@ import os
 import cv2
 import numpy as np
 
-from gamebeye.color_helpers import bgr_to_hex
-from gamebeye.filter_helpers import generate_vstripes
-from gamebeye.gbcamimage import GBCamImage
+from gamebeye.gbcamcolors.color_helpers import bgr_to_hex
+from gamebeye.gbcamimage.filter_helpers import generate_vstripes
+from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
 
 def to_thermal_printer(src: GBCamImage) -> np.ndarray:
@@ -19,6 +19,15 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
 
     :return: the printed image
     :rtype: np.ndarray
+
+    .. raw:: html
+
+        <div class="centered-grid">
+        <div class="grid-item">
+        <img src="../_static/printedGameBoyCamera.png">
+        <p>Thermal printed image</p>
+        </div>
+        </div>
     """
     mask_size = 20
     overlap = 4

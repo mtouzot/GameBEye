@@ -21,9 +21,10 @@ You'll see in this example the result of updating the color palette of an origin
 
     """An example to change image color palette from BW to AZC."""
 
-    from gamebeye.gbcamimage import GBCamImage
-    from gamebeye.gbcampalettes import GBColorPalettes
     import cv2
+
+    from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
+    from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
     # Path to the image
     image_filepath = "images\\originalImage.png"
@@ -46,9 +47,7 @@ You'll see in this example the result of updating the color palette of an origin
     gb_img.change_color(color_palette=gb_color_palette)
 
     # Displaying the colorized image
-    color_title = "Colorized image with {} color palette".format(
-        gb_img.color_palette.name
-    )
+    color_title = "Colorized image with {} color palette".format(gb_img.color_palette.name)
     cv2.imshow(color_title, gb_img.data)
     print(
         "Colorized image color palette : {}\nRequired color palette : {}".format(

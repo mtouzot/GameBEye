@@ -1,9 +1,10 @@
-Colors module
-=============
+**gamebeye.gbcamcolors** module
+===============================
 
-The **gamebeye.gbcamcolors**  and **gamebeye.gbcampalettes** enumerations are as its name indicates focused on colors and color palettes. It deals with a selection of color palettes (picked and adapted from `HerrZatacke <https://github.com/HerrZatacke>`_ `gb-printer-web <https://github.com/HerrZatacke/gb-printer-web>`_).
 
-The module **gamebeye.color_helpers** module gather color conversions.
+The current **gamebeye.gbcamcolors** manage colors, palettes and all stuff related to process images color. The selection of color palettes is picked and adapted from `HerrZatacke <https://github.com/HerrZatacke>`_ `gb-printer-web <https://github.com/HerrZatacke/gb-printer-web>`_.
+
+The **color_helpers** module gather basic color conversion methods.
 
 Thoses colors allowed me to make this small animation :
 
@@ -16,32 +17,28 @@ Thoses colors allowed me to make this small animation :
          <p>Animated GIF made of colorized images</p>
       </div>
 
-:mod:`gamebeye.gbcamcolors` module
-----------------------------------
+:mod:`GBColorValues` class
+--------------------------
 
-.. automodule:: gamebeye.gbcamcolors
-
-   .. autoclass:: gamebeye.gbcamcolors.GBColorValues
-      :members:
-      :undoc-members:
-      :show-inheritance:
-
-:mod:`gamebeye.gbcampalettes` module
-------------------------------------
-
-.. automodule:: gamebeye.gbcampalettes
-
-   .. autoclass:: gamebeye.gbcampalettes.GBColorPalettes
-      :members:
-      :undoc-members:
-      :show-inheritance:
-
-.. _ch module:
-
-:mod:`gamebeye.color\_helpers` module
--------------------------------------
-
-.. automodule:: gamebeye.color_helpers
+.. autoclass:: gamebeye.gbcamcolors.gbcolorvalues.GBColorValues
    :members:
    :undoc-members:
    :show-inheritance:
+
+:mod:`GBColorPalettes` class
+----------------------------
+
+.. autoclass:: gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+:mod:`color\_helpers` module
+-------------------------------------------------
+
+.. automodule:: gamebeye.gbcamcolors.color_helpers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. _ch module:

@@ -5,8 +5,8 @@ import os
 import cv2
 import numpy as np
 
-from gamebeye.color_helpers import hex_to_rgb
-from gamebeye.gbcamimage import GBCamImage
+from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
+from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
 input_folder = os.path.join("images", "colorizedImages")
 images_filepath = sorted(

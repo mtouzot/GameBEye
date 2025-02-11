@@ -5,8 +5,8 @@ from typing import List
 import numpy as np
 import pytest
 
-import gamebeye.color_helpers as color_helpers
-import gamebeye.gbcampalettes as gbcampalettes
+import gamebeye.gbcamcolors.color_helpers as color_helpers
+import gamebeye.gbcamcolors.gbcolorpalettes as gbcampalettes
 
 
 @pytest.mark.parametrize(
