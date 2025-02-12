@@ -152,7 +152,7 @@ def test_hex_to_bgr(value, expected):
         ([255, 255, 255], "#FFFFFF"),
     ],
 )
-def test_(value, expected):
+def test_rgb_to_hex(value, expected):
     """Test `rgb_to_hex` method."""
     assert color_helpers.rgb_to_hex(value) == expected
 
