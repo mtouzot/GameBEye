@@ -708,7 +708,7 @@ class GBColorPalettes(Enum):
         :returns: a 2-values tuple containing the color name and its values
         :rtype: str, list
 
-        >>> from gamebeye.gbcampalettes import GBColorPalettes
+        >>> from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
         >>> GBColorPalettes.BW.describe()
         ('BW', ['#FFFFFF', '#A8A8A8', '#545454', '#000000'])
         """
@@ -721,7 +721,7 @@ class GBColorPalettes(Enum):
         :returns: the enum member as a string
         :rtype: str
 
-        >>> from gamebeye.gbcampalettes import GBColorPalettes
+        >>> from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
         >>> str(GBColorPalettes.BW)
         "BW : ['#FFFFFF', '#A8A8A8', '#545454', '#000000']"
         """
@@ -735,7 +735,7 @@ class GBColorPalettes(Enum):
         :return: the 4 colors values in the RGB space
         :rtype: list[list[int]]
 
-        >>> from gamebeye.gbcampalettes import GBColorPalettes
+        >>> from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
         >>> GBColorPalettes.BW.rgb_colors
         [[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]]
         """

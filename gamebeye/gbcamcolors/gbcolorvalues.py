@@ -2304,7 +2304,7 @@ class GBColorValues(Enum):
         :returns: a 2-values tuple containing the color name and its values
         :rtype: str, list
 
-        >>> from gamebeye.gbcampalettes import GBcolorValues
+        >>> from gamebeye.gbcamcolors.gbcolorvalues import GBColorValues
         >>> GBcolorValues.ROYAL_NAVY_BLUE.describe()
         ('ROYAL_NAVY_BLUE', '#0163C6')
         """
@@ -2317,7 +2317,7 @@ class GBColorValues(Enum):
         :returns: the enum member as a string
         :rtype: str
 
-        >>> from gamebeye.gbcampalettes import GBcolorValues
+        >>> from gamebeye.gbcamcolors.gbcolorvalues import GBColorValues
         >>> str(GBcolorValues.ROYAL_NAVY_BLUE)
         "ROYAL_NAVY_BLUE : '#0163C6'"
         """
@@ -2331,7 +2331,7 @@ class GBColorValues(Enum):
         :return: the color values in the RGB space
         :rtype: list[int]
 
-        >>> from gamebeye.gbcampalettes import GBcolorValues
+        >>> from gamebeye.gbcamcolors.gbcolorvalues import GBColorValues
         >>> GBcolorValues.ROYAL_NAVY_BLUE
         [1, 99, 198]
         """
