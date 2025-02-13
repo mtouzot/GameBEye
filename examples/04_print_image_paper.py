@@ -2,8 +2,8 @@
 
 import cv2
 
-import gamebeye.gbcamfilters as gbcamfilters
-from gamebeye.gbcamimage import GBCamImage
+import gamebeye.gbcamimage.gbcamfilters as gbcamfilters
+from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
 # Path to the image
 image_filepath = "images\\originalImage.png"

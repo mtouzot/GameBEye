@@ -11,4 +11,3 @@ gamebeye documentation
 
    ./gamebeye/image.rst
    ./gamebeye/colors.rst
-   ./gamebeye/filters.rst

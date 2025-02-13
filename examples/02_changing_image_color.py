@@ -2,8 +2,8 @@
 
 import cv2
 
-from gamebeye.gbcamcolors import GBColorPalettes
-from gamebeye.gbcamimage import GBCamImage
+from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
+from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
 # Path to the image
 image_filepath = "images\\originalImage.png"

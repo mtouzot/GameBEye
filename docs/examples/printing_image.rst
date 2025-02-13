@@ -9,9 +9,10 @@ here's an example of how looks a printed image
 
    """An example to use the thermal printer effect on an image."""
 
-   from gamebeye.gbcamimage import GBCamImage
-   import gamebeye.gbcamfilters as gbcamfilters
    import cv2
+
+   import gamebeye.gbcamimage.gbcamfilters as gbcamfilters
+   from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
    # Path to the image
    image_filepath = "images\\originalImage.png"
