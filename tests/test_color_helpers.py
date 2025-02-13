@@ -7,37 +7,52 @@ import numpy.testing as npt
 import pytest
 
 import gamebeye.gbcamcolors.color_helpers as color_helpers
-import gamebeye.gbcamcolors.gbcolorpalettes as gbcampalettes
+from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
+from gamebeye.gbcamcolors.gbcolorvalues import GBColorValues
 
 
 @pytest.mark.parametrize(
-    "color,name,value,rgb_colors",
+    "color,name,value,rgb_colors,hex_colors",
     [
         (
-            gbcampalettes.GBColorPalettes.BW,
+            GBColorPalettes.BW,
             "BW",
-            ["#FFFFFF", "#A8A8A8", "#545454", "#000000"],
+            [
+                GBColorValues.WHITE,
+                GBColorValues.UNIFORM_GREY,
+                GBColorValues.BRILLIANT_LIQUORICE,
+                GBColorValues.BLACK,
+            ],
             [[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]],
+            ["#FFFFFF", "#A8A8A8", "#545454", "#000000"],
         ),
         (
-            gbcampalettes.GBColorPalettes.GBCEUUS,
+            GBColorPalettes.GBCEUUS,
             "GBCEUUS",
-            ["#FFFFFF", "#7BFF30", "#0163C6", "#000000"],
+            [
+                GBColorValues.WHITE,
+                GBColorValues.SPRING_FROST,
+                GBColorValues.ROYAL_NAVY_BLUE,
+                GBColorValues.BLACK,
+            ],
             [[255, 255, 255], [123, 255, 48], [1, 99, 198], [0, 0, 0]],
+            ["#FFFFFF", "#7BFF30", "#0163C6", "#000000"],
         ),
     ],
 )
 def test_gbcolorpalettes(
-    color: gbcampalettes.GBColorPalettes,
+    color: GBColorPalettes,
     name: str,
     value: List[str],
     rgb_colors: List[List[int]],
+    hex_colors: List[str],
 ):
-    """Test gbcampalettes.GBColorPalettes object."""
+    """Test GBColorPalettes object."""
     assert color.value == value
     assert color.name == name
     assert str(color) == f"{name} : {value}"
-    assert color.rgb_colors == rgb_colors
+    npt.assert_array_equal(color.rgb_colors, rgb_colors)
+    npt.assert_array_equal(color.hex_colors, hex_colors)
     assert color.describe() == (name, value)
 
 

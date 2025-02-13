@@ -125,7 +125,7 @@ class GBCamImage:
         self.__colors = [
             palette
             for palette in GBColorPalettes
-            if np.array_equal(np.sort(hex_colors), sorted(palette.value))
+            if np.array_equal(np.sort(hex_colors), sorted(palette.hex_colors))
         ][0]
 
     def change_color(
@@ -143,9 +143,9 @@ class GBCamImage:
             raise TypeError("The color parameter must be a GBColorPalettes.")
 
         img_temp = np.empty_like(self.__data)
-        for idx, thresh in enumerate(color_palette.value):
-            thresh = hex_to_bgr(thresh)
-            current_color = hex_to_rgb(self.__colors.value[idx])
+        for idx, color in enumerate(color_palette.value):
+            thresh = hex_to_bgr(color.value)
+            current_color = hex_to_rgb(self.__colors.value[idx].value)
             img_temp = np.where(self.__data == current_color, thresh, img_temp)
 
         self.__data[:] = img_temp

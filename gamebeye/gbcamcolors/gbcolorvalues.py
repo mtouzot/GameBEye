@@ -17,7 +17,7 @@ class GBColorValues(Enum):
     coded in hexadecimal basis.
     """
 
-    WHITE = "FFFFFF"
+    WHITE = "#FFFFFF"
     """
     .. raw:: html
 
@@ -29,7 +29,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    UNIFORM_GREY = "A8A8A8"
+    UNIFORM_GREY = "#A8A8A8"
     """
     .. raw:: html
 
@@ -41,7 +41,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BRILLIANT_LIQUORICE = "545454"
+    BRILLIANT_LIQUORICE = "#545454"
     """
     .. raw:: html
 
@@ -53,7 +53,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLACK = "000000"
+    BLACK = "#000000"
     """
     .. raw:: html
 
@@ -65,7 +65,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GAMEBOY_CONTRAST = "0F380F"
+    GAMEBOY_CONTRAST = "#0F380F"
     """
     .. raw:: html
 
@@ -77,7 +77,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GAMEBOY_LIGHT = "9BBC0F"
+    GAMEBOY_LIGHT = "#9BBC0F"
     """
     .. raw:: html
 
@@ -89,7 +89,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LUMINESCENT_GREEN = "77A112"
+    LUMINESCENT_GREEN = "#77A112"
     """
     .. raw:: html
 
@@ -101,7 +101,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GAMEBOY_SHADE = "306230"
+    GAMEBOY_SHADE = "#306230"
     """
     .. raw:: html
 
@@ -113,7 +113,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    UMBRA = "1F1F1F"
+    UMBRA = "#1F1F1F"
     """
     .. raw:: html
 
@@ -125,7 +125,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DAPPLED_DAYDREAM = "C4CFA1"
+    DAPPLED_DAYDREAM = "#C4CFA1"
     """
     .. raw:: html
 
@@ -137,7 +137,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CIDER_PEAR_GREEN = "8B956D"
+    CIDER_PEAR_GREEN = "#8B956D"
     """
     .. raw:: html
 
@@ -149,7 +149,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    KELP = "4D533C"
+    KELP = "#4D533C"
     """
     .. raw:: html
 
@@ -161,7 +161,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLACK_STALLION = "081820"
+    BLACK_STALLION = "#081820"
     """
     .. raw:: html
 
@@ -173,7 +173,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LIGHT_GREEN_GLINT = "E0F8D0"
+    LIGHT_GREEN_GLINT = "#E0F8D0"
     """
     .. raw:: html
 
@@ -185,7 +185,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LAUDABLE_LIME = "88C070"
+    LAUDABLE_LIME = "#88C070"
     """
     .. raw:: html
 
@@ -197,7 +197,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PLANTAIN_GREEN = "346856"
+    PLANTAIN_GREEN = "#346856"
     """
     .. raw:: html
 
@@ -209,7 +209,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLUE_GREEN = "0B7A6D"
+    BLUE_GREEN = "#0B7A6D"
     """
     .. raw:: html
 
@@ -221,7 +221,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CERAMIC_BLUE_TURQUOISE = "16A596"
+    CERAMIC_BLUE_TURQUOISE = "#16A596"
     """
     .. raw:: html
 
@@ -233,7 +233,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    EXQUISITE_TURQUOISE = "19C7B3"
+    EXQUISITE_TURQUOISE = "#19C7B3"
     """
     .. raw:: html
 
@@ -245,7 +245,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ICE_CLIMBER = "1DDECE"
+    ICE_CLIMBER = "#1DDECE"
     """
     .. raw:: html
 
@@ -257,7 +257,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GREEN_WATERLOO = "2B2B26"
+    GREEN_WATERLOO = "#2B2B26"
     """
     .. raw:: html
 
@@ -269,7 +269,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GIBRALTAR_GREY = "706B66"
+    GIBRALTAR_GREY = "#706B66"
     """
     .. raw:: html
 
@@ -281,7 +281,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LONDON_STONES = "A89F94"
+    LONDON_STONES = "#A89F94"
     """
     .. raw:: html
 
@@ -293,7 +293,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    NOBLE_CREAM = "E0DBCD"
+    NOBLE_CREAM = "#E0DBCD"
     """
     .. raw:: html
 
@@ -305,7 +305,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    VERT_PIERRE = "4C625A"
+    VERT_PIERRE = "#4C625A"
     """
     .. raw:: html
 
@@ -317,7 +317,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CHICON = "DBF4B4"
+    CHICON = "#DBF4B4"
     """
     .. raw:: html
 
@@ -329,7 +329,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LODEN_FROST = "7B9278"
+    LODEN_FROST = "#7B9278"
     """
     .. raw:: html
 
@@ -341,7 +341,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SEAWASHED_GLASS = "ABC396"
+    SEAWASHED_GLASS = "#ABC396"
     """
     .. raw:: html
 
@@ -353,7 +353,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BRACKEN_FERN = "2E463D"
+    BRACKEN_FERN = "#2E463D"
     """
     .. raw:: html
 
@@ -365,7 +365,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ELWYNN_FOREST_OLIVE = "7E8416"
+    ELWYNN_FOREST_OLIVE = "#7E8416"
     """
     .. raw:: html
 
@@ -377,7 +377,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FRESH_HERBS = "385D49"
+    FRESH_HERBS = "#385D49"
     """
     .. raw:: html
 
@@ -389,7 +389,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MOSSY_GREEN = "577B46"
+    MOSSY_GREEN = "#577B46"
     """
     .. raw:: html
 
@@ -401,7 +401,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    COFFEE_ADDICTION = "833100"
+    COFFEE_ADDICTION = "#833100"
     """
     .. raw:: html
 
@@ -413,7 +413,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DREAMY_SUNSET = "FFAD63"
+    DREAMY_SUNSET = "#FFAD63"
     """
     .. raw:: html
 
@@ -425,7 +425,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DESERT_FLOWER = "FF8F84"
+    DESERT_FLOWER = "#FF8F84"
     """
     .. raw:: html
 
@@ -437,7 +437,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    NEW_SLED = "943A3A"
+    NEW_SLED = "#943A3A"
     """
     .. raw:: html
 
@@ -449,7 +449,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    AGED_ANTICS = "846B29"
+    AGED_ANTICS = "#846B29"
     """
     .. raw:: html
 
@@ -461,7 +461,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CHESS_IVORY = "FFE7C5"
+    CHESS_IVORY = "#FFE7C5"
     """
     .. raw:: html
 
@@ -473,7 +473,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DUSTY_CORAL = "CE9C85"
+    DUSTY_CORAL = "#CE9C85"
     """
     .. raw:: html
 
@@ -485,7 +485,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    COUNT_CHOCULA = "5B3109"
+    COUNT_CHOCULA = "#5B3109"
     """
     .. raw:: html
 
@@ -497,7 +497,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    AQUA_RAPIDS = "65A49B"
+    AQUA_RAPIDS = "#65A49B"
     """
     .. raw:: html
 
@@ -509,7 +509,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLUE = "0000FE"
+    BLUE = "#0000FE"
     """
     .. raw:: html
 
@@ -521,7 +521,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    TWILIGHT = "53528C"
+    TWILIGHT = "#53528C"
     """
     .. raw:: html
 
@@ -533,7 +533,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PERRYWINKLE = "8B8CDE"
+    PERRYWINKLE = "#8B8CDE"
     """
     .. raw:: html
 
@@ -545,7 +545,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    RAINY_GREY = "A5A5A5"
+    RAINY_GREY = "#A5A5A5"
     """
     .. raw:: html
 
@@ -557,7 +557,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CALAMANSI = "FFFFA5"
+    CALAMANSI = "#FFFFA5"
     """
     .. raw:: html
 
@@ -569,7 +569,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CAVERNOUS = "525252"
+    CAVERNOUS = "#525252"
     """
     .. raw:: html
 
@@ -581,7 +581,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CHERISHED_ONE = "FE9494"
+    CHERISHED_ONE = "#FE9494"
     """
     .. raw:: html
 
@@ -593,7 +593,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PERRYWINKLE_BLUE = "9395FE"
+    PERRYWINKLE_BLUE = "#9395FE"
     """
     .. raw:: html
 
@@ -605,7 +605,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    YELLOW = "FFFF00"
+    YELLOW = "#FFFF00"
     """
     .. raw:: html
 
@@ -617,7 +617,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    RED = "FF0000"
+    RED = "#FF0000"
     """
     .. raw:: html
 
@@ -629,7 +629,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DRIED_MUSTARD = "7D4900"
+    DRIED_MUSTARD = "#7D4900"
     """
     .. raw:: html
 
@@ -641,7 +641,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    HYPER_GREEN = "51FF00"
+    HYPER_GREEN = "#51FF00"
     """
     .. raw:: html
 
@@ -653,7 +653,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ULTIMATE_ORANGE = "FF4200"
+    ULTIMATE_ORANGE = "#FF4200"
     """
     .. raw:: html
 
@@ -665,7 +665,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SPRING_FROST = "7BFF30"
+    SPRING_FROST = "#7BFF30"
     """
     .. raw:: html
 
@@ -677,7 +677,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ROYAL_NAVY_BLUE = "0163C6"
+    ROYAL_NAVY_BLUE = "#0163C6"
     """
     .. raw:: html
 
@@ -689,7 +689,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FANFARE = "008486"
+    FANFARE = "#008486"
     """
     .. raw:: html
 
@@ -701,7 +701,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GOLDEN_YELLOW = "FFDE00"
+    GOLDEN_YELLOW = "#FFDE00"
     """
     .. raw:: html
 
@@ -713,7 +713,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FANTASY_CONSOLE_SKY = "21AFF5"
+    FANTASY_CONSOLE_SKY = "#21AFF5"
     """
     .. raw:: html
 
@@ -725,7 +725,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FREEZY_WIND = "9EFBE3"
+    FREEZY_WIND = "#9EFBE3"
     """
     .. raw:: html
 
@@ -737,7 +737,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    NUIT_BLANCHE = "1E4793"
+    NUIT_BLANCHE = "#1E4793"
     """
     .. raw:: html
 
@@ -749,7 +749,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DARK_ECLIPSE = "0E1E3D"
+    DARK_ECLIPSE = "#0E1E3D"
     """
     .. raw:: html
 
@@ -761,7 +761,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CREME_FRAICHE = "EBEEE7"
+    CREME_FRAICHE = "#EBEEE7"
     """
     .. raw:: html
 
@@ -773,7 +773,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    KOSHER_KHAHI = "868779"
+    KOSHER_KHAHI = "#868779"
     """
     .. raw:: html
 
@@ -785,7 +785,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    RED_STOP = "FA2B25"
+    RED_STOP = "#FA2B25"
     """
     .. raw:: html
 
@@ -797,7 +797,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    VELCET_BLACK = "2A201E"
+    VELCET_BLACK = "#2A201E"
     """
     .. raw:: html
 
@@ -809,7 +809,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ACAPULCO_DIVE = "6F9EDF"
+    ACAPULCO_DIVE = "#6F9EDF"
     """
     .. raw:: html
 
@@ -821,7 +821,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SEA_OF_GALILEE = "42678E"
+    SEA_OF_GALILEE = "#42678E"
     """
     .. raw:: html
 
@@ -833,7 +833,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    WHISPER_OF_SMOKE = "CECECE"
+    WHISPER_OF_SMOKE = "#CECECE"
     """
     .. raw:: html
 
@@ -845,7 +845,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLACK_BOX = "102533"
+    BLACK_BOX = "#102533"
     """
     .. raw:: html
 
@@ -857,7 +857,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LAZY_LIZARD = "A0A840"
+    LAZY_LIZARD = "#A0A840"
     """
     .. raw:: html
 
@@ -869,7 +869,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PESTO_DI_RUCOLA = "708028"
+    PESTO_DI_RUCOLA = "#708028"
     """
     .. raw:: html
 
@@ -881,7 +881,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SALSA_VERDE = "D0D058"
+    SALSA_VERDE = "#D0D058"
     """
     .. raw:: html
 
@@ -893,7 +893,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GODZILLA = "405010"
+    GODZILLA = "#405010"
     """
     .. raw:: html
 
@@ -905,7 +905,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    WAX_FLOWER = "EDB4A1"
+    WAX_FLOWER = "#EDB4A1"
     """
     .. raw:: html
 
@@ -917,7 +917,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MELON_TWIST = "A96868"
+    MELON_TWIST = "#A96868"
     """
     .. raw:: html
 
@@ -929,7 +929,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SCINTILLATING_VIOLET = "764462"
+    SCINTILLATING_VIOLET = "#764462"
     """
     .. raw:: html
 
@@ -941,7 +941,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MOON_WHITE = "EAF5FA"
+    MOON_WHITE = "#EAF5FA"
     """
     .. raw:: html
 
@@ -953,7 +953,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLUE_JEANS = "5FB1F5"
+    BLUE_JEANS = "#5FB1F5"
     """
     .. raw:: html
 
@@ -965,7 +965,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SMOOCH_ROUGE = "D23C4E"
+    SMOOCH_ROUGE = "#D23C4E"
     """
     .. raw:: html
 
@@ -977,7 +977,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DARK_MAHOGANY = "4C1C2D"
+    DARK_MAHOGANY = "#4C1C2D"
     """
     .. raw:: html
 
@@ -989,7 +989,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MOONGLOW = "F8E3C4"
+    MOONGLOW = "#F8E3C4"
     """
     .. raw:: html
 
@@ -1001,7 +1001,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ROYAL_FUCHSIA = "CC3495"
+    ROYAL_FUCHSIA = "#CC3495"
     """
     .. raw:: html
 
@@ -1013,7 +1013,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FUCHSIA_NEBULA = "6B1FB1"
+    FUCHSIA_NEBULA = "#6B1FB1"
     """
     .. raw:: html
 
@@ -1025,7 +1025,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    COSMIC_VOID = "0B0630"
+    COSMIC_VOID = "#0B0630"
     """
     .. raw:: html
 
@@ -1037,7 +1037,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CHESTNUT_SHELL = "B5FF32"
+    CHESTNUT_SHELL = "#B5FF32"
     """
     .. raw:: html
 
@@ -1049,7 +1049,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PEEVISH_RED = "FF2261"
+    PEEVISH_RED = "#FF2261"
     """
     .. raw:: html
 
@@ -1061,7 +1061,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    NIGHT_BROWN = "462917"
+    NIGHT_BROWN = "#462917"
     """
     .. raw:: html
 
@@ -1073,7 +1073,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BATS_CLOAK = "1D1414"
+    BATS_CLOAK = "#1D1414"
     """
     .. raw:: html
 
@@ -1085,7 +1085,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    POLO_PONY = "CF9255"
+    POLO_PONY = "#CF9255"
     """
     .. raw:: html
 
@@ -1097,7 +1097,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    OK_CORRAL = "CF7163"
+    OK_CORRAL = "#CF7163"
     """
     .. raw:: html
 
@@ -1109,7 +1109,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CERISE = "B01553"
+    CERISE = "#B01553"
     """
     .. raw:: html
 
@@ -1121,7 +1121,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DARK_SIENNA = "3F1711"
+    DARK_SIENNA = "#3F1711"
     """
     .. raw:: html
 
@@ -1133,7 +1133,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PILA_YELLOW = "FFFF55"
+    PILA_YELLOW = "#FFFF55"
     """
     .. raw:: html
 
@@ -1145,7 +1145,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FLUORESCENT_RED = "FF5555"
+    FLUORESCENT_RED = "#FF5555"
     """
     .. raw:: html
 
@@ -1157,7 +1157,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    RED_LEEVER = "881400"
+    RED_LEEVER = "#881400"
     """
     .. raw:: html
 
@@ -1169,7 +1169,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    VIVID_LIME_GREEN = "A1D909"
+    VIVID_LIME_GREEN = "#A1D909"
     """
     .. raw:: html
 
@@ -1181,7 +1181,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FOREST_EMPRESS = "467818"
+    FOREST_EMPRESS = "#467818"
     """
     .. raw:: html
 
@@ -1193,7 +1193,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MYRTLE = "27421F"
+    MYRTLE = "#27421F"
     """
     .. raw:: html
 
@@ -1205,7 +1205,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    TINTED_ICE = "CEF7F7"
+    TINTED_ICE = "#CEF7F7"
     """
     .. raw:: html
 
@@ -1217,7 +1217,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLAZE = "F78E50"
+    BLAZE = "#F78E50"
     """
     .. raw:: html
 
@@ -1229,7 +1229,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CACODEMON_RED = "9E0000"
+    CACODEMON_RED = "#9E0000"
     """
     .. raw:: html
 
@@ -1241,7 +1241,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DWARF_FORTRESS = "1E0000"
+    DWARF_FORTRESS = "#1E0000"
     """
     .. raw:: html
 
@@ -1253,7 +1253,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PINK_MACAROON = "E6AEC4"
+    PINK_MACAROON = "#E6AEC4"
     """
     .. raw:: html
 
@@ -1265,7 +1265,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CARMINE_ROSE = "E65790"
+    CARMINE_ROSE = "#E65790"
     """
     .. raw:: html
 
@@ -1277,7 +1277,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MADRILENO_MAROON = "8F0039"
+    MADRILENO_MAROON = "#8F0039"
     """
     .. raw:: html
 
@@ -1289,7 +1289,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ILVAITE_BLACK = "380016"
+    ILVAITE_BLACK = "#380016"
     """
     .. raw:: html
 
@@ -1301,7 +1301,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    HINT_OF_YELLOW = "FCF1CD"
+    HINT_OF_YELLOW = "#FCF1CD"
     """
     .. raw:: html
 
@@ -1313,7 +1313,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    WICKERWORK = "C09E7D"
+    WICKERWORK = "#C09E7D"
     """
     .. raw:: html
 
@@ -1325,7 +1325,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MOOSE_FUR = "725441"
+    MOOSE_FUR = "#725441"
     """
     .. raw:: html
 
@@ -1337,7 +1337,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FLAXSEED = "F7E7C6"
+    FLAXSEED = "#F7E7C6"
     """
     .. raw:: html
 
@@ -1349,7 +1349,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GOLDEN_NUGGET = "D68E49"
+    GOLDEN_NUGGET = "#D68E49"
     """
     .. raw:: html
 
@@ -1361,7 +1361,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    JAIPUR = "A63725"
+    JAIPUR = "#A63725"
     """
     .. raw:: html
 
@@ -1373,7 +1373,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    POWERFUL_VIOLET = "331E50"
+    POWERFUL_VIOLET = "#331E50"
     """
     .. raw:: html
 
@@ -1385,7 +1385,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CREME = "FFFFB5"
+    CREME = "#FFFFB5"
     """
     .. raw:: html
 
@@ -1397,7 +1397,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GARDEN_STROLL = "7BC67B"
+    GARDEN_STROLL = "#7BC67B"
     """
     .. raw:: html
 
@@ -1409,7 +1409,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MAKRUT_LIME = "6B8C42"
+    MAKRUT_LIME = "#6B8C42"
     """
     .. raw:: html
 
@@ -1421,7 +1421,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    KURO_BROWN = "5A3921"
+    KURO_BROWN = "#5A3921"
     """
     .. raw:: html
 
@@ -1433,7 +1433,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ELECTRIC_SHEEP = "55FFFF"
+    ELECTRIC_SHEEP = "#55FFFF"
     """
     .. raw:: html
 
@@ -1445,7 +1445,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ULTIMATE_PINK = "FF55FF"
+    ULTIMATE_PINK = "#FF55FF"
     """
     .. raw:: html
 
@@ -1457,7 +1457,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    YELLOWISH_GREEN = "AEDF1E"
+    YELLOWISH_GREEN = "#AEDF1E"
     """
     .. raw:: html
 
@@ -1469,7 +1469,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SPANISH_VIRIDIAN = "047E60"
+    SPANISH_VIRIDIAN = "#047E60"
     """
     .. raw:: html
 
@@ -1481,7 +1481,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GRANITA = "B62558"
+    GRANITA = "#B62558"
     """
     .. raw:: html
 
@@ -1493,7 +1493,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ZINNWALDITE_BROWN = "2C1700"
+    ZINNWALDITE_BROWN = "#2C1700"
     """
     .. raw:: html
 
@@ -1505,7 +1505,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PORTAGE = "869AD9"
+    PORTAGE = "#869AD9"
     """
     .. raw:: html
 
@@ -1517,7 +1517,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CIRCUMORBITAL_RING = "6D53BD"
+    CIRCUMORBITAL_RING = "#6D53BD"
     """
     .. raw:: html
 
@@ -1529,7 +1529,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    VIOLET_CARMINE = "4F133F"
+    VIOLET_CARMINE = "#4F133F"
     """
     .. raw:: html
 
@@ -1541,7 +1541,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ORB_OF_DISCORD = "6F2096"
+    ORB_OF_DISCORD = "#6F2096"
     """
     .. raw:: html
 
@@ -1553,7 +1553,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    RED_PEGASUS = "DB0000"
+    RED_PEGASUS = "#DB0000"
     """
     .. raw:: html
 
@@ -1565,7 +1565,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    UMBRAL_UMBER = "520000"
+    UMBRAL_UMBER = "#520000"
     """
     .. raw:: html
 
@@ -1577,7 +1577,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BRILLIANT_SILVER = "A9B0B3"
+    BRILLIANT_SILVER = "#A9B0B3"
     """
     .. raw:: html
 
@@ -1589,7 +1589,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ANCHOR_GREY = "586164"
+    ANCHOR_GREY = "#586164"
     """
     .. raw:: html
 
@@ -1601,7 +1601,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    YANKEES_BLUE = "20293F"
+    YANKEES_BLUE = "#20293F"
     """
     .. raw:: html
 
@@ -1613,7 +1613,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    VOID = "030C22"
+    VOID = "#030C22"
     """
     .. raw:: html
 
@@ -1625,7 +1625,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ANGELS_TRUMPET = "F5DB37"
+    ANGELS_TRUMPET = "#F5DB37"
     """
     .. raw:: html
 
@@ -1637,7 +1637,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LAKE_THUN = "37CAE5"
+    LAKE_THUN = "#37CAE5"
     """
     .. raw:: html
 
@@ -1649,7 +1649,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LUCARIO_BLUE = "0F86B6"
+    LUCARIO_BLUE = "#0F86B6"
     """
     .. raw:: html
 
@@ -1661,7 +1661,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    INOFFENSIVE_BLUE = "123F77"
+    INOFFENSIVE_BLUE = "#123F77"
     """
     .. raw:: html
 
@@ -1673,7 +1673,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FROSTBITE = "ADFFFC"
+    FROSTBITE = "#ADFFFC"
     """
     .. raw:: html
 
@@ -1685,7 +1685,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DAHLIA_PURPLE = "8570B2"
+    DAHLIA_PURPLE = "#8570B2"
     """
     .. raw:: html
 
@@ -1697,7 +1697,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FANCY_FUCHSIA = "FF0084"
+    FANCY_FUCHSIA = "#FF0084"
     """
     .. raw:: html
 
@@ -1709,7 +1709,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PURPLE_DREAMER = "68006A"
+    PURPLE_DREAMER = "#68006A"
     """
     .. raw:: html
 
@@ -1721,7 +1721,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PAINT_THE_SKY = "0BE8FD"
+    PAINT_THE_SKY = "#0BE8FD"
     """
     .. raw:: html
 
@@ -1733,7 +1733,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SIXTEEN_MILLION_PINK = "FB00FA"
+    SIXTEEN_MILLION_PINK = "#FB00FA"
     """
     .. raw:: html
 
@@ -1745,7 +1745,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DARK_GREY = "373737"
+    DARK_GREY = "#373737"
     """
     .. raw:: html
 
@@ -1757,7 +1757,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SEA_GREEN = "47FF99"
+    SEA_GREEN = "#47FF99"
     """
     .. raw:: html
 
@@ -1769,7 +1769,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    TURTLE_WARRIOR = "32B66D"
+    TURTLE_WARRIOR = "#32B66D"
     """
     .. raw:: html
 
@@ -1781,7 +1781,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MIZUKAZE_GREEN = "124127"
+    MIZUKAZE_GREEN = "#124127"
     """
     .. raw:: html
 
@@ -1793,7 +1793,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MANDARIN_PEEL = "FF9C00"
+    MANDARIN_PEEL = "#FF9C00"
     """
     .. raw:: html
 
@@ -1805,7 +1805,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CASSANDRAS_CURSE = "C27600"
+    CASSANDRAS_CURSE = "#C27600"
     """
     .. raw:: html
 
@@ -1817,7 +1817,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    KYOTO_HOUSE = "4F3000"
+    KYOTO_HOUSE = "#4F3000"
     """
     .. raw:: html
 
@@ -1829,7 +1829,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    WEEKEND_RETREAT = "EBC4AB"
+    WEEKEND_RETREAT = "#EBC4AB"
     """
     .. raw:: html
 
@@ -1841,7 +1841,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ASTROTURF = "649A57"
+    ASTROTURF = "#649A57"
     """
     .. raw:: html
 
@@ -1853,7 +1853,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    OLD_TREASURE_CHEST = "574431"
+    OLD_TREASURE_CHEST = "#574431"
     """
     .. raw:: html
 
@@ -1865,7 +1865,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLACK_POWDER = "323727"
+    BLACK_POWDER = "#323727"
     """
     .. raw:: html
 
@@ -1877,7 +1877,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    EARLY_SPRING_NIGHT = "3C3CA9"
+    EARLY_SPRING_NIGHT = "#3C3CA9"
     """
     .. raw:: html
 
@@ -1889,7 +1889,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SUPER_BANANA = "FFFE6E"
+    SUPER_BANANA = "#FFFE6E"
     """
     .. raw:: html
 
@@ -1901,7 +1901,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CINAMON = "D5690F"
+    CINAMON = "#D5690F"
     """
     .. raw:: html
 
@@ -1913,7 +1913,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLACK_SLUG = "2C2410"
+    BLACK_SLUG = "#2C2410"
     """
     .. raw:: html
 
@@ -1925,7 +1925,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GLAZED_SUGAR = "FFDBCB"
+    GLAZED_SUGAR = "#FFDBCB"
     """
     .. raw:: html
 
@@ -1937,7 +1937,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    JINZA_SAFFLOWER = "F27D7A"
+    JINZA_SAFFLOWER = "#F27D7A"
     """
     .. raw:: html
 
@@ -1949,7 +1949,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    EMERALD_CLEAR_GREEN = "558429"
+    EMERALD_CLEAR_GREEN = "#558429"
     """
     .. raw:: html
 
@@ -1961,7 +1961,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    LIQUORICE_ROOT = "222903"
+    LIQUORICE_ROOT = "#222903"
     """
     .. raw:: html
 
@@ -1973,7 +1973,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CANDLELIGHT = "FEDA1B"
+    CANDLELIGHT = "#FEDA1B"
     """
     .. raw:: html
 
@@ -1985,7 +1985,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CHEROKEE_DIGNITY = "DF7925"
+    CHEROKEE_DIGNITY = "#DF7925"
     """
     .. raw:: html
 
@@ -1997,7 +1997,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    EYE_POPPING_CHERRY = "B60077"
+    EYE_POPPING_CHERRY = "#B60077"
     """
     .. raw:: html
 
@@ -2009,7 +2009,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    DEEP_SPACE_RODEO = "382977"
+    DEEP_SPACE_RODEO = "#382977"
     """
     .. raw:: html
 
@@ -2021,7 +2021,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SHORELAND = "E9D9CC"
+    SHORELAND = "#E9D9CC"
     """
     .. raw:: html
 
@@ -2033,7 +2033,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FLAT_ALUMINIUM = "C5C5CE"
+    FLAT_ALUMINIUM = "#C5C5CE"
     """
     .. raw:: html
 
@@ -2045,7 +2045,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ADIRONDACK_BLUE = "75868F"
+    ADIRONDACK_BLUE = "#75868F"
     """
     .. raw:: html
 
@@ -2057,7 +2057,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PURE_MIDNIGHT = "171F62"
+    PURE_MIDNIGHT = "#171F62"
     """
     .. raw:: html
 
@@ -2069,7 +2069,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    HEXOS_PALESUN = "FDFE0A"
+    HEXOS_PALESUN = "#FDFE0A"
     """
     .. raw:: html
 
@@ -2081,7 +2081,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FLIRTATIOUS = "FED638"
+    FLIRTATIOUS = "#FED638"
     """
     .. raw:: html
 
@@ -2093,7 +2093,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SPRUCED_UP = "977B25"
+    SPRUCED_UP = "#977B25"
     """
     .. raw:: html
 
@@ -2105,7 +2105,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    NOIR_MYSTIQUE = "221A09"
+    NOIR_MYSTIQUE = "#221A09"
     """
     .. raw:: html
 
@@ -2117,7 +2117,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    MILK = "FDFEF5"
+    MILK = "#FDFEF5"
     """
     .. raw:: html
 
@@ -2129,7 +2129,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    SUGAR_HONEY_CASHEW = "DEA963"
+    SUGAR_HONEY_CASHEW = "#DEA963"
     """
     .. raw:: html
 
@@ -2141,7 +2141,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GOLDEN_GLOVE = "9E754F"
+    GOLDEN_GLOVE = "#9E754F"
     """
     .. raw:: html
 
@@ -2153,7 +2153,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    CANNON_BLACK = "241606"
+    CANNON_BLACK = "#241606"
     """
     .. raw:: html
 
@@ -2165,7 +2165,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BUTTER_CAKE = "FCFE54"
+    BUTTER_CAKE = "#FCFE54"
     """
     .. raw:: html
 
@@ -2177,7 +2177,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    FIJI = "04AAAC"
+    FIJI = "#04AAAC"
     """
     .. raw:: html
 
@@ -2189,7 +2189,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    TRADITIONAL_ROYAL_BLUE = "0402AC"
+    TRADITIONAL_ROYAL_BLUE = "#0402AC"
     """
     .. raw:: html
 
@@ -2201,7 +2201,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLUSHING_CINNAMON = "FFBF98"
+    BLUSHING_CINNAMON = "#FFBF98"
     """
     .. raw:: html
 
@@ -2213,7 +2213,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    RIDGE_VIEW = "A1A8B8"
+    RIDGE_VIEW = "#A1A8B8"
     """
     .. raw:: html
 
@@ -2225,7 +2225,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    PANGO_BLACK = "514F6C"
+    PANGO_BLACK = "#514F6C"
     """
     .. raw:: html
 
@@ -2237,7 +2237,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    BLEACHED_CEDAR = "2F1C35"
+    BLEACHED_CEDAR = "#2F1C35"
     """
     .. raw:: html
 
@@ -2249,7 +2249,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    ORANGE_CHOCOLATE = "F3C677"
+    ORANGE_CHOCOLATE = "#F3C677"
     """
     .. raw:: html
 
@@ -2261,7 +2261,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    THIMBLEBERRY = "E64A4E"
+    THIMBLEBERRY = "#E64A4E"
     """
     .. raw:: html
 
@@ -2273,7 +2273,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    VIOLET_VIXEN = "912978"
+    VIOLET_VIXEN = "#912978"
     """
     .. raw:: html
 
@@ -2285,7 +2285,7 @@ class GBColorValues(Enum):
         </div>
     """
 
-    GRIM_REAPER = "0C0A3E"
+    GRIM_REAPER = "#0C0A3E"
     """
     .. raw:: html
 
@@ -2308,7 +2308,7 @@ class GBColorValues(Enum):
         >>> GBcolorValues.ROYAL_NAVY_BLUE.describe()
         ('ROYAL_NAVY_BLUE', '#0163C6')
         """
-        return self.name, f"#{self.value}"
+        return self.name, self.value
 
     def __str__(self) -> str:
         """
@@ -2321,7 +2321,7 @@ class GBColorValues(Enum):
         >>> str(GBcolorValues.ROYAL_NAVY_BLUE)
         "ROYAL_NAVY_BLUE : '#0163C6'"
         """
-        return "{} : #{}".format(self.name, str(self.value))
+        return "{} : {}".format(self.name, str(self.value))
 
     @property
     def rgb_colors(self) -> List[int]:
@@ -2335,4 +2335,4 @@ class GBColorValues(Enum):
         >>> GBcolorValues.ROYAL_NAVY_BLUE
         [1, 99, 198]
         """
-        return list(hex_to_rgb(self.value))
+        return hex_to_rgb(self.value)

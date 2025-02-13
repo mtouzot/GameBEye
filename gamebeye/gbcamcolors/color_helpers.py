@@ -302,3 +302,37 @@ def bgr_to_hex(bgr_val: npt.ArrayLike) -> str:
     if not isinstance(bgr_val, tuple):
         bgr_val = tuple(clamp_rgb(bgr_val))
     return "#%02X%02X%02X" % bgr_val[::-1]
+
+
+def bgr_to_rgb(bgr_val: npt.ArrayLike) -> np.ndarray:
+    """
+    Convert a (B, G, R) array to a (R, G, B) array.
+
+    All values are clamped between 0 and 255.
+
+    :param list bgr_val: (B, G, R) to convert
+
+    :raises ValueError: bgr_val argument must be a 3 values list
+
+    :returns: a list containing R, G, B values.
+    :rtype: a list of integer
+
+    >>> from gamebeye.gbcamcolors.color_helpers import bgr_to_hex
+    >>> bgr_to_hex([0, 0, 0])
+    '#000000'
+    >>> bgr_to_hex([0, 0, 255])
+    '#FF0000'
+    >>> bgr_to_hex([255, 0, 0])
+    '#0000FF'
+    >>> bgr_to_hex([512, 128, 0])
+    '#0080FF'
+    >>> bgr_to_hex([0, 0, 0, 0])
+    Traceback (most recent call last):
+        ...
+    ValueError: bgr_val argument must be a 3 values list
+    """
+    if len(bgr_val) != 3:
+        raise ValueError("bgr_val argument must be a 3 values list")
+    if not isinstance(bgr_val, tuple):
+        bgr_val = tuple(clamp_rgb(bgr_val))
+    return bgr_val[::-1]

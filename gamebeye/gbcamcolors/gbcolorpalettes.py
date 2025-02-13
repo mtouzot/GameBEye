@@ -4,6 +4,7 @@ from enum import Enum, unique
 from typing import List, Tuple
 
 from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
+from gamebeye.gbcamcolors.gbcolorvalues import GBColorValues
 
 
 # Class decorator @unique ensure each enum value is unique
@@ -17,7 +18,12 @@ class GBColorPalettes(Enum):
     represent a color coded in hexadecimal basis.
     """
 
-    BW = ["#FFFFFF", "#A8A8A8", "#545454", "#000000"]
+    BW = [
+        GBColorValues.WHITE,
+        GBColorValues.UNIFORM_GREY,
+        GBColorValues.BRILLIANT_LIQUORICE,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -29,7 +35,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    DMG = ["#9BBC0F", "#77A112", "#306230", "#0F380F"]
+    DMG = [
+        GBColorValues.GAMEBOY_LIGHT,
+        GBColorValues.LUMINESCENT_GREEN,
+        GBColorValues.GAMEBOY_SHADE,
+        GBColorValues.GAMEBOY_CONTRAST,
+    ]
     """
     .. raw:: html
 
@@ -41,7 +52,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBPOCKET = ["#C4CFA1", "#8B956D", "#4D533C", "#1F1F1F"]
+    GBPOCKET = [
+        GBColorValues.DAPPLED_DAYDREAM,
+        GBColorValues.CIDER_PEAR_GREEN,
+        GBColorValues.KELP,
+        GBColorValues.UMBRA,
+    ]
     """
     .. raw:: html
 
@@ -53,7 +69,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    BGB = ["#E0F8D0", "#88C070", "#346856", "#081820"]
+    BGB = [
+        GBColorValues.LIGHT_GREEN_GLINT,
+        GBColorValues.LAUDABLE_LIME,
+        GBColorValues.PLANTAIN_GREEN,
+        GBColorValues.BLACK_STALLION,
+    ]
     """
     .. raw:: html
 
@@ -65,7 +86,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBLIT = ["#1DDECE", "#19C7B3", "#16A596", "#0B7A6D"]
+    GBLIT = [
+        GBColorValues.ICE_CLIMBER,
+        GBColorValues.EXQUISITE_TURQUOISE,
+        GBColorValues.CERAMIC_BLUE_TURQUOISE,
+        GBColorValues.BLUE_GREEN,
+    ]
     """
     .. raw:: html
 
@@ -77,7 +103,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GRAFIXKIDGRAY = ["#E0DBCD", "#A89F94", "#706B66", "#2B2B26"]
+    GRAFIXKIDGRAY = [
+        GBColorValues.NOBLE_CREAM,
+        GBColorValues.LONDON_STONES,
+        GBColorValues.GIBRALTAR_GREY,
+        GBColorValues.GREEN_WATERLOO,
+    ]
     """
     .. raw:: html
 
@@ -89,7 +120,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GRAFIXKIDGREEN = ["#DBF4B4", "#ABC396", "#7B9278", "#4C625A"]
+    GRAFIXKIDGREEN = [
+        GBColorValues.CHICON,
+        GBColorValues.SEAWASHED_GLASS,
+        GBColorValues.LODEN_FROST,
+        GBColorValues.VERT_PIERRE,
+    ]
     """
     .. raw:: html
 
@@ -101,7 +137,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    BLACKZERO = ["#7E8416", "#577B46", "#385D49", "#2E463D"]
+    BLACKZERO = [
+        GBColorValues.ELWYNN_FOREST_OLIVE,
+        GBColorValues.MOSSY_GREEN,
+        GBColorValues.FRESH_HERBS,
+        GBColorValues.BRACKEN_FERN,
+    ]
     """
     .. raw:: html
 
@@ -113,7 +154,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCJP = ["#FFFFFF", "#FFAD63", "#833100", "#000000"]
+    GBCJP = [
+        GBColorValues.WHITE,
+        GBColorValues.DREAMY_SUNSET,
+        GBColorValues.COFFEE_ADDICTION,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -125,7 +171,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCUA = ["#FFFFFF", "#FF8F84", "#943A3A", "#000000"]
+    GBCUA = [
+        GBColorValues.WHITE,
+        GBColorValues.DESERT_FLOWER,
+        GBColorValues.NEW_SLED,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -137,7 +188,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCUC = ["#FFE7C5", "#CE9C85", "#846B29", "#5B3109"]
+    GBCUC = [
+        GBColorValues.CHESS_IVORY,
+        GBColorValues.DUSTY_CORAL,
+        GBColorValues.AGED_ANTICS,
+        GBColorValues.COUNT_CHOCULA,
+    ]
     """
     .. raw:: html
 
@@ -149,7 +205,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCL = ["#FFFFFF", "#65A49B", "#0000FE", "#000000"]
+    GBCL = [
+        GBColorValues.WHITE,
+        GBColorValues.AQUA_RAPIDS,
+        GBColorValues.BLUE,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -161,7 +222,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCLA = ["#FFFFFF", "#8B8CDE", "#53528C", "#000000"]
+    GBCLA = [
+        GBColorValues.WHITE,
+        GBColorValues.PERRYWINKLE,
+        GBColorValues.TWILIGHT,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -173,7 +239,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCLB = ["#FFFFFF", "#A5A5A5", "#525252", "#000000"]
+    GBCLB = [
+        GBColorValues.WHITE,
+        GBColorValues.RAINY_GREY,
+        GBColorValues.CAVERNOUS,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -185,7 +256,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCD = ["#FFFFA5", "#FE9494", "#9395FE", "#000000"]
+    GBCD = [
+        GBColorValues.CALAMANSI,
+        GBColorValues.CHERISHED_ONE,
+        GBColorValues.PERRYWINKLE_BLUE,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -197,7 +273,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCDA = ["#FFFFFF", "#FFFF00", "#FE0000", "#000000"]
+    GBCDA = [
+        GBColorValues.WHITE,
+        GBColorValues.YELLOW,
+        GBColorValues.RED,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -209,7 +290,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCDB = ["#FFFFFF", "#FFFF00", "#7D4900", "#000000"]
+    GBCDB = [
+        GBColorValues.WHITE,
+        GBColorValues.YELLOW,
+        GBColorValues.DRIED_MUSTARD,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -221,7 +307,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCR = ["#FFFFFF", "#51FF00", "#FF4200", "#000000"]
+    GBCR = [
+        GBColorValues.WHITE,
+        GBColorValues.HYPER_GREEN,
+        GBColorValues.ULTIMATE_ORANGE,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -233,7 +324,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCEUUS = ["#FFFFFF", "#7BFF30", "#0163C6", "#000000"]
+    GBCEUUS = [
+        GBColorValues.WHITE,
+        GBColorValues.SPRING_FROST,
+        GBColorValues.ROYAL_NAVY_BLUE,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -245,7 +341,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GBCRB = ["#000000", "#008486", "#FFDE00", "#FFFFFF"]
+    GBCRB = [
+        GBColorValues.BLACK,
+        GBColorValues.FANFARE,
+        GBColorValues.GOLDEN_YELLOW,
+        GBColorValues.WHITE,
+    ]
     """
     .. raw:: html
 
@@ -257,7 +358,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    CYBL = ["#9EFBE3", "#21AFF5", "#1E4793", "#0E1E3D"]
+    CYBL = [
+        GBColorValues.FREEZY_WIND,
+        GBColorValues.FANTASY_CONSOLE_SKY,
+        GBColorValues.NUIT_BLANCHE,
+        GBColorValues.DARK_ECLIPSE,
+    ]
     """
     .. raw:: html
 
@@ -269,7 +375,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    AQPP = ["#EBEEE7", "#868779", "#FA2B25", "#2A201E"]
+    AQPP = [
+        GBColorValues.CREME_FRAICHE,
+        GBColorValues.KOSHER_KHAHI,
+        GBColorValues.RED_STOP,
+        GBColorValues.VELCET_BLACK,
+    ]
     """
     .. raw:: html
 
@@ -281,7 +392,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    WTFP = ["#CECECE", "#6F9EDF", "#42678E", "#102533"]
+    WTFP = [
+        GBColorValues.WHISPER_OF_SMOKE,
+        GBColorValues.ACAPULCO_DIVE,
+        GBColorValues.SEA_OF_GALILEE,
+        GBColorValues.BLACK_BOX,
+    ]
     """
     .. raw:: html
 
@@ -293,7 +409,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    CHIG = ["#D0D058", "#A0A840", "#708028", "#405010"]
+    CHIG = [
+        GBColorValues.SALSA_VERDE,
+        GBColorValues.LAZY_LIZARD,
+        GBColorValues.PESTO_DI_RUCOLA,
+        GBColorValues.GODZILLA,
+    ]
     """
     .. raw:: html
 
@@ -305,7 +426,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    RCS = ["#EDB4A1", "#A96868", "#764462", "#2C2137"]
+    RCS = [
+        GBColorValues.WAX_FLOWER,
+        GBColorValues.MELON_TWIST,
+        GBColorValues.SCINTILLATING_VIOLET,
+        GBColorValues.BLEACHED_CEDAR,
+    ]
     """
     .. raw:: html
 
@@ -317,7 +443,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    FSIL = ["#EAF5FA", "#5FB1F5", "#D23C4E", "#4C1C2D"]
+    FSIL = [
+        GBColorValues.MOON_WHITE,
+        GBColorValues.BLUE_JEANS,
+        GBColorValues.SMOOCH_ROUGE,
+        GBColorValues.DARK_MAHOGANY,
+    ]
     """
     .. raw:: html
 
@@ -329,7 +460,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    SHZOL = ["#F8E3C4", "#CC3495", "#6B1FB1", "#0B0630"]
+    SHZOL = [
+        GBColorValues.MOONGLOW,
+        GBColorValues.ROYAL_FUCHSIA,
+        GBColorValues.FUCHSIA_NEBULA,
+        GBColorValues.COSMIC_VOID,
+    ]
     """
     .. raw:: html
 
@@ -341,7 +477,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    TDOYC = ["#B5FF32", "#FF2261", "#462917", "#1D1414"]
+    TDOYC = [
+        GBColorValues.CHESTNUT_SHELL,
+        GBColorValues.PEEVISH_RED,
+        GBColorValues.NIGHT_BROWN,
+        GBColorValues.BATS_CLOAK,
+    ]
     """
     .. raw:: html
 
@@ -353,7 +494,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    CFP = ["#CF9255", "#CF7163", "#B01553", "#3F1711"]
+    CFP = [
+        GBColorValues.POLO_PONY,
+        GBColorValues.OK_CORRAL,
+        GBColorValues.CERISE,
+        GBColorValues.DARK_SIENNA,
+    ]
     """
     .. raw:: html
 
@@ -365,7 +511,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    SFH = ["#FFFF55", "#FF5555", "#881400", "#000000"]
+    SFH = [
+        GBColorValues.PILA_YELLOW,
+        GBColorValues.FLUORESCENT_RED,
+        GBColorValues.RED_LEEVER,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -377,7 +528,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    DHG = ["#A1D909", "#467818", "#27421F", "#000000"]
+    DHG = [
+        GBColorValues.VIVID_LIME_GREEN,
+        GBColorValues.FOREST_EMPRESS,
+        GBColorValues.MYRTLE,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -389,7 +545,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    YIRL = ["#CEF7F7", "#F78E50", "#9E0000", "#1E0000"]
+    YIRL = [
+        GBColorValues.TINTED_ICE,
+        GBColorValues.BLAZE,
+        GBColorValues.CACODEMON_RED,
+        GBColorValues.DWARF_FORTRESS,
+    ]
     """
     .. raw:: html
 
@@ -401,7 +562,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    CCTR = ["#E6AEC4", "#E65790", "#8F0039", "#380016"]
+    CCTR = [
+        GBColorValues.PINK_MACAROON,
+        GBColorValues.CARMINE_ROSE,
+        GBColorValues.MADRILENO_MAROON,
+        GBColorValues.ILVAITE_BLACK,
+    ]
     """
     .. raw:: html
 
@@ -413,7 +579,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    D2KR = ["#FCF1CD", "#C09E7D", "#725441", "#000000"]
+    D2KR = [
+        GBColorValues.HINT_OF_YELLOW,
+        GBColorValues.WICKERWORK,
+        GBColorValues.MOOSE_FUR,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -425,7 +596,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    SHMGY = ["#F7E7C6", "#D68E49", "#A63725", "#331E50"]
+    SHMGY = [
+        GBColorValues.FLAXSEED,
+        GBColorValues.GOLDEN_NUGGET,
+        GBColorValues.JAIPUR,
+        GBColorValues.POWERFUL_VIOLET,
+    ]
     """
     .. raw:: html
 
@@ -437,7 +613,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    LLAWK = ["#FFFFB5", "#7BC67B", "#6B8C42", "#5A3921"]
+    LLAWK = [
+        GBColorValues.CREME,
+        GBColorValues.GARDEN_STROLL,
+        GBColorValues.MAKRUT_LIME,
+        GBColorValues.KURO_BROWN,
+    ]
     """
     .. raw:: html
 
@@ -449,7 +630,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    CGA1 = ["#FFFFFF", "#55FFFF", "#FF55FF", "#000000"]
+    CGA1 = [
+        GBColorValues.WHITE,
+        GBColorValues.ELECTRIC_SHEEP,
+        GBColorValues.ULTIMATE_PINK,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -461,7 +647,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    CGA2 = ["#FFFFFF", "#55FFFF", "#FF5555", "#000000"]
+    CGA2 = [
+        GBColorValues.WHITE,
+        GBColorValues.ELECTRIC_SHEEP,
+        GBColorValues.FLUORESCENT_RED,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -473,7 +664,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    MARMX = ["#AEDF1E", "#047E60", "#B62558", "#2C1700"]
+    MARMX = [
+        GBColorValues.YELLOWISH_GREEN,
+        GBColorValues.SPANISH_VIRIDIAN,
+        GBColorValues.GRANITA,
+        GBColorValues.ZINNWALDITE_BROWN,
+    ]
     """
     .. raw:: html
 
@@ -485,7 +681,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    SLMEM = ["#869AD9", "#6D53BD", "#6F2096", "#4F133F"]
+    SLMEM = [
+        GBColorValues.PORTAGE,
+        GBColorValues.CIRCUMORBITAL_RING,
+        GBColorValues.ORB_OF_DISCORD,
+        GBColorValues.VIOLET_CARMINE,
+    ]
     """
     .. raw:: html
 
@@ -497,7 +698,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    DATN = ["#A9B0B3", "#586164", "#20293F", "#030C22"]
+    DATN = [
+        GBColorValues.BRILLIANT_SILVER,
+        GBColorValues.ANCHOR_GREY,
+        GBColorValues.YANKEES_BLUE,
+        GBColorValues.VOID,
+    ]
     """
     .. raw:: html
 
@@ -509,7 +715,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    TSK = ["#F5DB37", "#37CAE5", "#0F86B6", "#123F77"]
+    TSK = [
+        GBColorValues.ANGELS_TRUMPET,
+        GBColorValues.LAKE_THUN,
+        GBColorValues.LUCARIO_BLUE,
+        GBColorValues.INOFFENSIVE_BLUE,
+    ]
     """
     .. raw:: html
 
@@ -521,7 +732,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    PPR = ["#ADFFFC", "#8570B2", "#FF0084", "#68006A"]
+    PPR = [
+        GBColorValues.FROSTBITE,
+        GBColorValues.DAHLIA_PURPLE,
+        GBColorValues.FANCY_FUCHSIA,
+        GBColorValues.PURPLE_DREAMER,
+    ]
     """
     .. raw:: html
 
@@ -533,7 +749,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    CMYK = ["#FFFF00", "#0BE8FD", "#FB00FA", "#373737"]
+    CMYK = [
+        GBColorValues.YELLOW,
+        GBColorValues.PAINT_THE_SKY,
+        GBColorValues.SIXTEEN_MILLION_PINK,
+        GBColorValues.DARK_GREY,
+    ]
     """
     .. raw:: html
 
@@ -545,7 +766,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    VB85 = ["#FF0000", "#DB0000", "#520000", "#000000"]
+    VB85 = [
+        GBColorValues.RED,
+        GBColorValues.RED_PEGASUS,
+        GBColorValues.UMBRAL_UMBER,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -557,7 +783,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    AZC = ["#47FF99", "#32B66D", "#124127", "#000000"]
+    AZC = [
+        GBColorValues.SEA_GREEN,
+        GBColorValues.TURTLE_WARRIOR,
+        GBColorValues.MIZUKAZE_GREEN,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -569,7 +800,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GELC = ["#FF9C00", "#C27600", "#4F3000", "#000000"]
+    GELC = [
+        GBColorValues.MANDARIN_PEEL,
+        GBColorValues.CASSANDRAS_CURSE,
+        GBColorValues.KYOTO_HOUSE,
+        GBColorValues.BLACK,
+    ]
     """
     .. raw:: html
 
@@ -581,7 +817,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    ROGA = ["#EBC4AB", "#649A57", "#574431", "#323727"]
+    ROGA = [
+        GBColorValues.WEEKEND_RETREAT,
+        GBColorValues.ASTROTURF,
+        GBColorValues.OLD_TREASURE_CHEST,
+        GBColorValues.BLACK_POWDER,
+    ]
     """
     .. raw:: html
 
@@ -593,7 +834,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    KDITW = ["#FFFE6E", "#D5690F", "#3C3CA9", "#2C2410"]
+    KDITW = [
+        GBColorValues.SUPER_BANANA,
+        GBColorValues.CINAMON,
+        GBColorValues.EARLY_SPRING_NIGHT,
+        GBColorValues.BLACK_SLUG,
+    ]
     """
     .. raw:: html
 
@@ -605,7 +851,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    DIMWM = ["#FFDBCB", "#F27D7A", "#558429", "#222903"]
+    DIMWM = [
+        GBColorValues.GLAZED_SUGAR,
+        GBColorValues.JINZA_SAFFLOWER,
+        GBColorValues.EMERALD_CLEAR_GREEN,
+        GBColorValues.LIQUORICE_ROOT,
+    ]
     """
     .. raw:: html
 
@@ -617,7 +868,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    SPEZI = ["#FEDA1B", "#DF7925", "#B60077", "#382977"]
+    SPEZI = [
+        GBColorValues.CANDLELIGHT,
+        GBColorValues.CHEROKEE_DIGNITY,
+        GBColorValues.EYE_POPPING_CHERRY,
+        GBColorValues.DEEP_SPACE_RODEO,
+    ]
     """
     .. raw:: html
 
@@ -629,7 +885,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    FFS = ["#E9D9CC", "#C5C5CE", "#75868F", "#171F62"]
+    FFS = [
+        GBColorValues.SHORELAND,
+        GBColorValues.FLAT_ALUMINIUM,
+        GBColorValues.ADIRONDACK_BLUE,
+        GBColorValues.PURE_MIDNIGHT,
+    ]
     """
     .. raw:: html
 
@@ -641,7 +902,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    BANANA = ["#FDFE0A", "#FED638", "#977B25", "#221A09"]
+    BANANA = [
+        GBColorValues.HEXOS_PALESUN,
+        GBColorValues.FLIRTATIOUS,
+        GBColorValues.SPRUCED_UP,
+        GBColorValues.NOIR_MYSTIQUE,
+    ]
     """
     .. raw:: html
 
@@ -653,7 +919,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    HIPSTER = ["#FDFEF5", "#DEA963", "#9E754F", "#241606"]
+    HIPSTER = [
+        GBColorValues.MILK,
+        GBColorValues.SUGAR_HONEY_CASHEW,
+        GBColorValues.GOLDEN_GLOVE,
+        GBColorValues.CANNON_BLACK,
+    ]
     """
     .. raw:: html
 
@@ -665,7 +936,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    NC = ["#FCFE54", "#54FEFC", "#04AAAC", "#0402AC"]
+    NC = [
+        GBColorValues.BUTTER_CAKE,
+        GBColorValues.ELECTRIC_SHEEP,
+        GBColorValues.FIJI,
+        GBColorValues.TRADITIONAL_ROYAL_BLUE,
+    ]
     """
     .. raw:: html
 
@@ -677,7 +953,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    GLMO = ["#FFBF98", "#A1A8B8", "#514F6C", "#2F1C35"]
+    GLMO = [
+        GBColorValues.BLUSHING_CINNAMON,
+        GBColorValues.RIDGE_VIEW,
+        GBColorValues.PANGO_BLACK,
+        GBColorValues.BLEACHED_CEDAR,
+    ]
     """
     .. raw:: html
 
@@ -689,7 +970,12 @@ class GBColorPalettes(Enum):
         </div>
     """
 
-    TPA = ["#F3C677", "#E64A4E", "#912978", "#0C0A3E"]
+    TPA = [
+        GBColorValues.ORANGE_CHOCOLATE,
+        GBColorValues.THIMBLEBERRY,
+        GBColorValues.VIOLET_VIXEN,
+        GBColorValues.GRIM_REAPER,
+    ]
     """
     .. raw:: html
 
@@ -739,4 +1025,18 @@ class GBColorPalettes(Enum):
         >>> GBColorPalettes.BW.rgb_colors
         [[255, 255, 255], [168, 168, 168], [84, 84, 84], [0, 0, 0]]
         """
-        return [list(hex_to_rgb(hex_value)) for hex_value in self.value]
+        return [hex_to_rgb(color.value) for color in self.value]
+
+    @property
+    def hex_colors(self) -> List[str]:
+        """
+        Return the 4 color values of the enum in hexadecimal.
+
+        :return: the 4 colors values in hexadecimal.
+        :rtype: list[str]
+
+        >>> from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
+        >>> GBColorPalettes.BW.hex_colors
+        ['#FFFFFF', '#A8A8A8', '#545454', '#000000']
+        """
+        return [color.value for color in self.value]
