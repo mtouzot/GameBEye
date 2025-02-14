@@ -3,7 +3,9 @@
 from enum import Enum, unique
 from typing import List, Tuple
 
-from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
+from skimage.color import deltaE_ciede2000
+
+from gamebeye.gbcamcolors.color_helpers import hex_to_rgb, rgb_to_lab
 
 
 # Class decorator @unique ensure each enum value is unique
@@ -2332,7 +2334,28 @@ class GBColorValues(Enum):
         :rtype: list[int]
 
         >>> from gamebeye.gbcamcolors.gbcolorvalues import GBColorValues
-        >>> GBcolorValues.ROYAL_NAVY_BLUE
+        >>> GBColorValues.ROYAL_NAVY_BLUE
         [1, 99, 198]
         """
         return hex_to_rgb(self.value)
+
+    @classmethod
+    def nearest_color(cls, rgb_value):
+        """
+        Find nearest color value among the GBColorValues.
+
+        :param list rgb_val: (R, G, B) list to convert
+
+        :return: the nearest color from the GBColorValues
+        :rtype: GBColorValue
+
+        >>> from gamebeye.gbcamcolors.gbcolorvalues import GBColorValues
+        >>> GBColorValues.nearest_color([2, 100, 198])
+        <GBColorValues.ROYAL_NAVY_BLUE: '#0163C6'>
+        """
+        ref_lab_color = rgb_to_lab(rgb_value)
+        distance = []
+        for color in cls:
+            lab_color = rgb_to_lab(color.rgb_colors)
+            distance.append((color, deltaE_ciede2000(ref_lab_color, lab_color)))
+        return min(distance, key=lambda d: d[1])[0]
