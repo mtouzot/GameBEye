@@ -1,7 +1,7 @@
 """Define the GBColorValues enum."""
 
 from enum import Enum, unique
-from typing import List, Tuple
+from typing import List, Self, Tuple
 
 from skimage.color import deltaE_ciede2000
 
@@ -2367,4 +2367,19 @@ class GBColorValues(Enum):
         <GBColorValues.ROYAL_NAVY_BLUE: '#0163C6'>
         """
         distance = [(color, color.distance_from(rgb_value)) for color in cls]
+        return min(distance, key=lambda d: d[1])[0]
+
+    @staticmethod
+    def nearest_color_in(gb_color_values: List[Self], rgb_value: List[int]):
+        """
+        Find nearest color value among a list of GBColorValues.
+
+        :param list rgb_val: (R, G, B) list to convert
+
+        :return: the nearest color from the GBColorValues
+        :rtype: GBColorValue
+        """
+        distance = [
+            (color, color.distance_from(rgb_value)) for color in gb_color_values
+        ]
         return min(distance, key=lambda d: d[1])[0]
