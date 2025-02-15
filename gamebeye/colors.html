@@ -77,6 +77,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamcolors.color_helpers.is_clamped_hex"><code class="docutils literal notranslate"><span class="pre">is_clamped_hex()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamcolors.color_helpers.is_clamped_rgb"><code class="docutils literal notranslate"><span class="pre">is_clamped_rgb()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamcolors.color_helpers.rgb_to_hex"><code class="docutils literal notranslate"><span class="pre">rgb_to_hex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamcolors.color_helpers.rgb_to_lab"><code class="docutils literal notranslate"><span class="pre">rgb_to_lab()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamcolors.color_helpers.scaled_array"><code class="docutils literal notranslate"><span class="pre">scaled_array()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -2050,6 +2052,45 @@ coded in hexadecimal basis.</p>
 </div>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamcolors.gbcolorvalues.GBColorValues.distance_from">
+<span class="sig-name descname"><span class="pre">distance_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamebeye.gbcamcolors.gbcolorvalues.GBColorValues.distance_from" title="Link to this definition"></a></dt>
+<dd><p>Compute the deltaE_ciede2000 between the current color from a (R, G, B) array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb_value</strong> (<em>list</em>) – (R, G, B) list of reference</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the color distance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamcolors.gbcolorvalues.GBColorValues.nearest_color">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nearest_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamebeye.gbcamcolors.gbcolorvalues.GBColorValues.nearest_color" title="Link to this definition"></a></dt>
+<dd><p>Find nearest color value among the GBColorValues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb_val</strong> (<em>list</em>) – (R, G, B) list to convert</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the nearest color from the GBColorValues</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>GBColorValue</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">gamebeye.gbcamcolors.gbcolorvalues</span><span class="w"> </span><span class="kn">import</span> <span class="n">GBColorValues</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GBColorValues</span><span class="o">.</span><span class="n">nearest_color</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">198</span><span class="p">])</span>
+<span class="go">&lt;GBColorValues.ROYAL_NAVY_BLUE: &#39;#0163C6&#39;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="gamebeye.gbcamcolors.gbcolorvalues.GBColorValues.rgb_colors">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rgb_colors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gamebeye.gbcamcolors.gbcolorvalues.GBColorValues.rgb_colors" title="Link to this definition"></a></dt>
@@ -2063,7 +2104,7 @@ coded in hexadecimal basis.</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">gamebeye.gbcamcolors.gbcolorvalues</span><span class="w"> </span><span class="kn">import</span> <span class="n">GBColorValues</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">GBcolorValues</span><span class="o">.</span><span class="n">ROYAL_NAVY_BLUE</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GBColorValues</span><span class="o">.</span><span class="n">ROYAL_NAVY_BLUE</span>
 <span class="go">[1, 99, 198]</span>
 </pre></div>
 </div>
@@ -2671,6 +2712,23 @@ represent a color coded in hexadecimal basis.</p>
 </div>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes.distance_from">
+<span class="sig-name descname"><span class="pre">distance_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes.distance_from" title="Link to this definition"></a></dt>
+<dd><p>Compute the deltaE_ciede2000 between the palette from a colors list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb_values</strong> (<em>list</em>) – (R, G, B) colors</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the color distance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes.hex_colors">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hex_colors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes.hex_colors" title="Link to this definition"></a></dt>
@@ -2688,6 +2746,23 @@ represent a color coded in hexadecimal basis.</p>
 <span class="go">[&#39;#FFFFFF&#39;, &#39;#A8A8A8&#39;, &#39;#545454&#39;, &#39;#000000&#39;]</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes.nearest_palette">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nearest_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_rgb_palette</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes.nearest_palette" title="Link to this definition"></a></dt>
+<dd><p>Find nearest color palette among the GBColorPalettes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb_color_palette</strong> (<em>list</em><em>[</em><em>list</em><em>[</em><em>int</em><em>]</em><em>]</em>) – a color palette</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the nearest color palette from GBColorPalettes</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes" title="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes">GBColorPalettes</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -3077,6 +3152,52 @@ and the 2 left digits the green.</p>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="w">    </span><span class="o">...</span>
 <span class="gr">ValueError</span>: <span class="n">rgb_val argument must be a 3 values list</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gamebeye.gbcamcolors.color_helpers.rgb_to_lab">
+<span class="sig-prename descclassname"><span class="pre">gamebeye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">rgb_to_lab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb_val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamebeye.gbcamcolors.color_helpers.rgb_to_lab" title="Link to this definition"></a></dt>
+<dd><p>Convert a (R, G, B) array to a (L, a, b) array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rgb_val</strong> (<em>list</em>) – (R, G, B) list to convert</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list containing L, a, b values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">gamebeye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">rgb_to_lab</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rgb_to_lab</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">])</span>
+<span class="go">array([ 20.0262693 ,  -0.6623394 , -18.32821659])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gamebeye.gbcamcolors.color_helpers.scaled_array">
+<span class="sig-prename descclassname"><span class="pre">gamebeye.gbcamcolors.color_helpers.</span></span><span class="sig-name descname"><span class="pre">scaled_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gamebeye.gbcamcolors.color_helpers.scaled_array" title="Link to this definition"></a></dt>
+<dd><p>Scale an array from a source range to a destination range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>array</strong> (<em>list</em>) – array to scale</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a scaled array</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">gamebeye.gbcamcolors.color_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">scaled_array</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scaled_array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="go">np.array([0., 0., 1.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scaled_array</span><span class="p">([</span><span class="mi">512</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="go">array([2.00784314, 0.50196078, 0. ])</span>
 </pre></div>
 </div>
 </dd></dl>
