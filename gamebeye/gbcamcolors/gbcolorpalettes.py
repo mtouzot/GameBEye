@@ -2,10 +2,12 @@
 
 from enum import Enum, unique
 from math import inf
-from typing import List, Tuple
+from typing import Dict, List, Self, Tuple
 
-from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
+from gamebeye.gbcamcolors.color_helpers import hex_to_rgb, rgb_to_hex
 from gamebeye.gbcamcolors.gbcolorvalues import GBColorValues
+
+ColorMap = Dict[List[int], GBColorValues]
 
 
 # Class decorator @unique ensure each enum value is unique
@@ -1042,7 +1044,7 @@ class GBColorPalettes(Enum):
         """
         return [color.value for color in self.value]
 
-    def distance_from(self, rgb_values: list[list[int]]):
+    def distance_from(self, rgb_values: List[List[int]]):
         """
         Compute the deltaE_ciede2000 between the palette from a colors list.
 
@@ -1058,7 +1060,7 @@ class GBColorPalettes(Enum):
         return min_distance
 
     @classmethod
-    def nearest_palette(cls, img_rgb_palette: list[list[int]]):
+    def nearest_palette(cls, img_rgb_palette: List[List[int]]):
         """
         Find nearest color palette among the GBColorPalettes.
 
@@ -1083,3 +1085,26 @@ class GBColorPalettes(Enum):
                     nearest_palette = palette
                     min_distances = distance
         return nearest_palette
+
+    @staticmethod
+    def convert_to_palette(
+        img_rgb_palette: List[List[int]], gbcolorpalette: Self = None
+    ) -> ColorMap:
+        """
+        Convert a RGB color to the nearest GBColorValue from a GBColorPalette.
+
+        :param list img_rgb_palette: list of rgb colors
+        :param GBColorPalettes gbcolorpalette: the color palette destination
+
+        :returns: a color conversion map
+        :rtype: ColorMap
+        """
+        if gbcolorpalette is None:
+            gbcolorpalette = GBColorPalettes.nearest_palette(img_rgb_palette)
+
+        conversion_map = {}
+        for rgb_color in img_rgb_palette:
+            conversion_map[rgb_to_hex(rgb_color)] = GBColorValues.nearest_color_in(
+                gbcolorpalette.value, rgb_color
+            )
+        return conversion_map

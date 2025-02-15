@@ -1,7 +1,7 @@
 """Define the GBCamImage class."""
 
 import os
-from typing import NoReturn, Tuple
+from typing import List, NoReturn, Tuple
 
 import cv2
 import numpy as np
@@ -72,7 +72,7 @@ class GBCamImage:
         """
         return self.__colors
 
-    def read(self, image_filepath: str) -> NoReturn:
+    def read(self, image_filepath: str, convert: bool = False) -> NoReturn:
         """
         Open filepath to read the file contents to populate the object.
 
@@ -83,6 +83,8 @@ class GBCamImage:
 
         :param image_filepath: filepath to image
         :type image_filepath: a string
+        :param convert: turn on color convertion to the closest GBColorPalette
+        :type convert: bool
         """
         if not os.path.exists(image_filepath):
             raise FileNotFoundError("The input filepath does not exist")
@@ -103,6 +105,10 @@ class GBCamImage:
             .view(img.dtype)
             .reshape(-1, img.shape[2])
         )
+
+        if convert:
+            gb_color_palette = GBColorPalettes.nearest_palette(bgr_colors)
+            bgr_colors = self.convert_to_palette(bgr_colors, gb_color_palette)
 
         if len(bgr_colors) != GBCamImage.NB_COLORS:
             raise ValueError("The read image have too many colors")
@@ -150,3 +156,35 @@ class GBCamImage:
 
         self.__data[:] = img_temp
         self.__colors = color_palette
+
+    def convert_to_palette(
+        self, src_color_palette: List[List[int]], dest_color_palette: GBColorPalettes
+    ):
+        """
+        Convert the data to the nearest GBColorPalettes.
+
+        :param src_color_palette: original color palatte
+        :type src_color_palette: List of List of int
+        :param dest_color_palette: final GBColorPalettes
+        :type dest_color_palette: GBColorPalettes
+
+        :return: the final color palette in the BGR color space
+        :rtype: List of List of int
+        """
+        color_map = GBColorPalettes.convert_to_palette(
+            src_color_palette, dest_color_palette
+        )
+
+        bgr_colors = []
+        img_temp = np.empty_like(self.__data)
+        for color in color_map.keys():
+            bgr_color = hex_to_bgr(color_map[color].value).tolist()
+            bgr_colors.append(bgr_color)
+
+            src_color = hex_to_rgb(color)
+            dest_color = hex_to_rgb(color_map[color].value)
+            img_temp = np.where(self.__data == src_color, dest_color, img_temp)
+
+        self.__data[:] = img_temp
+        self.__colors = dest_color_palette
+        return [{tuple(color) for color in bgr_colors}]
