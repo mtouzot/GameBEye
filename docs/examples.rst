@@ -22,6 +22,7 @@ Among others, you'll be able to create an animated GIF made of color Game Boy Ca
    :maxdepth: 1
    :caption: Contents:
 
+   ./examples/converting_images.rst
    ./examples/display_images.rst
    ./examples/colorizing_image.rst
    ./examples/printing_image.rst
