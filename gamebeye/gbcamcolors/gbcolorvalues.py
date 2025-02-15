@@ -2339,6 +2339,19 @@ class GBColorValues(Enum):
         """
         return hex_to_rgb(self.value)
 
+    def distance_from(self, rgb_value: list[int]):
+        """
+        Compute the deltaE_ciede2000 between the current color from a (R, G, B) array.
+
+        :param list rgb_value: (R, G, B) list of reference
+
+        :return: the color distance
+        :rtype: float
+        """
+        ref_lab_color = rgb_to_lab(rgb_value)
+        lab_color = rgb_to_lab(self.rgb_colors)
+        return deltaE_ciede2000(ref_lab_color, lab_color)
+
     @classmethod
     def nearest_color(cls, rgb_value):
         """
@@ -2353,9 +2366,5 @@ class GBColorValues(Enum):
         >>> GBColorValues.nearest_color([2, 100, 198])
         <GBColorValues.ROYAL_NAVY_BLUE: '#0163C6'>
         """
-        ref_lab_color = rgb_to_lab(rgb_value)
-        distance = []
-        for color in cls:
-            lab_color = rgb_to_lab(color.rgb_colors)
-            distance.append((color, deltaE_ciede2000(ref_lab_color, lab_color)))
+        distance = [(color, color.distance_from(rgb_value)) for color in cls]
         return min(distance, key=lambda d: d[1])[0]

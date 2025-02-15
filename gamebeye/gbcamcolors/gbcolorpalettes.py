@@ -1,6 +1,7 @@
 """Define the GBColorPalettes enum."""
 
 from enum import Enum, unique
+from math import inf
 from typing import List, Tuple
 
 from gamebeye.gbcamcolors.color_helpers import hex_to_rgb
@@ -1040,3 +1041,45 @@ class GBColorPalettes(Enum):
         ['#FFFFFF', '#A8A8A8', '#545454', '#000000']
         """
         return [color.value for color in self.value]
+
+    def distance_from(self, rgb_values: list[list[int]]):
+        """
+        Compute the deltaE_ciede2000 between the palette from a colors list.
+
+        :param list rgb_values: (R, G, B) colors
+
+        :return: the color distance
+        :rtype: float
+        """
+        min_distance = []
+        for rgb_value in rgb_values:
+            distance = [(color, color.distance_from(rgb_value)) for color in self.value]
+            min_distance.append(min(distance, key=lambda d: d[1]))
+        return min_distance
+
+    @classmethod
+    def nearest_palette(cls, img_rgb_palette: list[list[int]]):
+        """
+        Find nearest color palette among the GBColorPalettes.
+
+        :param list[list[int]] rgb_color_palette: a color palette
+
+        :return: the nearest color palette from GBColorPalettes
+        :rtype: GBColorPalettes
+        """
+        min_distances = inf
+        for palette in cls:
+            infos = palette.distance_from(img_rgb_palette)
+            colors, _ = zip(*infos, strict=False)
+
+            if len(set(colors)) != 4:
+                pass
+
+            for unique_color in set(colors):
+                distance = min(
+                    [distance for color, distance in infos if color == unique_color]
+                )
+                if min_distances > distance:
+                    nearest_palette = palette
+                    min_distances = distance
+        return nearest_palette
