@@ -2,6 +2,7 @@
 
 import numpy as np
 import numpy.typing as npt
+import skimage.color
 
 
 def clamp(val: int) -> int:
@@ -336,3 +337,43 @@ def bgr_to_rgb(bgr_val: npt.ArrayLike) -> np.ndarray:
     if not isinstance(bgr_val, tuple):
         bgr_val = tuple(clamp_rgb(bgr_val))
     return bgr_val[::-1]
+
+
+def scaled_array(
+    array: list, src_range: list[int], dest_range: list[int]
+) -> np.ndarray:
+    """
+    Scale an array from a source range to a destination range.
+
+    :param list array: array to scale
+
+    :returns: a scaled array
+    :rtype: np.ndarray
+
+    >>> from gamebeye.gbcamcolors.color_helpers import scaled_array
+    >>> scaled_array([0, 0, 255], [0, 255], [0, 1])
+    np.array([0., 0., 1.])
+    >>> scaled_array([512, 128, 0], [0, 255], [0, 1])
+    array([2.00784314, 0.50196078, 0. ])
+    """
+    array = np.array(array)
+    src_min, src_max = src_range
+    dest_min, dest_max = dest_range
+    return (array - src_min) / (src_max - src_min) * (dest_max - dest_min) + dest_min
+
+
+def rgb_to_lab(rgb_val):
+    """
+    Convert a (R, G, B) array to a (L, a, b) array.
+
+    :param list rgb_val: (R, G, B) list to convert
+
+    :returns: a list containing L, a, b values.
+    :rtype: np.array
+
+    >>> from gamebeye.gbcamcolors.color_helpers import rgb_to_lab
+    >>> rgb_to_lab([25, 50, 75])
+    array([ 20.0262693 ,  -0.6623394 , -18.32821659])
+    """
+    rgb_val = scaled_array(rgb_val, [0, 255], [0, 1])
+    return skimage.color.rgb2lab(rgb_val)
