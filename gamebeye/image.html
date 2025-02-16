@@ -56,8 +56,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../gamebeye.html">gamebeye documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>gamebeye.gbcamimage</strong> module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gbcamimage-class"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GBCamImage</span></code> class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gbcamfilters-module"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gbcamfilters</span></code> module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbcamimage-class"><code class="xref py py-mod docutils literal notranslate"><span class="pre">GBCamImage</span></code> class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage"><code class="docutils literal notranslate"><span class="pre">GBCamImage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-gamebeye.gbcamimage.gbcamfilters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gbcamfilters</span></code> module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamimage.gbcamfilters.to_thermal_printer"><code class="docutils literal notranslate"><span class="pre">to_thermal_printer()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#module-gamebeye.gbcamimage.filter_helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">filter_helpers</span></code> module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamimage.filter_helpers.generate_hstripes"><code class="docutils literal notranslate"><span class="pre">generate_hstripes()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamimage.filter_helpers.generate_vstripes"><code class="docutils literal notranslate"><span class="pre">generate_vstripes()</span></code></a></li>
@@ -111,9 +117,168 @@
 </div></div>
 <section id="gbcamimage-class">
 <h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">GBCamImage</span></code> class<a class="headerlink" href="#gbcamimage-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gamebeye.gbcamimage.gbcamimage.</span></span><span class="sig-name descname"><span class="pre">GBCamImage</span></span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The base class of Game Boy Camera images.</p>
+<p>A Game Boy Camera image is a nothing but a 4-colors 128x112 array.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.BORDER">
+<span class="sig-name descname"><span class="pre">BORDER</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.BORDER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.CHANNEL">
+<span class="sig-name descname"><span class="pre">CHANNEL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.CHANNEL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.HEIGHT">
+<span class="sig-name descname"><span class="pre">HEIGHT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.HEIGHT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.NB_COLORS">
+<span class="sig-name descname"><span class="pre">NB_COLORS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.NB_COLORS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.WIDTH">
+<span class="sig-name descname"><span class="pre">WIDTH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">112</span></em><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.WIDTH" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.change_color">
+<span class="sig-name descname"><span class="pre">change_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color_palette</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="colors.html#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes" title="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes"><span class="pre">GBColorPalettes</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">GBColorPalettes.BW</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.change_color" title="Link to this definition"></a></dt>
+<dd><p>Change the color palette with a new one from GBColorPalettes values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – The color parameter must be a GBColorPalettes.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>color_palette</strong> – the color palette to apply</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a GBColorPalettes value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.color_palette">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">color_palette</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="colors.html#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes" title="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes"><span class="pre">GBColorPalettes</span></a></em><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.color_palette" title="Link to this definition"></a></dt>
+<dd><p>Return the GBColorPalette of the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a GBColorPalette value</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="colors.html#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes" title="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes">GBColorPalettes</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.convert_to_palette">
+<span class="sig-name descname"><span class="pre">convert_to_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_color_palette</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_color_palette</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="colors.html#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes" title="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes"><span class="pre">GBColorPalettes</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.convert_to_palette" title="Link to this definition"></a></dt>
+<dd><p>Convert the data to the nearest GBColorPalettes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src_color_palette</strong> (<em>List</em><em> of </em><em>List</em><em> of </em><em>int</em>) – original color palatte</p></li>
+<li><p><strong>dest_color_palette</strong> (<a class="reference internal" href="colors.html#gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes" title="gamebeye.gbcamcolors.gbcolorpalettes.GBColorPalettes"><em>GBColorPalettes</em></a>) – final GBColorPalettes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the final color palette in the BGR color space</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of List of int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.data" title="Link to this definition"></a></dt>
+<dd><p>Property to return the image data as a numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the image data</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.read" title="Link to this definition"></a></dt>
+<dd><p>Open filepath to read the file contents to populate the object.</p>
+<p>Read filepath content, change color to GBColorPalettes.BW if unknown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – The input filepath must exist to be read</p></li>
+<li><p><strong>ValueError</strong> – The read image is a standard Game Boy Camera Image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>image_filepath</strong> (<em>a string</em>) – filepath to image</p></li>
+<li><p><strong>convert</strong> (<em>bool</em>) – turn on color convertion to the closest GBColorPalette</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.shape" title="Link to this definition"></a></dt>
+<dd><p>Property to return the GBCamImage shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the image shape</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="gbcamfilters-module">
-<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">gbcamfilters</span></code> module<a class="headerlink" href="#gbcamfilters-module" title="Link to this heading"></a></h2>
+<section id="module-gamebeye.gbcamimage.gbcamfilters">
+<span id="gbcamfilters-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">gbcamfilters</span></code> module<a class="headerlink" href="#module-gamebeye.gbcamimage.gbcamfilters" title="Link to this heading"></a></h2>
+<p>Define filters to apply to GBCamImage object.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamfilters.to_thermal_printer">
+<span class="sig-prename descclassname"><span class="pre">gamebeye.gbcamimage.gbcamfilters.</span></span><span class="sig-name descname"><span class="pre">to_thermal_printer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage" title="gamebeye.gbcamimage.gbcamimage.GBCamImage"><span class="pre">GBCamImage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamfilters.to_thermal_printer" title="Link to this definition"></a></dt>
+<dd><p>Emulate a GB thermal printer and return a printed-on-paper image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>src</strong> – A Game Boy Camera Image</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage" title="gamebeye.gbcamimage.gbcamimage.GBCamImage">GBCamImage</a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the printed image</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+<div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/printedGameBoyCamera.png">
+<p>Thermal printed image</p>
+</div>
+</div></dd></dl>
+
 </section>
 <section id="module-gamebeye.gbcamimage.filter_helpers">
 <span id="filter-helpers-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">filter_helpers</span></code> module<a class="headerlink" href="#module-gamebeye.gbcamimage.filter_helpers" title="Link to this heading"></a></h2>
