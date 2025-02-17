@@ -1,31 +1,27 @@
 ## Site Meta ##
 # The title of the website.
-title: "Lens - Elastic Designs"
+title: "GameBEye - A gallery"
 # The description of the website
-description: "A Jekyll theme for photographers and photo bloggers."
+description: "A gallery to display images processed by gamebeye library."
 # Keywords/tags for you site.
-keywords: "lens, jeykll-lens, jekyll, theme, jekyll-theme, photography, blog, photography-blog, photo-blog"
+keywords: "gamebeye, gameboy camera, python"
 # Your copyright message.
-copyright: "Copyright &copy; 2017 - Elastic Designs."
+copyright: "&copy; Copyright 2021 - 2025, Martin TOUZOT."
 
 ## Site Configurations ##
 # 1st heading of the site.
-header: "Lens"
+header: "gamebeye"
 # 2nd heading/sub heading of the website.
-subheader: "Elastic Designs"
+subheader: "A gallery"
 # A description/bio of the website.
-bio: "A Jekyll theme for photographers and photo bloggers."
+bio: "A gallery made with Game Boy Camera images."
 social:
-  # Your Twitter username.
-  twitter_username: ""
-  # Your Facebook username.
-  facebook_username: ""
-  # Your Instagram username.
-  instagram_username: ""
   # GitHub username.
-  github_username: "ElasticDesigns"
+  github_username: "mtouzot"
+  # GitHub username.
+  github_repo: "GameBEye"
   # Your email address.
-  email: ""
+  email: "martin.touzot@gmail.com"
 
 ## Gallery Configuration ##
 # If you modify this, also modify the `default.scope.path` key below.

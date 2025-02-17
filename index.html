@@ -11,17 +11,11 @@ layout: default
     <p>{{ site.bio }}</p>
     {% if site.social %}
       <ul class="icons">
-        {% if site.social.twitter_username and site.social.twitter_username != "" %}
-          <li><a href="https://twitter.com/{{ site.social.twitter_username }}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        {% endif %}
-        {% if site.social.facebook_username and site.social.facebook_username != "" %}
-          <li><a href="https://www.facebook.com/{{ site.social.facebook_username }}" class="icon fa-facebook-official"><span class="label">Facebook</span></a></li>
-        {% endif %}
-        {% if site.social.instagram_username and site.social.instagram_username != "" %}
-          <li><a href="https://instagram.com/{{ site.social.instagram_username }}" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        {% if site.social.github_repo and site.social.github_repo != "" %}
+        <li><a href="https://{{ site.social.github_username }}.github.io/{{ site.social.github_repo }}" class="icon"><img src="https://media.githubusercontent.com/media/mtouzot/GameBEye/refs/heads/master/docs/_static/icon/favicon-16x16.png" alt="Documentation"><span class="label">Documentation</span></a></li>
         {% endif %}
         {% if site.social.github_username and site.social.github_username != "" %}
-          <li><a href="https://github.com/{{ site.social.github_username }}" class="icon fa-github"><span class="label">Github</span></a></li>
+          <li><a href="https://github.com/{{ site.social.github_username }}/{{ site.social.github_repo }}" class="icon fa-github" alt="GitHub"><span class="label">Github</span></a></li>
         {% endif %}
         {% if site.social.email and site.social.email != "" %}
           <li><a href="mailto:{{ site.social.email }}" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
