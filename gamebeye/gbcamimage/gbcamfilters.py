@@ -33,7 +33,8 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
     overlap = 4
 
     pixel_sample = os.path.join(
-        os.path.dirname(__file__), "images\\sample\\pixel_sample.png"
+        os.path.dirname(os.path.dirname(__file__)),
+        "images\\sample\\pixel_sample.png"
     )
     pixel_sample = cv2.imread(pixel_sample)
     nb_pixel_samples = 49
@@ -55,9 +56,10 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
             c = y * (mask_size - overlap)
             d = c + mask_size
 
-            if bgr_to_hex(src.data[x, y]) != src.color_palette.value[0]:
+            if bgr_to_hex(src.data[x, y]) != src.color_palette.value[0].value:
                 j = np.random.choice(nb_pixel_samples)
-                i = src.color_palette.value[1:].index(bgr_to_hex(src.data[x, y]))
+                hex_color_palette = [color.value for color in src.color_palette.value[1:]]
+                i = hex_color_palette.index(bgr_to_hex(src.data[x, y]))
 
                 dot = pixel_sample[
                     mask_size * i : mask_size * (i + 1),
