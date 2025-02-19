@@ -257,3 +257,16 @@ class GBCamImage:
                     dst[a:b, c:d, :] = np.minimum(dot, dst[a:b, c:d, :])
 
         return dst
+
+    def invert_color(self):
+        """
+        Invert the color palette of the image.
+        """
+        img_temp = np.empty_like(self.__data)
+        for idx, color in enumerate(self.color_palette.value[::-1]):
+            thresh = hex_to_bgr(color.value)
+            current_color = hex_to_bgr(self.__colors.value[idx].value)
+            img_temp = np.where(self.__data == current_color, thresh, img_temp)
+
+
+        self.__data[:] = cv2.normalize(img_temp, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)

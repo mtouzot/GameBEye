@@ -5,7 +5,7 @@ import os
 import cv2
 import numpy as np
 
-from gamebeye.gbcamcolors.color_helpers import bgr_to_hex
+from gamebeye.gbcamcolors.color_helpers import bgr_to_hex, hex_to_bgr
 from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
 from gamebeye.gbcamimage.filter_helpers import generate_vstripes
 from gamebeye.gbcamimage.gbcamimage import GBCamImage
@@ -81,3 +81,21 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
                 dst[a:b, c:d, :] = np.minimum(dot, dst[a:b, c:d, :])
 
     return dst
+
+def invert_color(src: GBCamImage) -> np.ndarray:
+    """
+    Invert the color palette of the image.
+
+    :param src: A Game Boy Camera Image
+    :type: GBCamImage
+
+    :return: the printed image
+    :rtype: np.ndarray
+    """
+    img_temp = np.empty_like(src.data)
+    for idx, color in enumerate(src.color_palette.value[::-1]):
+        thresh = hex_to_bgr(color.value)
+        current_color = hex_to_bgr(src.color_palette.value[idx].value)
+        img_temp = np.where(src.data == current_color, thresh, img_temp)
+
+    return cv2.normalize(img_temp, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
