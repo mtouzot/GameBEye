@@ -6,6 +6,7 @@ import cv2
 import numpy as np
 
 from gamebeye.gbcamcolors.color_helpers import bgr_to_hex
+from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
 from gamebeye.gbcamimage.filter_helpers import generate_vstripes
 from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
@@ -48,6 +49,9 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
         ),
         dtype=np.uint8,
     )
+
+    if src.color_palette != GBColorPalettes.BW:
+        src.change_color()
 
     for y in range(src.HEIGHT):
         for x in range(src.WIDTH):

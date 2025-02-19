@@ -226,6 +226,9 @@ class GBCamImage:
             dtype=np.uint8,
         )
 
+        if self.color_palette != GBColorPalettes.BW:
+            self.change_color()
+
         for y in range(self.HEIGHT):
             for x in range(self.WIDTH):
                 a = x * (mask_size - overlap)
