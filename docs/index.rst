@@ -43,6 +43,9 @@ Here are some infos about the hardware and the Gam Boy Camera images that drive 
          <p>Original color palette for Game Boy Camera Images</p>
       </div>
 
+
+To see more about what `gamebeye` can do, you can visit the `gallery <./gallery>`_ to see some image processed by the library.
+
 .. toctree::
    :maxdepth: 1
    :glob:
