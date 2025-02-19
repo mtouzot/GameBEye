@@ -188,7 +188,7 @@ class GBCamImage:
 
         self.__data[:] = img_temp
         self.__colors = dest_color_palette
-        return [{tuple(color) for color in bgr_colors}]
+        return list({tuple(color) for color in bgr_colors})
 
     def to_thermal_printer(self) -> np.ndarray:
         """
