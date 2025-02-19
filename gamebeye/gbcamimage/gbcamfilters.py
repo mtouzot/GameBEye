@@ -5,7 +5,8 @@ import os
 import cv2
 import numpy as np
 
-from gamebeye.gbcamcolors.color_helpers import bgr_to_hex
+from gamebeye.gbcamcolors.color_helpers import bgr_to_hex, hex_to_bgr
+from gamebeye.gbcamcolors.gbcolorpalettes import GBColorPalettes
 from gamebeye.gbcamimage.filter_helpers import generate_vstripes
 from gamebeye.gbcamimage.gbcamimage import GBCamImage
 
@@ -33,7 +34,8 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
     overlap = 4
 
     pixel_sample = os.path.join(
-        os.path.dirname(__file__), "images\\sample\\pixel_sample.png"
+        os.path.dirname(os.path.dirname(__file__)),
+        "images\\sample\\pixel_sample.png"
     )
     pixel_sample = cv2.imread(pixel_sample)
     nb_pixel_samples = 49
@@ -48,6 +50,9 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
         dtype=np.uint8,
     )
 
+    if src.color_palette != GBColorPalettes.BW:
+        src.change_color()
+
     for y in range(src.HEIGHT):
         for x in range(src.WIDTH):
             a = x * (mask_size - overlap)
@@ -55,9 +60,10 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
             c = y * (mask_size - overlap)
             d = c + mask_size
 
-            if bgr_to_hex(src.data[x, y]) != src.color_palette.value[0]:
+            if bgr_to_hex(src.data[x, y]) != src.color_palette.value[0].value:
                 j = np.random.choice(nb_pixel_samples)
-                i = src.color_palette.value[1:].index(bgr_to_hex(src.data[x, y]))
+                hex_color_palette = [color.value for color in src.color_palette.value[1:]]
+                i = hex_color_palette.index(bgr_to_hex(src.data[x, y]))
 
                 dot = pixel_sample[
                     mask_size * i : mask_size * (i + 1),
@@ -75,3 +81,21 @@ def to_thermal_printer(src: GBCamImage) -> np.ndarray:
                 dst[a:b, c:d, :] = np.minimum(dot, dst[a:b, c:d, :])
 
     return dst
+
+def invert_color(src: GBCamImage) -> np.ndarray:
+    """
+    Invert the color palette of the image.
+
+    :param src: A Game Boy Camera Image
+    :type: GBCamImage
+
+    :return: the printed image
+    :rtype: np.ndarray
+    """
+    img_temp = np.empty_like(src.data)
+    for idx, color in enumerate(src.color_palette.value[::-1]):
+        thresh = hex_to_bgr(color.value)
+        current_color = hex_to_bgr(src.color_palette.value[idx].value)
+        img_temp = np.where(src.data == current_color, thresh, img_temp)
+
+    return cv2.normalize(img_temp, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
