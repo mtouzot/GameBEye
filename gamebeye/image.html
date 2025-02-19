@@ -61,6 +61,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-gamebeye.gbcamimage.gbcamfilters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gbcamfilters</span></code> module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamimage.gbcamfilters.invert_color"><code class="docutils literal notranslate"><span class="pre">invert_color()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gamebeye.gbcamimage.gbcamfilters.to_thermal_printer"><code class="docutils literal notranslate"><span class="pre">to_thermal_printer()</span></code></a></li>
 </ul>
 </li>
@@ -214,6 +215,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.invert_color">
+<span class="sig-name descname"><span class="pre">invert_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.invert_color" title="Link to this definition"></a></dt>
+<dd><p>Invert the color palette of the image.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.read">
 <span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.read" title="Link to this definition"></a></dt>
 <dd><p>Open filepath to read the file contents to populate the object.</p>
@@ -248,12 +255,51 @@
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamimage.GBCamImage.to_thermal_printer">
+<span class="sig-name descname"><span class="pre">to_thermal_printer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage.to_thermal_printer" title="Link to this definition"></a></dt>
+<dd><p>Emulate a GB thermal printer and return a printed-on-paper image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the printed image</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+<div class="centered-grid">
+<div class="grid-item">
+<img src="../_static/printedGameBoyCamera.png">
+<p>Thermal printed image</p>
+</div>
+</div></dd></dl>
+
 </dd></dl>
 
 </section>
 <section id="module-gamebeye.gbcamimage.gbcamfilters">
 <span id="gbcamfilters-module"></span><h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">gbcamfilters</span></code> module<a class="headerlink" href="#module-gamebeye.gbcamimage.gbcamfilters" title="Link to this heading"></a></h2>
 <p>Define filters to apply to GBCamImage object.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamfilters.invert_color">
+<span class="sig-prename descclassname"><span class="pre">gamebeye.gbcamimage.gbcamfilters.</span></span><span class="sig-name descname"><span class="pre">invert_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage" title="gamebeye.gbcamimage.gbcamimage.GBCamImage"><span class="pre">GBCamImage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamfilters.invert_color" title="Link to this definition"></a></dt>
+<dd><p>Invert the color palette of the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>src</strong> – A Game Boy Camera Image</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage" title="gamebeye.gbcamimage.gbcamimage.GBCamImage">GBCamImage</a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the printed image</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="gamebeye.gbcamimage.gbcamfilters.to_thermal_printer">
 <span class="sig-prename descclassname"><span class="pre">gamebeye.gbcamimage.gbcamfilters.</span></span><span class="sig-name descname"><span class="pre">to_thermal_printer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gamebeye.gbcamimage.gbcamimage.GBCamImage" title="gamebeye.gbcamimage.gbcamimage.GBCamImage"><span class="pre">GBCamImage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gamebeye.gbcamimage.gbcamfilters.to_thermal_printer" title="Link to this definition"></a></dt>
