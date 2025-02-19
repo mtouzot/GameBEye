@@ -1,0 +1,79 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+name: Deploy Jekyll site to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["gallery"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensures full Git history, needed for worktre
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --destination gallery/_site --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+      - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: gallery/_site
+      - name: Set up Git LFS
+        run: |
+          git lfs install
+      - name: Deploy to gh-pages branch
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+
+          # Fetch the latest gh-pages branch
+          git clone --branch=gh-pages https://x-access-token:${{ secrets.GH_PAT }}@github.com/mtouzot/GameBEye.git gh-pages
+          cd gh-pages
+
+          # Create a gallery directory if not exists
+          rm -rf gallery
+          mkdir -p gallery
+
+          # Copy Jekyll's built site into the gallery directory (without deleting other files)
+          rsync -av ../gallery/_site/ gallery/
+
+          # Add and commit changes only in the gallery directory
+          git add gallery/
+          git commit -m "Deploy Jekyll site to gallery folder in gh-pages" || echo "No changes to commit"
+          git push origin gh-pages
