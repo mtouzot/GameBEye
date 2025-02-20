@@ -1,5 +1,5 @@
 # Nom du workflow
-name: "Build and deploy Github pages"
+name: "Pytest"
 
 # Evenements sur lesquels il doit être déclenché
 on:
@@ -7,9 +7,6 @@ on:
     branches:
       - master
       - dev
-    paths:
-      - gamebeye/**
-      - examples/**
 
 jobs:
   ci:
