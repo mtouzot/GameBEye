@@ -161,7 +161,7 @@ class GBCamImage:
 
     def convert_to_palette(
         self, src_color_palette: List[List[int]], dest_color_palette: GBColorPalettes
-    ):
+    ) -> NoReturn:
         """
         Convert the data to the nearest GBColorPalettes.
 
@@ -261,7 +261,7 @@ class GBCamImage:
 
         return dst
 
-    def invert_color(self):
+    def invert_color(self) -> NoReturn:
         """Invert the color palette of the image."""
         img_temp = np.empty_like(self.__data)
         for idx, color in enumerate(self.color_palette.value[::-1]):
@@ -273,7 +273,7 @@ class GBCamImage:
             np.uint8
         )
 
-    def random_palette(self):
+    def random_palette(self) -> NoReturn:
         """Change image color to a random GBColorPalette."""
         random_palette = random.choice(list(GBColorPalettes))
         self.change_color(random_palette)
