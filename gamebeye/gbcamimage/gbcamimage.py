@@ -2,7 +2,7 @@
 
 import os
 import random
-from typing import List, NoReturn, Tuple
+from typing import List, NoReturn, Self, Tuple
 
 import cv2
 import numpy as np
@@ -277,3 +277,24 @@ class GBCamImage:
         """Change image color to a random GBColorPalette."""
         random_palette = random.choice(list(GBColorPalettes))
         self.change_color(random_palette)
+
+    @staticmethod
+    def from_file(image_filepath: str) -> Self:
+        r"""
+        Construct a GBCamImage from a filepath.
+
+        Read and convert the image color to the closest GBColorPalettes, and
+        act like read method with `convert` parameter passed to `True`.
+
+        :param image_filepath: filepath to image
+        :type image_filepath: a string
+
+        :returns: a GBCamImage read from the `image_filepath`
+        :rtype: GBCamImage
+
+        >>> from gamebeye.gbcamimage.gbcamimage import GBCamImage
+        >>> gb_cam_image = GBCamImage.from_file('images\\originalImage.jpg')
+        """
+        gb_cam_image = GBCamImage()
+        gb_cam_image.read(image_filepath, convert=True)
+        return gb_cam_image
