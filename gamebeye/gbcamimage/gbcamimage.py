@@ -1,6 +1,7 @@
 """Define the GBCamImage class."""
 
 import os
+import random
 from typing import List, NoReturn, Tuple
 
 import cv2
@@ -211,7 +212,7 @@ class GBCamImage:
 
         pixel_sample = os.path.join(
             os.path.dirname(os.path.dirname(__file__)),
-            "images\\sample\\pixel_sample.png"
+            "images\\sample\\pixel_sample.png",
         )
         pixel_sample = cv2.imread(pixel_sample)
         nb_pixel_samples = 49
@@ -238,7 +239,9 @@ class GBCamImage:
 
                 if bgr_to_hex(self.data[x, y]) != self.color_palette.value[0].value:
                     j = np.random.choice(nb_pixel_samples)
-                    hex_color_palette = [color.value for color in self.color_palette.value[1:]]
+                    hex_color_palette = [
+                        color.value for color in self.color_palette.value[1:]
+                    ]
                     i = hex_color_palette.index(bgr_to_hex(self.data[x, y]))
 
                     dot = pixel_sample[
@@ -259,14 +262,18 @@ class GBCamImage:
         return dst
 
     def invert_color(self):
-        """
-        Invert the color palette of the image.
-        """
+        """Invert the color palette of the image."""
         img_temp = np.empty_like(self.__data)
         for idx, color in enumerate(self.color_palette.value[::-1]):
             thresh = hex_to_bgr(color.value)
             current_color = hex_to_bgr(self.__colors.value[idx].value)
             img_temp = np.where(self.__data == current_color, thresh, img_temp)
 
+        self.__data[:] = cv2.normalize(img_temp, None, 0, 255, cv2.NORM_MINMAX).astype(
+            np.uint8
+        )
 
-        self.__data[:] = cv2.normalize(img_temp, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+    def random_palette(self):
+        """Change image color to a random GBColorPalette."""
+        random_palette = random.choice(list(GBColorPalettes))
+        self.change_color(random_palette)
