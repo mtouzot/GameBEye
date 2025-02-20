@@ -1,6 +1,7 @@
 """Define the GBCamImage class."""
 
 import os
+import random
 from typing import List, NoReturn, Tuple
 
 import cv2
@@ -271,3 +272,8 @@ class GBCamImage:
         self.__data[:] = cv2.normalize(img_temp, None, 0, 255, cv2.NORM_MINMAX).astype(
             np.uint8
         )
+
+    def random_palette(self):
+        """Change image color to a random GBColorPalette."""
+        random_palette = random.choice(list(GBColorPalettes))
+        self.change_color(random_palette)
