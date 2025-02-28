@@ -74,7 +74,9 @@ class GBCamImage:
         """
         return self.__colors
 
-    def read(self, image_filepath: str, convert: bool = False) -> NoReturn:
+    def read(
+        self, image_filepath: str, convert: bool = False, remove_border: bool = False
+    ) -> NoReturn:
         """
         Open filepath to read the file contents to populate the object.
 
@@ -116,10 +118,7 @@ class GBCamImage:
             raise ValueError("The read image have too many colors")
 
         hex_colors = np.array([bgr_to_hex(bgr_val=val) for val in bgr_colors])
-        if img.shape[:2] == (
-            GBCamImage.WIDTH + 2 * GBCamImage.BORDER,
-            GBCamImage.HEIGHT + 2 * GBCamImage.BORDER,
-        ):
+        if remove_border:
             width_max = GBCamImage.WIDTH + GBCamImage.BORDER
             height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
             self.__data = img[
