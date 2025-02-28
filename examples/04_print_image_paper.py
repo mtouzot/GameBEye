@@ -27,5 +27,4 @@ cv2.imshow(printed_title, printed_image)
 
 
 cv2.waitKey()
-cv2.destroyWindow(original_title)
-cv2.destroyWindow(printed_title)
+cv2.destroyAllWindows()

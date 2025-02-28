@@ -41,5 +41,4 @@ for image_filepath in images_filepath:
     cv2.imshow(color_palette_title, color_palettes)
 
     cv2.waitKey()
-    cv2.destroyWindow(image_title)
-    cv2.destroyWindow(color_palette_title)
+    cv2.destroyAllWindows()
