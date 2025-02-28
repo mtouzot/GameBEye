@@ -74,6 +74,16 @@ class GBCamImage:
         """
         return self.__colors
 
+    @property
+    def has_border(self) -> bool:
+        """
+        Property to return if the GBCamImage has a border.
+
+        :returns: the possesion of a border
+        :rtype: bool
+        """
+        return self.shape[:2] == (144, 160)
+
     def read(
         self, image_filepath: str, convert: bool = False, remove_border: bool = False
     ) -> NoReturn:
