@@ -129,13 +129,7 @@ class GBCamImage:
 
         hex_colors = np.array([bgr_to_hex(bgr_val=val) for val in bgr_colors])
         if remove_border:
-            width_max = GBCamImage.WIDTH + GBCamImage.BORDER
-            height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
-            self.__data = img[
-                GBCamImage.BORDER : width_max,
-                GBCamImage.BORDER : height_max,
-                :,
-            ]
+            self.remove_boder()
         else:
             self.__data = img
 
@@ -144,6 +138,22 @@ class GBCamImage:
             for palette in GBColorPalettes
             if np.array_equal(np.sort(hex_colors), sorted(palette.hex_colors))
         ][0]
+
+    def remove_boder(self) -> NoReturn:
+        """
+        Remove Nintendo border from image.
+
+        Some images from Game Boy Camera may contain a Nintendo border, this
+        method remove it.
+        """
+        if self.has_border:
+            width_max = GBCamImage.WIDTH + GBCamImage.BORDER
+            height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
+            self.__data = self.__data[
+                GBCamImage.BORDER : width_max,
+                GBCamImage.BORDER : height_max,
+                :,
+            ]
 
     def change_color(
         self, color_palette: GBColorPalettes = GBColorPalettes.BW
