@@ -155,6 +155,23 @@ class GBCamImage:
                 :,
             ]
 
+    def add_border(self) -> NoReturn:
+        """Add Nintendo border to image."""
+        if not self.has_border:
+            border = os.path.join(
+                os.path.dirname(os.path.dirname(__file__)), "images\\border.png"
+            )
+            print(border)
+            border = cv2.imread(border)
+            width_max = GBCamImage.WIDTH + GBCamImage.BORDER
+            height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
+            border[
+                GBCamImage.BORDER : width_max,
+                GBCamImage.BORDER : height_max,
+                :,
+            ] = self.__data
+            self.__data = border
+
     def change_color(
         self, color_palette: GBColorPalettes = GBColorPalettes.BW
     ) -> NoReturn:
