@@ -2,7 +2,7 @@
 
 import os
 import random
-from typing import List, NoReturn, Tuple
+from typing import List, NoReturn, Self, Tuple
 
 import cv2
 import numpy as np
@@ -74,7 +74,19 @@ class GBCamImage:
         """
         return self.__colors
 
-    def read(self, image_filepath: str, convert: bool = False) -> NoReturn:
+    @property
+    def has_border(self) -> bool:
+        """
+        Property to return if the GBCamImage has a border.
+
+        :returns: the possesion of a border
+        :rtype: bool
+        """
+        return self.shape[:2] == (144, 160)
+
+    def read(
+        self, image_filepath: str, convert: bool = False, remove_border: bool = False
+    ) -> NoReturn:
         """
         Open filepath to read the file contents to populate the object.
 
@@ -116,17 +128,8 @@ class GBCamImage:
             raise ValueError("The read image have too many colors")
 
         hex_colors = np.array([bgr_to_hex(bgr_val=val) for val in bgr_colors])
-        if img.shape[:2] == (
-            GBCamImage.WIDTH + 2 * GBCamImage.BORDER,
-            GBCamImage.HEIGHT + 2 * GBCamImage.BORDER,
-        ):
-            width_max = GBCamImage.WIDTH + GBCamImage.BORDER
-            height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
-            self.__data = img[
-                GBCamImage.BORDER : width_max,
-                GBCamImage.BORDER : height_max,
-                :,
-            ]
+        if remove_border:
+            self.remove_boder()
         else:
             self.__data = img
 
@@ -135,6 +138,39 @@ class GBCamImage:
             for palette in GBColorPalettes
             if np.array_equal(np.sort(hex_colors), sorted(palette.hex_colors))
         ][0]
+
+    def remove_boder(self) -> NoReturn:
+        """
+        Remove Nintendo border from image.
+
+        Some images from Game Boy Camera may contain a Nintendo border, this
+        method remove it.
+        """
+        if self.has_border:
+            width_max = GBCamImage.WIDTH + GBCamImage.BORDER
+            height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
+            self.__data = self.__data[
+                GBCamImage.BORDER : width_max,
+                GBCamImage.BORDER : height_max,
+                :,
+            ]
+
+    def add_border(self) -> NoReturn:
+        """Add Nintendo border to image."""
+        if not self.has_border:
+            border = os.path.join(
+                os.path.dirname(os.path.dirname(__file__)), "images\\border.png"
+            )
+            print(border)
+            border = cv2.imread(border)
+            width_max = GBCamImage.WIDTH + GBCamImage.BORDER
+            height_max = GBCamImage.HEIGHT + GBCamImage.BORDER
+            border[
+                GBCamImage.BORDER : width_max,
+                GBCamImage.BORDER : height_max,
+                :,
+            ] = self.__data
+            self.__data = border
 
     def change_color(
         self, color_palette: GBColorPalettes = GBColorPalettes.BW
@@ -161,7 +197,7 @@ class GBCamImage:
 
     def convert_to_palette(
         self, src_color_palette: List[List[int]], dest_color_palette: GBColorPalettes
-    ):
+    ) -> NoReturn:
         """
         Convert the data to the nearest GBColorPalettes.
 
@@ -261,7 +297,7 @@ class GBCamImage:
 
         return dst
 
-    def invert_color(self):
+    def invert_color(self) -> NoReturn:
         """Invert the color palette of the image."""
         img_temp = np.empty_like(self.__data)
         for idx, color in enumerate(self.color_palette.value[::-1]):
@@ -273,7 +309,28 @@ class GBCamImage:
             np.uint8
         )
 
-    def random_palette(self):
+    def random_palette(self) -> NoReturn:
         """Change image color to a random GBColorPalette."""
         random_palette = random.choice(list(GBColorPalettes))
         self.change_color(random_palette)
+
+    @staticmethod
+    def from_file(image_filepath: str) -> Self:
+        r"""
+        Construct a GBCamImage from a filepath.
+
+        Read and convert the image color to the closest GBColorPalettes, and
+        act like read method with `convert` parameter passed to `True`.
+
+        :param image_filepath: filepath to image
+        :type image_filepath: a string
+
+        :returns: a GBCamImage read from the `image_filepath`
+        :rtype: GBCamImage
+
+        >>> from gamebeye.gbcamimage.gbcamimage import GBCamImage
+        >>> gb_cam_image = GBCamImage.from_file('images\\originalImage.jpg')
+        """
+        gb_cam_image = GBCamImage()
+        gb_cam_image.read(image_filepath, convert=True)
+        return gb_cam_image

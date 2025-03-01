@@ -35,5 +35,4 @@ print(
 )
 
 cv2.waitKey()
-cv2.destroyWindow(original_title)
-cv2.destroyWindow(color_title)
+cv2.destroyAllWindows()
