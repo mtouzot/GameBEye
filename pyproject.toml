@@ -56,7 +56,7 @@ testpaths = [
 line-length = 79
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.3.4"
+pytest = "^9.0.3"
 coverage = "^7.6.10"
 ruff = "^0.9.3"
 
